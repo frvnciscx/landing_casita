@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>La Casita del Molde - Moldes Personalizados y Herramientas Creativas</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ff0099",
+                        "background-light": "#ffffff",
+                        "background-dark": "#1a1a1a",
+                        "text-main": "#1d0c16",
+                        "text-light": "#4a4a4a",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "body": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ff0099, #cc007a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white transition-colors duration-200">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden group/design-root pt-[72px]">
+        <header
+            class="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-100 dark:bg-background-dark/90 dark:border-gray-800">
+            <div class="layout-container flex h-full grow flex-col">
+                <div class="px-4 lg:px-10 flex items-center justify-between py-4 max-w-[1280px] mx-auto w-full">
+                    <div class="flex items-center gap-3 cursor-pointer">
+                        <img src="images/logo.png" alt="Logo de La Casita del Molde"
+                            class="h-10 w-auto object-contain" />
+                        <h2 class="text-text-main dark:text-white text-xl font-bold tracking-tight">La Casita del Molde
+                        </h2>
+                    </div>
+                    <nav class="hidden lg:flex items-center gap-8">
+                        <a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
+                            href="index.html">Tienda</a>
+                        <a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
+                            href="catalogo.html">Catálogo</a>
+                        <a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
+                            href="nosotros.html">Sobre Nosotros</a>
+                        <a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
+                            href="#">Blog</a>
+                    </nav>
+                    <div class="flex items-center gap-4">
+                        <button
+                            class="hidden sm:flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 hover:bg-primary/90 hover:shadow-primary/40 transition-all transform hover:-translate-y-0.5">
+                            <span class="mr-2 material-symbols-outlined text-[18px]">lightbulb</span>
+                            <span>Cotizar mi Idea</span>
+                        </button>
+                        <button class="lg:hidden p-2 text-text-main dark:text-white">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main class="flex-1 flex flex-col items-center w-full">
+            <div class="w-full max-w-[1280px] px-4 lg:px-10 pt-8 pb-12">
+                <div
+                    class="relative overflow-hidden rounded-2xl bg-gray-900 text-white min-h-[560px] flex items-center">
+                    <div class="absolute inset-0 z-0">
+                        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10">
+                        </div>
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105"
+                            data-alt="Close up of white 3D printed geometric shapes and molds"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVgQUDzR-jRo4iPXi9VbJl-950RY5f805rVSkXpE8iIPWm4f-e1RmrRjyKZW6ZhZtEkWNxBU215GzGxYKHwZkTfGsrTVLQW8D1occL-vEtZWHVVQuqQHU_cl75y6PtrPKIT_683iIK1zkXy5fsy1EeBOMFx8nau6PqquOWZjevd2TyIyH0KWcXdSNOSQQcLpq71JYFqudCNFCVXFLcLjip8eu1aH1341HKfyu-YzaZJ-X52MZsRyTgdOAKCaEpQiBRO6Xw6NMqAV6v');">
+                        </div>
+                    </div>
+                    <div class="relative z-20 flex flex-col gap-6 max-w-2xl px-6 lg:px-16 py-12">
+                        <span
+                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-xs font-semibold text-white w-fit">
+                            <span class="size-2 rounded-full bg-primary animate-pulse"></span>
+                            Nuevos diseños disponibles
+                        </span>
+                        <h1 class="text-5xl lg:text-7xl font-bold leading-tight tracking-tight">
+                            Tu idea hecha <span class="text-primary">molde</span>.
+                        </h1>
+                        <p class="text-lg lg:text-xl text-gray-200 font-light max-w-[540px] leading-relaxed">
+                            Especialistas en herramientas creativas personalizadas para repostería, jabones y proyectos
+                            artísticos.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-4">
+                            <button
+                                class="flex items-center justify-center rounded-lg h-12 px-8 bg-primary text-white text-base font-bold shadow-lg shadow-primary/30 hover:bg-primary/90 transition-all">
+                                Explorar Catálogo
+                            </button>
+                            <button
+                                class="flex items-center justify-center rounded-lg h-12 px-8 bg-white/10 backdrop-blur-md border border-white/30 text-white text-base font-medium hover:bg-white/20 transition-all">
+                                Ver Galería
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full max-w-[1280px] px-4 lg:px-10 py-12">
+                <div class="flex flex-col md:flex-row justify-between items-end gap-4 mb-8">
+                    <div>
+                        <h2 class="text-3xl font-bold text-text-main dark:text-white mb-2">Nuestras Categorías</h2>
+                        <p class="text-text-light dark:text-gray-400">Encuentra la herramienta perfecta para tu próximo
+                            proyecto</p>
+                    </div>
+                    <a class="group flex items-center gap-1 text-primary font-bold text-sm hover:underline" href="#">
+                        Ver todo
+                        <span
+                            class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
+                        <div class="aspect-[4/3] w-full overflow-hidden bg-gray-100">
+                            <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Colorful cookie cutters on a baking surface"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAInPR71rK6Tqb1Npjyz8_eMOKUSIWOO4yruPUUUMo6i2errmhMcE5x0l6PsL3CXQDq6x1EML1C6dYB_8XZTDtEMnnEZ66-fZdmr2tRkOQJCBMHFo05ac1fA3knvAh0scNuXzq6WYMqWF2_czrYugOiuTtgJ4WNJzu_KUgdvNDceuxPGLygB--ILdAhZloM3WQxcWBNeiHEJa4ZpiSQcNsvTLd3bMQBz74lWRzNqWeX-w4HCpb1_JXdKqFvOFLMQdPoXboMpFL15vsa');">
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2 text-primary">
+                                <span class="material-symbols-outlined">cake</span>
+                                <span class="text-xs font-bold uppercase tracking-wider">Destacado</span>
+                            </div>
+                            <h3
+                                class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">
+                                Repostería Creativa</h3>
+                            <p class="text-sm text-text-light dark:text-gray-400">Moldes para galletas, pasteles y
+                                decoraciones de chocolate con detalles precisos.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
+                        <div class="aspect-[4/3] w-full overflow-hidden bg-gray-100">
+                            <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Handmade soaps with intricate floral designs"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkNpN-IYEEnCMBsCIdSkO4q7yqWLzK5Wa_lyNAG7Tj2G-GpbsQifxDyIeDD-hhzYVoa9MwCIQ3mcZd_rhdDAZLOVjdbRHBd27cQjfupFyC_h9f2aFQS3R7PLIGbkoa93mkajSNiCPz0QmaH0RdVKGtJ4vXpMY79EFG_nmWNWLekVGXakHXyQcm9ATMKNvTUkPdg-yyO-hDXDwRf_RDz6DblfrJVZqTtwfK5ndx1Q95LXvO-u8j79SLC099LGBqIYnII8FJ035URXe9');">
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2 text-primary">
+                                <span class="material-symbols-outlined">spa</span>
+                                <span class="text-xs font-bold uppercase tracking-wider">Spa &amp; Relax</span>
+                            </div>
+                            <h3
+                                class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">
+                                Jabones y Velas</h3>
+                            <p class="text-sm text-text-light dark:text-gray-400">Diseños ergonómicos y estéticos para
+                                la creación de jabones artesanales y velas.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
+                        <div class="aspect-[4/3] w-full overflow-hidden bg-gray-100">
+                            <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+                                data-alt="Various clay sculpting tools and molds on a table"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCx7MxVPLJXJoR7EkBxdrC-3neIhWZSdmnJ6NPTIkC-qGQl7uluOXDmEK3sSP-IDvtvdHvyi3QDAK3LMeeZEvYGXDknHmLkwKR8CNGL6PzOsPVpIXhHQBEqT-13y0PqqplK7exBqafAzFQ5eeVDqTFYSt0Gdw1kDQAwMz5DPZYzxRQzPOZ-Gnmnm9d0VpNvLrNut1AGrUDDr73GPwFTs5SUlXzp2UxLV1OFoVkIVNknF2q8l-b1k-8_YFoMa0JetH5VyTTppwpPzyLO');">
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 mb-2 text-primary">
+                                <span class="material-symbols-outlined">brush</span>
+                                <span class="text-xs font-bold uppercase tracking-wider">Artistas</span>
+                            </div>
+                            <h3
+                                class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">
+                                Herramientas de Autor</h3>
+                            <p class="text-sm text-text-light dark:text-gray-400">Soluciones únicas para ceramistas,
+                                escultores y artistas plásticos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section class="w-full bg-primary/5 dark:bg-primary/10 border-y border-primary/10 py-16 lg:py-24">
+                <div class="max-w-[1280px] mx-auto px-4 lg:px-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="flex flex-col gap-6">
+                            <div
+                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-gray-800 border border-primary/20 text-xs font-bold text-primary w-fit shadow-sm">
+                                <span class="material-symbols-outlined text-sm">3d_rotation</span>
+                                Impresión 3D a Medida
+                            </div>
+                            <h2 class="text-4xl lg:text-5xl font-bold text-text-main dark:text-white leading-tight">
+                                ¿Tienes un diseño propio?
+                            </h2>
+                            <p class="text-lg text-text-light dark:text-gray-300 leading-relaxed max-w-lg">
+                                Convierte tus archivos digitales en moldes físicos de alta calidad. Nuestro servicio de
+                                impresión 3D es rápido, preciso y accesible.
+                            </p>
+                            <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                                <button
+                                    class="flex items-center justify-center rounded-lg h-14 px-8 bg-primary text-white text-base font-bold shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all hover:scale-105">
+                                    <span class="material-symbols-outlined mr-2">upload_file</span>
+                                    Subir mi Diseño
+                                </button>
+                                <button
+                                    class="flex items-center justify-center rounded-lg h-14 px-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-text-main dark:text-white text-base font-medium hover:border-primary hover:text-primary transition-all">
+                                    Ver Guía de Diseño
+                                </button>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div
+                                class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-colors">
+                                <div
+                                    class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                                    <span class="material-symbols-outlined">cloud_upload</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-1">1. Sube tu archivo
+                                </h3>
+                                <p class="text-sm text-text-light dark:text-gray-400">Aceptamos STL, OBJ y más. Carga
+                                    directa en nuestra plataforma.</p>
+                            </div>
+                            <div
+                                class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-colors">
+                                <div
+                                    class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                                    <span class="material-symbols-outlined">rule</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-1">2. Verificamos</h3>
+                                <p class="text-sm text-text-light dark:text-gray-400">Expertos revisan la viabilidad
+                                    técnica de tu modelo 3D.</p>
+                            </div>
+                            <div
+                                class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-colors">
+                                <div
+                                    class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                                    <span class="material-symbols-outlined">print</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-1">3. Imprimimos</h3>
+                                <p class="text-sm text-text-light dark:text-gray-400">Producción de alta resolución con
+                                    materiales seguros.</p>
+                            </div>
+                            <div
+                                class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-colors">
+                                <div
+                                    class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
+                                    <span class="material-symbols-outlined">local_shipping</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-1">4. Recibe en casa</h3>
+                                <p class="text-sm text-text-light dark:text-gray-400">Envío rápido y seguro a cualquier
+                                    parte del país.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="w-full max-w-[1280px] px-4 lg:px-10 py-16">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-3xl font-bold text-text-main dark:text-white mb-4">Lo más popular de la semana</h2>
+                    <p class="text-text-light dark:text-gray-400">Nuestros clientes están creando cosas increíbles con
+                        estos moldes.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="group flex flex-col gap-3">
+                        <div class="relative overflow-hidden rounded-xl bg-gray-50 dark:bg-gray-800 aspect-square">
+                            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Geometric minimalist white vase on pastel background"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSFau7_5rWdohTKj-8iyVdrCCiaq376jb71l387B1BtZV8rVM5Tfh7TM4nUV4Urlw07K1nDew-AR6yQX3A7DEYGwoKiMUvMY27KT9juORwJso7mqbWXCSjktcu6PgBEqXulC6HKmytNDdGZARyHQwrtl5YBiZV_b0SfOvdYw5K0t4XHfAoR9QygIOxubafePmR5DF0QIxtTU5cNB8ExBWJ52Q_Rk21Uj2GtdILnvv9UuJrakqQQDxzf-pHmDaY6vEIHAnnTAzWF20d');">
+                            </div>
+                            <button
+                                class="absolute bottom-3 right-3 size-10 rounded-full bg-white text-primary shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary hover:text-white">
+                                <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                            </button>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-text-main dark:text-white truncate">Molde Geométrico V2</h3>
+                            <p class="text-primary font-bold text-sm">$24.00</p>
+                        </div>
+                    </div>
+                    <div class="group flex flex-col gap-3">
+                        <div class="relative overflow-hidden rounded-xl bg-gray-50 dark:bg-gray-800 aspect-square">
+                            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Heart shaped silicone mold for baking"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLPrV2SESPM4r9Hgu2bvDqgJ1KP6GS9UeV3lbZUieP4s8Pqp5cL3PwXVtMkdfARTgrBkc5FqXnulDWljprdiiPZj-2W4L2_-3T383Z5afvwg0HeTvOHRrtKhxNhvXWO3W9CFzJSDGSiq0ZHRnNPSOmNEhdO3RrbCOZ4QRP83pdZXPTCbjhEw1-S6vfl5v6uF8cVYty4tbk2fzpsHJz4m04vQUpI6FROhBfICRur2d3kx517y_00Q8X5iBjpz4lbUYm13OSKSQvYZR7');">
+                            </div>
+                            <button
+                                class="absolute bottom-3 right-3 size-10 rounded-full bg-white text-primary shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary hover:text-white">
+                                <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                            </button>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-text-main dark:text-white truncate">Corazón Diamante</h3>
+                            <p class="text-primary font-bold text-sm">$18.50</p>
+                        </div>
+                    </div>
+                    <div class="group flex flex-col gap-3">
+                        <div class="relative overflow-hidden rounded-xl bg-gray-50 dark:bg-gray-800 aspect-square">
+                            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Intricate flower pattern mold"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAI7vTqhBcl4FMaARVu6srdRJ4znFYlW2ZIqbGC-BzsYgW0ilwnAEd3-rjkH31AEbt--rd4mXnnHdZEwOslzHs0ItQNON_g1ptlRM850-gcrrnbAz3Ata6taCxMtUWddvGmVyGBpQLeXt11IjKjRcyjEMpfx0TLiPpPXhQlQeWQqBFFvbwAN3lE5mhQ277UehvX54JYga_tcYph9spGSWLn4zBbAOQ0-u-wK6WWcMvsDxDz5MAURWbGIrZ62IzTfId3EwL7qO0dyEhl');">
+                            </div>
+                            <button
+                                class="absolute bottom-3 right-3 size-10 rounded-full bg-white text-primary shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary hover:text-white">
+                                <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                            </button>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-text-main dark:text-white truncate">Rosa Clásica</h3>
+                            <p class="text-primary font-bold text-sm">$12.90</p>
+                        </div>
+                    </div>
+                    <div class="group flex flex-col gap-3">
+                        <div class="relative overflow-hidden rounded-xl bg-gray-50 dark:bg-gray-800 aspect-square">
+                            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Star shaped cookie cutter on white surface"
+                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuChQ7Q8n2CAASPNGsg8xdgxR1QGvbgABXtfyJxf09TzBCv6RpfLXbpXqvVsRxyQ4xVAuAhErVAbOsbsKXP8DGwBY3jJ1QZag5g1sLECDHQMbXzbo1GSKelO6SJr45e5eShmCwXLUvu6s-HMG7cVwfZIXUeWpKAAd9i_dntS0bVizXS4IhKhzR0GfaC1vmp0NnlCn962bFa3tQ1lprDRynPO0mAnvYKQjjYzDzpAzY-zRLqRpv1AzTqCVSrS5e5coJGAlnbs_xDnTtJV');">
+                            </div>
+                            <button
+                                class="absolute bottom-3 right-3 size-10 rounded-full bg-white text-primary shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary hover:text-white">
+                                <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
+                            </button>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-text-main dark:text-white truncate">Set Estrellas (5pcs)</h3>
+                            <p class="text-primary font-bold text-sm">$30.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full max-w-[1280px] px-4 lg:px-10 pb-16">
+                <div
+                    class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-8 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8 text-black dark:text-white relative overflow-hidden">
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] pointer-events-none">
+                    </div>
+                    <div class="flex-1 relative z-10">
+                        <h2 class="text-3xl font-bold mb-4">Únete a nuestra comunidad creativa</h2>
+                        <p class="text-gray-600 dark:text-gray-300 max-w-md">Recibe descuentos exclusivos, tutoriales
+                            gratuitos y sé el primero en conocer nuestros nuevos lanzamientos.</p>
+                    </div>
+                    <div class="flex-1 w-full relative z-10">
+                        <form class="flex flex-col sm:flex-row gap-3">
+                            <input
+                                class="flex-1 rounded-lg border-0 bg-black/10 dark:bg-white/10 text-text-main dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary h-12 px-4"
+                                placeholder="Tu correo electrónico" type="email" />
+                            <button
+                                class="rounded-lg h-12 px-6 bg-primary font-bold text-white hover:bg-primary/90 transition-colors whitespace-nowrap">
+                                Suscribirme
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="w-full bg-white dark:bg-background-dark border-t-4 border-primary">
+            <div class="max-w-[1280px] mx-auto px-4 lg:px-10 py-12">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                    <div class="col-span-1 md:col-span-1">
+                        <div class="flex items-center gap-2 mb-4">
+                            <img src="images/logo.png" alt="Logo de La Casita del Molde"
+                                class="h-8 w-auto object-contain" />
+                            <h3 class="font-bold text-lg text-text-main dark:text-white">La Casita del Molde</h3>
+                        </div>
+                        <p class="text-sm text-text-light dark:text-gray-400 mb-4">
+                            Transformando ideas en realidad, capa por capa. Calidad y precisión en cada impresión.
+                        </p>
+                        <div class="flex gap-4">
+                            <a class="text-primary hover:text-primary/80 transition-colors" href="#">
+                                <span class="text-2xl font-bold">Fb</span>
+                            </a>
+                            <a class="text-primary hover:text-primary/80 transition-colors" href="#">
+                                <span class="text-2xl font-bold">In</span>
+                            </a>
+                            <a class="text-primary hover:text-primary/80 transition-colors" href="#">
+                                <span class="text-2xl font-bold">Tw</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-text-main dark:text-white mb-4">Tienda</h4>
+                        <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-gray-400">
+                            <li><a class="hover:text-primary transition-colors" href="#">Nuevos Lanzamientos</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Más Vendidos</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Ofertas</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Tarjetas de Regalo</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-text-main dark:text-white mb-4">Empresa</h4>
+                        <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-gray-400">
+                            <li><a class="hover:text-primary transition-colors" href="#">Sobre Nosotros</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Prensa</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Trabaja con nosotros</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-text-main dark:text-white mb-4">Soporte</h4>
+                        <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-gray-400">
+                            <li><a class="hover:text-primary transition-colors" href="#">Centro de Ayuda</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Envíos y Devoluciones</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Términos y Condiciones</a></li>
+                            <li><a class="hover:text-primary transition-colors" href="#">Política de Privacidad</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div
+                    class="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-text-light dark:text-gray-500">
+                    <p>© 2023 La Casita del Molde. Todos los derechos reservados.</p>
+                    <p>Diseñado con ❤️ para creadores.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
