@@ -1,442 +1,1932 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>La Casita del Molde - Moldes Personalizados y Herramientas Creativas</title>
+    <title>
+      La Casita del Molde - Moldes Personalizados y Herramientas Creativas
+    </title>
+    <meta
+      name="description"
+      content="Servicio de impresión 3D a medida y catálogo de moldes y herramientas personalizadas para repostería, jabones y proyectos creativos. Tu idea hecha molde."
+    />
+    <meta name="theme-color" content="#faf8f6" />
+    <script>
+      // Aplica el tema antes de pintar para evitar parpadeo.
+      (function () {
+        function aplicarTema(oscuro) {
+          document.documentElement.classList.toggle("dark", oscuro);
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", oscuro ? "#141016" : "#faf8f6");
+        }
+        window.aplicarTema = aplicarTema;
+        var guardado = null;
+        try {
+          guardado = localStorage.getItem("tema");
+        } catch (e) {}
+        aplicarTema(
+          guardado
+            ? guardado === "oscuro"
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+        // Si el usuario no ha elegido, sigue los cambios del sistema en vivo.
+        try {
+          window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .addEventListener("change", function (e) {
+              var g = null;
+              try {
+                g = localStorage.getItem("tema");
+              } catch (err) {}
+              if (!g) aplicarTema(e.matches);
+            });
+        } catch (e) {}
+      })();
+    </script>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap"
-        rel="stylesheet" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&display=swap"
+      rel="stylesheet"
+    />
     <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#ff0099",
-                        "background-light": "#ffffff",
-                        "background-dark": "#1a1a1a",
-                        "text-main": "#1d0c16",
-                        "text-light": "#4a4a4a",
-                    },
-                    fontFamily: {
-                        "display": ["Lexend", "sans-serif"],
-                        "body": ["Lexend", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "0.75rem",
-                        "xl": "1rem",
-                        "full": "9999px"
-                    },
-                },
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ff0099",
+              "primary-dark": "#cc007a",
+              ink: "#1b1520",
+              paper: "#faf8f6",
+              "paper-dark": "#141016",
+              surface: "#ffffff",
+              "surface-dark": "#1f1a25",
+              "text-main": "#231d29",
+              "text-light": "#6f6875",
             },
-        }
+            fontFamily: {
+              display: ["Fraunces", "Georgia", "serif"],
+              body: ["Fraunces", "Georgia", "serif"],
+              sans: ["Fraunces", "Georgia", "serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
     </script>
     <style>
-        body {
-            font-family: 'Lexend', sans-serif;
+      html {
+        color-scheme: light;
+      }
+
+      html.dark {
+        color-scheme: dark;
+      }
+
+      body {
+        font-family: "Fraunces", Georgia, serif;
+        font-optical-sizing: auto;
+      }
+
+      .font-display {
+        font-optical-sizing: auto;
+      }
+
+      h1,
+      h2,
+      h3 {
+        text-wrap: balance;
+      }
+
+      .tabular {
+        font-variant-numeric: tabular-nums;
+      }
+
+      [id] {
+        scroll-margin-top: 96px;
+      }
+
+      ::selection {
+        background-color: #ff0099;
+        color: #ffffff;
+      }
+
+      :focus-visible {
+        outline: 2px solid #ff0099;
+        outline-offset: 2px;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      .sello-anillo {
+        animation: girar-sello 22s linear infinite;
+      }
+
+      @keyframes girar-sello {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .textura-grano {
+        position: relative;
+      }
+
+      .textura-grano::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.06;
+        mix-blend-mode: overlay;
+        background-repeat: repeat;
+        background-size: 150px 150px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
         }
 
-        .text-gradient {
-            background: linear-gradient(to right, #ff0099, #cc007a);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
         }
+      }
     </style>
-</head>
+  </head>
 
-<body class="bg-background-light dark:bg-background-dark text-text-main dark:text-white transition-colors duration-200">
-    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden group/design-root pt-[72px]">
-        <header
-            class="fixed top-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-gray-100 dark:bg-background-dark/90 dark:border-gray-800">
-            <div class="layout-container flex h-full grow flex-col">
-                <div class="px-4 lg:px-10 flex items-center justify-between py-4 max-w-[1280px] mx-auto w-full">
-                    <div class="flex items-center gap-3 cursor-pointer">
-                        <img src="images/logo.png" alt="Logo de La Casita del Molde"
-                            class="h-10 w-auto object-contain" />
-                        <h2 class="text-text-main dark:text-white text-xl font-bold tracking-tight">La Casita del Molde
-                        </h2>
-                    </div>
-                    <nav class="hidden lg:flex items-center gap-8">
-                        <a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
-                            href="index.html">Tienda</a>
-                        <a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
-                            href="catalogo.html">Catálogo</a>
-                        <a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
-                            href="nosotros.html">Sobre Nosotros</a>
-                        <a class="text-text-main dark:text-gray-200 text-sm font-medium hover:text-primary transition-colors"
-                            href="#">Blog</a>
-                    </nav>
-                    <div class="flex items-center gap-4">
-                        <button
-                            class="hidden sm:flex items-center justify-center rounded-full h-10 px-6 bg-primary text-white text-sm font-bold shadow-lg shadow-primary/30 hover:bg-primary/90 hover:shadow-primary/40 transition-all transform hover:-translate-y-0.5">
-                            <span class="mr-2 material-symbols-outlined text-[18px]">lightbulb</span>
-                            <span>Cotizar mi Idea</span>
-                        </button>
-                        <button class="lg:hidden p-2 text-text-main dark:text-white">
-                            <span class="material-symbols-outlined">menu</span>
-                        </button>
-                    </div>
+  <body
+    class="bg-paper text-text-main dark:bg-paper-dark dark:text-stone-200 antialiased"
+  >
+    <a
+      href="#contenido"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ink focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white"
+      >Saltar al contenido</a
+    >
+    <div
+      class="relative flex min-h-screen w-full flex-col overflow-x-hidden pt-[72px]"
+    >
+      <header
+        class="fixed top-0 z-50 w-full bg-paper/80 dark:bg-paper-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/10"
+      >
+        <div
+          class="px-4 lg:px-10 flex items-center justify-between py-4 max-w-[1280px] mx-auto w-full"
+        >
+          <a href="index.html" class="flex items-center gap-3 rounded-lg">
+            <img
+              src="images/logo.png"
+              alt=""
+              width="150"
+              height="150"
+              class="h-10 w-10 object-contain"
+            />
+            <span
+              class="font-display text-xl font-semibold tracking-tight text-ink dark:text-white"
+              >La Casita del Molde</span
+            >
+          </a>
+          <nav
+            class="hidden lg:flex items-center gap-9"
+            aria-label="Principal"
+          >
+            <a
+              class="text-sm font-medium text-ink dark:text-white relative after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:bg-primary"
+              href="index.html"
+              aria-current="page"
+              >Tienda</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-stone-400 hover:text-ink dark:hover:text-white transition-colors"
+              href="catalogo.html"
+              >Catálogo</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-stone-400 hover:text-ink dark:hover:text-white transition-colors"
+              href="portafolio.html"
+              >Portafolio</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-stone-400 hover:text-ink dark:hover:text-white transition-colors"
+              href="nosotros.html"
+              >Sobre Nosotros</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-stone-400 hover:text-ink dark:hover:text-white transition-colors"
+              href="blog.html"
+              >Blog</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-stone-400 hover:text-ink dark:hover:text-white transition-colors"
+              href="contacto.html"
+              >Contacto</a
+            >
+          </nav>
+          <div class="flex items-center gap-4">
+            <button
+              id="boton-tema"
+              type="button"
+              aria-label="Cambiar tema"
+              class="p-2 rounded-lg text-ink dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-[20px] dark:hidden"
+                aria-hidden="true"
+                >dark_mode</span
+              >
+              <span
+                class="material-symbols-outlined text-[20px] hidden dark:inline"
+                aria-hidden="true"
+                >light_mode</span
+              >
+            </button>
+            <a
+              href="#cotiza"
+              class="hidden sm:inline-flex items-center justify-center rounded-full h-10 px-5 bg-ink text-white dark:bg-white dark:text-ink text-sm font-semibold hover:bg-ink/90 dark:hover:bg-white/90 transition-colors"
+            >
+              <span
+                class="mr-2 material-symbols-outlined text-[18px]"
+                aria-hidden="true"
+                >lightbulb</span
+              >
+              <span>Cotizar mi idea</span>
+            </a>
+            <button
+              id="boton-menu"
+              type="button"
+              aria-label="Abrir menú"
+              aria-expanded="false"
+              aria-controls="menu-movil"
+              class="lg:hidden p-2 text-ink dark:text-white rounded-lg"
+            >
+              <span class="material-symbols-outlined" aria-hidden="true"
+                >menu</span
+              >
+            </button>
+          </div>
+        </div>
+        <div
+          id="menu-movil"
+          hidden
+          class="lg:hidden border-t border-black/5 dark:border-white/10 bg-paper dark:bg-paper-dark px-4 pb-6 pt-2"
+        >
+          <nav class="flex flex-col" aria-label="Menú móvil">
+            <a
+              class="py-3 text-base font-semibold text-ink dark:text-white border-b border-black/5 dark:border-white/10"
+              href="index.html"
+              aria-current="page"
+              >Tienda</a
+            >
+            <a
+              class="py-3 text-base font-medium text-text-light dark:text-stone-300 border-b border-black/5 dark:border-white/10 hover:text-ink dark:hover:text-white"
+              href="catalogo.html"
+              >Catálogo</a
+            >
+            <a
+              class="py-3 text-base font-medium text-text-light dark:text-stone-300 border-b border-black/5 dark:border-white/10 hover:text-ink dark:hover:text-white"
+              href="portafolio.html"
+              >Portafolio</a
+            >
+            <a
+              class="py-3 text-base font-medium text-text-light dark:text-stone-300 border-b border-black/5 dark:border-white/10 hover:text-ink dark:hover:text-white"
+              href="nosotros.html"
+              >Sobre Nosotros</a
+            >
+            <a
+              class="py-3 text-base font-medium text-text-light dark:text-stone-300 border-b border-black/5 dark:border-white/10 hover:text-ink dark:hover:text-white"
+              href="blog.html"
+              >Blog</a
+            >
+            <a
+              class="py-3 text-base font-medium text-text-light dark:text-stone-300 hover:text-ink dark:hover:text-white"
+              href="contacto.html"
+              >Contacto</a
+            >
+            <a
+              href="#cotiza"
+              class="mt-4 inline-flex items-center justify-center rounded-full h-11 px-6 bg-ink text-white dark:bg-white dark:text-ink text-sm font-semibold"
+            >
+              Cotizar mi idea
+            </a>
+          </nav>
+        </div>
+      </header>
+      <main id="contenido" class="flex-1 flex flex-col items-center w-full">
+        <!-- Hero editorial -->
+        <section class="w-full max-w-[1280px] px-4 lg:px-10 pt-10 lg:pt-16 pb-14 lg:pb-20">
+          <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div class="flex flex-col gap-7">
+              <span
+                class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-text-light dark:text-stone-400"
+              >
+                <span
+                  class="size-1.5 rounded-full bg-primary animate-pulse"
+                  aria-hidden="true"
+                ></span>
+                Servicio de impresión 3D a medida
+              </span>
+              <h1
+                class="font-display text-5xl lg:text-6xl xl:text-7xl font-semibold leading-[1.03] tracking-tight text-ink dark:text-white"
+              >
+                Tu idea hecha
+                <span class="relative inline-block">
+                  <span class="italic text-primary-dark dark:text-primary"
+                    >molde</span
+                  >
+                  <svg
+                    class="absolute left-0 -bottom-1 w-full h-3 text-primary-dark dark:text-primary"
+                    viewBox="0 0 100 12"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2,7 Q15,2 30,6 T60,5 T98,7"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3.5"
+                      stroke-linecap="round"
+                    />
+                  </svg> </span
+                >.
+              </h1>
+              <p
+                class="text-lg text-text-light dark:text-stone-400 leading-relaxed max-w-[46ch]"
+              >
+                Convierte tu diseño en una pieza real con nuestro servicio de
+                impresión 3D a medida, o descubre en el catálogo cientos de
+                moldes y herramientas listos para repostería, jabones y
+                proyectos creativos.
+              </p>
+              <div class="flex flex-wrap gap-3 pt-1">
+                <a
+                  href="catalogo.html"
+                  class="inline-flex items-center justify-center rounded-full h-12 px-7 bg-ink text-white dark:bg-white dark:text-ink text-sm font-semibold hover:bg-ink/90 dark:hover:bg-white/90 transition-colors"
+                >
+                  Explorar catálogo
+                </a>
+                <a
+                  href="nosotros.html#proceso"
+                  class="inline-flex items-center justify-center rounded-full h-12 px-7 border border-ink/15 dark:border-white/20 text-ink dark:text-white text-sm font-medium hover:border-ink/40 dark:hover:border-white/40 transition-colors"
+                >
+                  Conoce el proceso
+                </a>
+              </div>
+              <dl
+                class="flex flex-wrap gap-x-8 gap-y-3 pt-4 border-t border-black/5 dark:border-white/10 mt-2 text-sm"
+              >
+                <div class="flex flex-col">
+                  <dt class="text-text-light dark:text-stone-500">Precisión</dt>
+                  <dd class="font-display text-lg text-ink dark:text-white">
+                    0.2&nbsp;mm por capa
+                  </dd>
                 </div>
+                <div class="flex flex-col">
+                  <dt class="text-text-light dark:text-stone-500">Formatos</dt>
+                  <dd class="font-display text-lg text-ink dark:text-white">
+                    STL y OBJ
+                  </dd>
+                </div>
+                <div class="flex flex-col">
+                  <dt class="text-text-light dark:text-stone-500">Envíos</dt>
+                  <dd class="font-display text-lg text-ink dark:text-white">
+                    A todo el país
+                  </dd>
+                </div>
+              </dl>
             </div>
-        </header>
-        <main class="flex-1 flex flex-col items-center w-full">
-            <div class="w-full max-w-[1280px] px-4 lg:px-10 pt-8 pb-12">
-                <div
-                    class="relative overflow-hidden rounded-2xl bg-gray-900 text-white min-h-[560px] flex items-center">
-                    <div class="absolute inset-0 z-0">
-                        <div class="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10">
-                        </div>
-                        <div class="w-full h-full bg-cover bg-center transition-transform duration-700 hover:scale-105"
-                            data-alt="Close up of white 3D printed geometric shapes and molds"
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBVgQUDzR-jRo4iPXi9VbJl-950RY5f805rVSkXpE8iIPWm4f-e1RmrRjyKZW6ZhZtEkWNxBU215GzGxYKHwZkTfGsrTVLQW8D1occL-vEtZWHVVQuqQHU_cl75y6PtrPKIT_683iIK1zkXy5fsy1EeBOMFx8nau6PqquOWZjevd2TyIyH0KWcXdSNOSQQcLpq71JYFqudCNFCVXFLcLjip8eu1aH1341HKfyu-YzaZJ-X52MZsRyTgdOAKCaEpQiBRO6Xw6NMqAV6v');">
-                        </div>
-                    </div>
-                    <div class="relative z-20 flex flex-col gap-6 max-w-2xl px-6 lg:px-16 py-12">
-                        <span
-                            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-xs font-semibold text-white w-fit">
-                            <span class="size-2 rounded-full bg-primary animate-pulse"></span>
-                            Nuevos diseños disponibles
-                        </span>
-                        <h1 class="text-5xl lg:text-7xl font-bold leading-tight tracking-tight">
-                            Tu idea hecha <span class="text-primary">molde</span>.
-                        </h1>
-                        <p class="text-lg lg:text-xl text-gray-200 font-light max-w-[540px] leading-relaxed">
-                            Especialistas en herramientas creativas personalizadas para repostería, jabones y proyectos
-                            artísticos.
-                        </p>
-                        <div class="flex flex-wrap gap-4 pt-4">
-                            <button
-                                class="flex items-center justify-center rounded-lg h-12 px-8 bg-primary text-white text-base font-bold shadow-lg shadow-primary/30 hover:bg-primary/90 transition-all">
-                                Explorar Catálogo
-                            </button>
-                            <button
-                                class="flex items-center justify-center rounded-lg h-12 px-8 bg-white/10 backdrop-blur-md border border-white/30 text-white text-base font-medium hover:bg-white/20 transition-all">
-                                Ver Galería
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div class="relative">
+              <div
+                class="absolute -inset-3 sm:-inset-5 -z-10 rounded-[2.25rem] bg-primary/10 dark:bg-primary/15 rotate-1"
+                aria-hidden="true"
+              ></div>
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVgQUDzR-jRo4iPXi9VbJl-950RY5f805rVSkXpE8iIPWm4f-e1RmrRjyKZW6ZhZtEkWNxBU215GzGxYKHwZkTfGsrTVLQW8D1occL-vEtZWHVVQuqQHU_cl75y6PtrPKIT_683iIK1zkXy5fsy1EeBOMFx8nau6PqquOWZjevd2TyIyH0KWcXdSNOSQQcLpq71JYFqudCNFCVXFLcLjip8eu1aH1341HKfyu-YzaZJ-X52MZsRyTgdOAKCaEpQiBRO6Xw6NMqAV6v"
+                alt="Moldes y figuras geométricas impresas en 3D en color blanco"
+                width="1280"
+                height="960"
+                fetchpriority="high"
+                class="w-full aspect-[4/3] object-cover rounded-[1.75rem] shadow-2xl shadow-black/10"
+              />
+              <div
+                class="absolute -top-5 -right-5 lg:-top-7 lg:-right-7 size-24 lg:size-28 rounded-full bg-ink dark:bg-white text-white dark:text-ink shadow-xl flex items-center justify-center"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 200 200" class="sello-anillo absolute inset-0 w-full h-full">
+                  <defs>
+                    <path
+                      id="circulo-sello-home"
+                      d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"
+                    />
+                  </defs>
+                  <text font-size="11.5" font-weight="600" letter-spacing="2.5" fill="currentColor">
+                    <textPath href="#circulo-sello-home" startOffset="0%">
+                      LA CASITA DEL MOLDE • HECHO A MANO •
+                    </textPath>
+                  </text>
+                </svg>
+                <span class="material-symbols-outlined text-2xl relative">favorite</span>
+              </div>
             </div>
-            <div class="w-full max-w-[1280px] px-4 lg:px-10 py-12">
-                <div class="flex flex-col md:flex-row justify-between items-end gap-4 mb-8">
-                    <div>
-                        <h2 class="text-3xl font-bold text-text-main dark:text-white mb-2">Nuestras Categorías</h2>
-                        <p class="text-text-light dark:text-gray-400">Encuentra la herramienta perfecta para tu próximo
-                            proyecto</p>
-                    </div>
-                    <a class="group flex items-center gap-1 text-primary font-bold text-sm hover:underline" href="#">
-                        Ver todo
-                        <span
-                            class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
-                    </a>
+          </div>
+        </section>
+
+        <!-- Impresión 3D a medida -->
+        <section
+          id="cotiza"
+          class="textura-grano w-full bg-ink text-white py-16 lg:py-24 scroll-mt-24 border-y border-transparent dark:border-white/10"
+        >
+          <div class="max-w-[1280px] mx-auto px-4 lg:px-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div class="flex flex-col gap-6">
+                <p
+                  class="text-xs font-semibold uppercase tracking-[0.18em] text-primary"
+                >
+                  Impresión 3D a medida
+                </p>
+                <h2
+                  class="font-display text-4xl lg:text-5xl font-semibold leading-tight"
+                >
+                  ¿Tienes una idea en mente?
+                </h2>
+                <p class="text-lg text-stone-300 leading-relaxed max-w-lg">
+                  Convierte tus archivos digitales en moldes físicos, o encarga
+                  cortadores de galletas y toppers para pastel hechos a tu
+                  medida. Nuestro servicio de impresión 3D es rápido, preciso y
+                  accesible.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                  <button
+                    type="button"
+                    id="abrir-subida"
+                    aria-expanded="false"
+                    aria-controls="panel-subida"
+                    class="inline-flex items-center justify-center rounded-full h-12 px-7 bg-primary text-white text-sm font-semibold hover:bg-primary-dark transition-colors"
+                  >
+                    <span
+                      class="material-symbols-outlined mr-2 text-[20px]"
+                      aria-hidden="true"
+                      >request_quote</span
+                    >
+                    Cotizar mi idea
+                  </button>
+                  <a
+                    href="catalogo.html"
+                    class="inline-flex items-center justify-center rounded-full h-12 px-7 border border-white/25 text-white text-sm font-medium hover:border-white/60 transition-colors"
+                  >
+                    Explorar catálogo
+                  </a>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div
-                        class="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
-                        <div class="aspect-[4/3] w-full overflow-hidden bg-gray-100">
-                            <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                data-alt="Colorful cookie cutters on a baking surface"
-                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAInPR71rK6Tqb1Npjyz8_eMOKUSIWOO4yruPUUUMo6i2errmhMcE5x0l6PsL3CXQDq6x1EML1C6dYB_8XZTDtEMnnEZ66-fZdmr2tRkOQJCBMHFo05ac1fA3knvAh0scNuXzq6WYMqWF2_czrYugOiuTtgJ4WNJzu_KUgdvNDceuxPGLygB--ILdAhZloM3WQxcWBNeiHEJa4ZpiSQcNsvTLd3bMQBz74lWRzNqWeX-w4HCpb1_JXdKqFvOFLMQdPoXboMpFL15vsa');">
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2 text-primary">
-                                <span class="material-symbols-outlined">cake</span>
-                                <span class="text-xs font-bold uppercase tracking-wider">Destacado</span>
-                            </div>
-                            <h3
-                                class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">
-                                Repostería Creativa</h3>
-                            <p class="text-sm text-text-light dark:text-gray-400">Moldes para galletas, pasteles y
-                                decoraciones de chocolate con detalles precisos.</p>
-                        </div>
-                    </div>
-                    <div
-                        class="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
-                        <div class="aspect-[4/3] w-full overflow-hidden bg-gray-100">
-                            <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                data-alt="Handmade soaps with intricate floral designs"
-                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBkNpN-IYEEnCMBsCIdSkO4q7yqWLzK5Wa_lyNAG7Tj2G-GpbsQifxDyIeDD-hhzYVoa9MwCIQ3mcZd_rhdDAZLOVjdbRHBd27cQjfupFyC_h9f2aFQS3R7PLIGbkoa93mkajSNiCPz0QmaH0RdVKGtJ4vXpMY79EFG_nmWNWLekVGXakHXyQcm9ATMKNvTUkPdg-yyO-hDXDwRf_RDz6DblfrJVZqTtwfK5ndx1Q95LXvO-u8j79SLC099LGBqIYnII8FJ035URXe9');">
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2 text-primary">
-                                <span class="material-symbols-outlined">spa</span>
-                                <span class="text-xs font-bold uppercase tracking-wider">Spa &amp; Relax</span>
-                            </div>
-                            <h3
-                                class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">
-                                Jabones y Velas</h3>
-                            <p class="text-sm text-text-light dark:text-gray-400">Diseños ergonómicos y estéticos para
-                                la creación de jabones artesanales y velas.</p>
-                        </div>
-                    </div>
-                    <div
-                        class="group relative overflow-hidden rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-primary/5">
-                        <div class="aspect-[4/3] w-full overflow-hidden bg-gray-100">
-                            <div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
-                                data-alt="Various clay sculpting tools and molds on a table"
-                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCx7MxVPLJXJoR7EkBxdrC-3neIhWZSdmnJ6NPTIkC-qGQl7uluOXDmEK3sSP-IDvtvdHvyi3QDAK3LMeeZEvYGXDknHmLkwKR8CNGL6PzOsPVpIXhHQBEqT-13y0PqqplK7exBqafAzFQ5eeVDqTFYSt0Gdw1kDQAwMz5DPZYzxRQzPOZ-Gnmnm9d0VpNvLrNut1AGrUDDr73GPwFTs5SUlXzp2UxLV1OFoVkIVNknF2q8l-b1k-8_YFoMa0JetH5VyTTppwpPzyLO');">
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-2 mb-2 text-primary">
-                                <span class="material-symbols-outlined">brush</span>
-                                <span class="text-xs font-bold uppercase tracking-wider">Artistas</span>
-                            </div>
-                            <h3
-                                class="text-xl font-bold text-text-main dark:text-white mb-2 group-hover:text-primary transition-colors">
-                                Herramientas de Autor</h3>
-                            <p class="text-sm text-text-light dark:text-gray-400">Soluciones únicas para ceramistas,
-                                escultores y artistas plásticos.</p>
-                        </div>
-                    </div>
-                </div>
+              </div>
+              <ol class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <li
+                  class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-primary/40 transition-colors"
+                >
+                  <div
+                    class="size-11 rounded-full bg-primary/15 flex items-center justify-center text-primary mb-4"
+                  >
+                    <span class="material-symbols-outlined" aria-hidden="true"
+                      >cloud_upload</span
+                    >
+                  </div>
+                  <h3 class="font-display text-lg font-semibold mb-1">
+                    1. Cuéntanos tu idea
+                  </h3>
+                  <p class="text-sm text-stone-400">
+                    Sube tu archivo STL u OBJ, o describe el cortador o topper
+                    que necesitas.
+                  </p>
+                </li>
+                <li
+                  class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-primary/40 transition-colors"
+                >
+                  <div
+                    class="size-11 rounded-full bg-primary/15 flex items-center justify-center text-primary mb-4"
+                  >
+                    <span class="material-symbols-outlined" aria-hidden="true"
+                      >rule</span
+                    >
+                  </div>
+                  <h3 class="font-display text-lg font-semibold mb-1">
+                    2. Verificamos
+                  </h3>
+                  <p class="text-sm text-stone-400">
+                    Expertos revisan la viabilidad técnica de tu modelo 3D.
+                  </p>
+                </li>
+                <li
+                  class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-primary/40 transition-colors"
+                >
+                  <div
+                    class="size-11 rounded-full bg-primary/15 flex items-center justify-center text-primary mb-4"
+                  >
+                    <span class="material-symbols-outlined" aria-hidden="true"
+                      >print</span
+                    >
+                  </div>
+                  <h3 class="font-display text-lg font-semibold mb-1">
+                    3. Imprimimos
+                  </h3>
+                  <p class="text-sm text-stone-400">
+                    Producción de alta resolución con materiales seguros.
+                  </p>
+                </li>
+                <li
+                  class="bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-primary/40 transition-colors"
+                >
+                  <div
+                    class="size-11 rounded-full bg-primary/15 flex items-center justify-center text-primary mb-4"
+                  >
+                    <span class="material-symbols-outlined" aria-hidden="true"
+                      >local_shipping</span
+                    >
+                  </div>
+                  <h3 class="font-display text-lg font-semibold mb-1">
+                    4. Recibe en casa
+                  </h3>
+                  <p class="text-sm text-stone-400">
+                    Envío rápido y seguro a cualquier parte del país.
+                  </p>
+                </li>
+              </ol>
             </div>
-            <section class="w-full bg-primary/5 dark:bg-primary/10 border-y border-primary/10 py-16 lg:py-24">
-                <div class="max-w-[1280px] mx-auto px-4 lg:px-10">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div class="flex flex-col gap-6">
-                            <div
-                                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-gray-800 border border-primary/20 text-xs font-bold text-primary w-fit shadow-sm">
-                                <span class="material-symbols-outlined text-sm">3d_rotation</span>
-                                Impresión 3D a Medida
-                            </div>
-                            <h2 class="text-4xl lg:text-5xl font-bold text-text-main dark:text-white leading-tight">
-                                ¿Tienes un diseño propio?
-                            </h2>
-                            <p class="text-lg text-text-light dark:text-gray-300 leading-relaxed max-w-lg">
-                                Convierte tus archivos digitales en moldes físicos de alta calidad. Nuestro servicio de
-                                impresión 3D es rápido, preciso y accesible.
-                            </p>
-                            <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                                <button
-                                    class="flex items-center justify-center rounded-lg h-14 px-8 bg-primary text-white text-base font-bold shadow-xl shadow-primary/20 hover:bg-primary/90 transition-all hover:scale-105">
-                                    <span class="material-symbols-outlined mr-2">upload_file</span>
-                                    Subir mi Diseño
-                                </button>
-                                <button
-                                    class="flex items-center justify-center rounded-lg h-14 px-8 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-text-main dark:text-white text-base font-medium hover:border-primary hover:text-primary transition-all">
-                                    Ver Guía de Diseño
-                                </button>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div
-                                class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-colors">
-                                <div
-                                    class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
-                                    <span class="material-symbols-outlined">cloud_upload</span>
-                                </div>
-                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-1">1. Sube tu archivo
-                                </h3>
-                                <p class="text-sm text-text-light dark:text-gray-400">Aceptamos STL, OBJ y más. Carga
-                                    directa en nuestra plataforma.</p>
-                            </div>
-                            <div
-                                class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-colors">
-                                <div
-                                    class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
-                                    <span class="material-symbols-outlined">rule</span>
-                                </div>
-                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-1">2. Verificamos</h3>
-                                <p class="text-sm text-text-light dark:text-gray-400">Expertos revisan la viabilidad
-                                    técnica de tu modelo 3D.</p>
-                            </div>
-                            <div
-                                class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-colors">
-                                <div
-                                    class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
-                                    <span class="material-symbols-outlined">print</span>
-                                </div>
-                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-1">3. Imprimimos</h3>
-                                <p class="text-sm text-text-light dark:text-gray-400">Producción de alta resolución con
-                                    materiales seguros.</p>
-                            </div>
-                            <div
-                                class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-colors">
-                                <div
-                                    class="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4">
-                                    <span class="material-symbols-outlined">local_shipping</span>
-                                </div>
-                                <h3 class="text-lg font-bold text-text-main dark:text-white mb-1">4. Recibe en casa</h3>
-                                <p class="text-sm text-text-light dark:text-gray-400">Envío rápido y seguro a cualquier
-                                    parte del país.</p>
-                            </div>
-                        </div>
-                    </div>
+            <div
+              id="panel-subida"
+              hidden
+              class="mt-10 bg-white/5 border border-white/10 rounded-2xl p-6 lg:p-8"
+            >
+              <form id="form-subida" class="flex flex-col gap-5" novalidate>
+                <fieldset>
+                  <legend class="block text-sm font-medium text-white mb-3">
+                    ¿Qué quieres cotizar?
+                  </legend>
+                  <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <label class="cursor-pointer">
+                      <input
+                        type="radio"
+                        name="tipo-cotizacion"
+                        value="diseno"
+                        checked
+                        class="peer sr-only"
+                      />
+                      <span
+                        class="flex h-full flex-col gap-1 rounded-2xl border border-white/15 bg-white/5 p-4 transition-colors hover:border-white/40 peer-checked:border-primary peer-checked:bg-primary/10 peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-primary"
+                      >
+                        <span class="material-symbols-outlined text-primary" aria-hidden="true">view_in_ar</span>
+                        <span class="text-sm font-semibold text-white">Diseño propio</span>
+                        <span class="text-xs text-stone-400">Tu archivo STL, OBJ o enlace</span>
+                      </span>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input
+                        type="radio"
+                        name="tipo-cotizacion"
+                        value="cortador"
+                        class="peer sr-only"
+                      />
+                      <span
+                        class="flex h-full flex-col gap-1 rounded-2xl border border-white/15 bg-white/5 p-4 transition-colors hover:border-white/40 peer-checked:border-primary peer-checked:bg-primary/10 peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-primary"
+                      >
+                        <span class="material-symbols-outlined text-primary" aria-hidden="true">cookie</span>
+                        <span class="text-sm font-semibold text-white">Cortador de galletas</span>
+                        <span class="text-xs text-stone-400">Elige tamaño y tipo</span>
+                      </span>
+                    </label>
+                    <label class="cursor-pointer">
+                      <input
+                        type="radio"
+                        name="tipo-cotizacion"
+                        value="topper"
+                        class="peer sr-only"
+                      />
+                      <span
+                        class="flex h-full flex-col gap-1 rounded-2xl border border-white/15 bg-white/5 p-4 transition-colors hover:border-white/40 peer-checked:border-primary peer-checked:bg-primary/10 peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-primary"
+                      >
+                        <span class="material-symbols-outlined text-primary" aria-hidden="true">cake</span>
+                        <span class="text-sm font-semibold text-white">Topper para pastel</span>
+                        <span class="text-xs text-stone-400">Elige tamaño y colores</span>
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+                <div id="grupo-diseno" class="flex flex-col gap-5">
+                <div>
+                  <label class="block text-sm font-medium text-white mb-2" for="archivo-diseno">
+                    Sube tu archivo
+                  </label>
+                  <div
+                    id="dropzone"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Elegir o arrastrar tu archivo de diseño"
+                    aria-describedby="ayuda-dropzone"
+                    class="flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-white/25 hover:border-primary transition-colors p-8 text-center cursor-pointer"
+                  >
+                    <span class="material-symbols-outlined text-4xl text-primary" aria-hidden="true">cloud_upload</span>
+                    <p class="text-sm text-stone-200">
+                      <span class="font-semibold text-white">Arrastra tu archivo aquí</span> o haz clic para elegirlo
+                    </p>
+                    <p id="ayuda-dropzone" class="text-xs text-stone-400">STL, OBJ o ZIP · Máx. 25&nbsp;MB</p>
+                  </div>
+                  <input
+                    id="archivo-diseno"
+                    name="archivo"
+                    type="file"
+                    accept=".stl,.obj,.zip"
+                    class="sr-only"
+                  />
+                  <p id="archivo-seleccionado" hidden class="text-sm text-stone-200 mt-3"></p>
+                  <p id="error-archivo" hidden role="alert" class="text-sm text-primary mt-3"></p>
                 </div>
-            </section>
-            <div class="w-full max-w-[1280px] px-4 lg:px-10 py-16">
-                <div class="text-center max-w-2xl mx-auto mb-12">
-                    <h2 class="text-3xl font-bold text-text-main dark:text-white mb-4">Lo más popular de la semana</h2>
-                    <p class="text-text-light dark:text-gray-400">Nuestros clientes están creando cosas increíbles con
-                        estos moldes.</p>
+                <div class="flex items-center gap-3" aria-hidden="true">
+                  <span class="h-px flex-1 bg-white/10"></span>
+                  <span class="text-xs text-stone-400 uppercase tracking-wide">o</span>
+                  <span class="h-px flex-1 bg-white/10"></span>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    <div class="group flex flex-col gap-3">
-                        <div class="relative overflow-hidden rounded-xl bg-gray-50 dark:bg-gray-800 aspect-square">
-                            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
-                                data-alt="Geometric minimalist white vase on pastel background"
-                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSFau7_5rWdohTKj-8iyVdrCCiaq376jb71l387B1BtZV8rVM5Tfh7TM4nUV4Urlw07K1nDew-AR6yQX3A7DEYGwoKiMUvMY27KT9juORwJso7mqbWXCSjktcu6PgBEqXulC6HKmytNDdGZARyHQwrtl5YBiZV_b0SfOvdYw5K0t4XHfAoR9QygIOxubafePmR5DF0QIxtTU5cNB8ExBWJ52Q_Rk21Uj2GtdILnvv9UuJrakqQQDxzf-pHmDaY6vEIHAnnTAzWF20d');">
-                            </div>
-                            <button
-                                class="absolute bottom-3 right-3 size-10 rounded-full bg-white text-primary shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary hover:text-white">
-                                <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
-                            </button>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-text-main dark:text-white truncate">Molde Geométrico V2</h3>
-                            <p class="text-primary font-bold text-sm">$24.00</p>
-                        </div>
-                    </div>
-                    <div class="group flex flex-col gap-3">
-                        <div class="relative overflow-hidden rounded-xl bg-gray-50 dark:bg-gray-800 aspect-square">
-                            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
-                                data-alt="Heart shaped silicone mold for baking"
-                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLPrV2SESPM4r9Hgu2bvDqgJ1KP6GS9UeV3lbZUieP4s8Pqp5cL3PwXVtMkdfARTgrBkc5FqXnulDWljprdiiPZj-2W4L2_-3T383Z5afvwg0HeTvOHRrtKhxNhvXWO3W9CFzJSDGSiq0ZHRnNPSOmNEhdO3RrbCOZ4QRP83pdZXPTCbjhEw1-S6vfl5v6uF8cVYty4tbk2fzpsHJz4m04vQUpI6FROhBfICRur2d3kx517y_00Q8X5iBjpz4lbUYm13OSKSQvYZR7');">
-                            </div>
-                            <button
-                                class="absolute bottom-3 right-3 size-10 rounded-full bg-white text-primary shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary hover:text-white">
-                                <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
-                            </button>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-text-main dark:text-white truncate">Corazón Diamante</h3>
-                            <p class="text-primary font-bold text-sm">$18.50</p>
-                        </div>
-                    </div>
-                    <div class="group flex flex-col gap-3">
-                        <div class="relative overflow-hidden rounded-xl bg-gray-50 dark:bg-gray-800 aspect-square">
-                            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
-                                data-alt="Intricate flower pattern mold"
-                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAI7vTqhBcl4FMaARVu6srdRJ4znFYlW2ZIqbGC-BzsYgW0ilwnAEd3-rjkH31AEbt--rd4mXnnHdZEwOslzHs0ItQNON_g1ptlRM850-gcrrnbAz3Ata6taCxMtUWddvGmVyGBpQLeXt11IjKjRcyjEMpfx0TLiPpPXhQlQeWQqBFFvbwAN3lE5mhQ277UehvX54JYga_tcYph9spGSWLn4zBbAOQ0-u-wK6WWcMvsDxDz5MAURWbGIrZ62IzTfId3EwL7qO0dyEhl');">
-                            </div>
-                            <button
-                                class="absolute bottom-3 right-3 size-10 rounded-full bg-white text-primary shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary hover:text-white">
-                                <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
-                            </button>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-text-main dark:text-white truncate">Rosa Clásica</h3>
-                            <p class="text-primary font-bold text-sm">$12.90</p>
-                        </div>
-                    </div>
-                    <div class="group flex flex-col gap-3">
-                        <div class="relative overflow-hidden rounded-xl bg-gray-50 dark:bg-gray-800 aspect-square">
-                            <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
-                                data-alt="Star shaped cookie cutter on white surface"
-                                style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuChQ7Q8n2CAASPNGsg8xdgxR1QGvbgABXtfyJxf09TzBCv6RpfLXbpXqvVsRxyQ4xVAuAhErVAbOsbsKXP8DGwBY3jJ1QZag5g1sLECDHQMbXzbo1GSKelO6SJr45e5eShmCwXLUvu6s-HMG7cVwfZIXUeWpKAAd9i_dntS0bVizXS4IhKhzR0GfaC1vmp0NnlCn962bFa3tQ1lprDRynPO0mAnvYKQjjYzDzpAzY-zRLqRpv1AzTqCVSrS5e5coJGAlnbs_xDnTtJV');">
-                            </div>
-                            <button
-                                class="absolute bottom-3 right-3 size-10 rounded-full bg-white text-primary shadow-md flex items-center justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 hover:bg-primary hover:text-white">
-                                <span class="material-symbols-outlined text-[20px]">add_shopping_cart</span>
-                            </button>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-text-main dark:text-white truncate">Set Estrellas (5pcs)</h3>
-                            <p class="text-primary font-bold text-sm">$30.00</p>
-                        </div>
-                    </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-medium text-white" for="enlace-diseno">
+                    Comparte el enlace de tu archivo
+                  </label>
+                  <input
+                    id="enlace-diseno"
+                    name="enlace"
+                    type="url"
+                    inputmode="url"
+                    autocomplete="off"
+                    placeholder="https://drive.google.com/…"
+                    class="rounded-lg border border-white/15 bg-white/5 text-white placeholder-stone-500 focus:ring-2 focus:ring-primary focus:border-primary h-12 px-4"
+                  />
+                  <p class="text-xs text-stone-400">
+                    Funciona con Google Drive, Dropbox, WeTransfer, etc.
+                  </p>
                 </div>
+                </div>
+                <div id="grupo-cortador" hidden class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div class="flex flex-col gap-2">
+                    <label class="text-sm font-medium text-white" for="tamano-cortador">
+                      Tamaño del cortador
+                    </label>
+                    <select
+                      id="tamano-cortador"
+                      name="tamano-cortador"
+                      class="rounded-lg border border-white/15 bg-white/5 text-white focus:ring-2 focus:ring-primary focus:border-primary h-12 px-4"
+                    >
+                      <option value="5 cm">5 cm</option>
+                      <option value="7 cm" selected>7 cm (estándar)</option>
+                      <option value="10 cm">10 cm</option>
+                      <option value="12 cm">12 cm</option>
+                      <option value="otro">Otro (indícalo en la descripción)</option>
+                    </select>
+                  </div>
+                  <fieldset>
+                    <legend class="text-sm font-medium text-white">Tipo de cortador</legend>
+                    <div class="mt-3 flex flex-col gap-2">
+                      <label class="inline-flex items-center gap-3 text-sm text-stone-200">
+                        <input
+                          type="radio"
+                          name="tipo-cortador"
+                          value="Solo cortador"
+                          checked
+                          class="text-primary border-white/25 bg-white/5 focus:ring-primary focus:ring-offset-0"
+                        />
+                        Solo cortador
+                      </label>
+                      <label class="inline-flex items-center gap-3 text-sm text-stone-200">
+                        <input
+                          type="radio"
+                          name="tipo-cortador"
+                          value="Cortador y marcador"
+                          class="text-primary border-white/25 bg-white/5 focus:ring-primary focus:ring-offset-0"
+                        />
+                        Cortador y marcador (sella el diseño)
+                      </label>
+                    </div>
+                  </fieldset>
+                </div>
+                <div id="grupo-topper" hidden class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div class="flex flex-col gap-2">
+                    <label class="text-sm font-medium text-white" for="tamano-topper">
+                      Tamaño del topper
+                    </label>
+                    <select
+                      id="tamano-topper"
+                      name="tamano-topper"
+                      class="rounded-lg border border-white/15 bg-white/5 text-white focus:ring-2 focus:ring-primary focus:border-primary h-12 px-4"
+                    >
+                      <option value="10 cm">10 cm</option>
+                      <option value="15 cm" selected>15 cm (estándar)</option>
+                      <option value="20 cm">20 cm</option>
+                      <option value="otro">Otro (indícalo en la descripción)</option>
+                    </select>
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <label class="text-sm font-medium text-white" for="colores-topper">
+                      Número de colores
+                    </label>
+                    <select
+                      id="colores-topper"
+                      name="colores-topper"
+                      class="rounded-lg border border-white/15 bg-white/5 text-white focus:ring-2 focus:ring-primary focus:border-primary h-12 px-4"
+                    >
+                      <option value="1 color" selected>1 color</option>
+                      <option value="2 colores">2 colores</option>
+                      <option value="3 colores">3 colores</option>
+                      <option value="4 o más colores">4 o más colores</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="grupo-detalles" hidden class="flex flex-col gap-5">
+                  <div class="flex flex-col gap-2">
+                    <label class="text-sm font-medium text-white" for="descripcion-cotizacion">
+                      Descripción <span class="font-normal text-stone-400">(opcional)</span>
+                    </label>
+                    <textarea
+                      id="descripcion-cotizacion"
+                      name="descripcion"
+                      rows="3"
+                      placeholder="Ej. forma de dinosaurio con el nombre Mateo, lo necesito para el 20 de julio…"
+                      class="rounded-lg border border-white/15 bg-white/5 text-white placeholder-stone-500 focus:ring-2 focus:ring-primary focus:border-primary px-4 py-3"
+                    ></textarea>
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <p class="text-sm font-medium text-white">
+                      Imagen de referencia <span class="font-normal text-stone-400">(opcional)</span>
+                    </p>
+                    <div class="flex flex-wrap items-center gap-3">
+                      <button
+                        type="button"
+                        id="adjuntar-imagen"
+                        aria-describedby="ayuda-imagen"
+                        class="inline-flex items-center gap-2 rounded-full h-11 px-5 border border-white/25 text-sm font-medium text-white hover:border-primary transition-colors"
+                      >
+                        <span class="material-symbols-outlined text-[20px]" aria-hidden="true">add_photo_alternate</span>
+                        Adjuntar imagen
+                      </button>
+                      <p id="imagen-seleccionada" hidden class="text-sm text-stone-200"></p>
+                      <button
+                        type="button"
+                        id="quitar-imagen"
+                        hidden
+                        class="text-sm text-stone-400 underline hover:text-white rounded"
+                      >
+                        Quitar
+                      </button>
+                    </div>
+                    <input
+                      id="imagen-referencia"
+                      name="imagen"
+                      type="file"
+                      accept="image/*"
+                      class="sr-only"
+                    />
+                    <p id="ayuda-imagen" class="text-xs text-stone-400">JPG, PNG o WebP · Máx. 10&nbsp;MB</p>
+                    <p id="error-imagen" hidden role="alert" class="text-sm text-primary"></p>
+                  </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label class="text-sm font-medium text-white" for="correo-diseno">
+                    Tu correo electrónico
+                  </label>
+                  <input
+                    id="correo-diseno"
+                    name="correo"
+                    type="email"
+                    required
+                    autocomplete="email"
+                    inputmode="email"
+                    spellcheck="false"
+                    placeholder="tu@correo.com"
+                    class="rounded-lg border border-white/15 bg-white/5 text-white placeholder-stone-500 focus:ring-2 focus:ring-primary focus:border-primary h-12 px-4"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="inline-flex items-center justify-center gap-2 self-start rounded-full h-12 px-8 bg-primary text-white text-sm font-semibold hover:bg-primary-dark transition-colors"
+                >
+                  <span class="material-symbols-outlined text-[20px]" aria-hidden="true">send</span>
+                  Solicitar cotización
+                </button>
+                <p id="mensaje-subida" aria-live="polite" class="text-sm font-semibold text-primary min-h-[1.25rem]"></p>
+              </form>
             </div>
-            <div class="w-full max-w-[1280px] px-4 lg:px-10 pb-16">
-                <div
-                    class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-8 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8 text-black dark:text-white relative overflow-hidden">
-                    <div
-                        class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] pointer-events-none">
-                    </div>
-                    <div class="flex-1 relative z-10">
-                        <h2 class="text-3xl font-bold mb-4">Únete a nuestra comunidad creativa</h2>
-                        <p class="text-gray-600 dark:text-gray-300 max-w-md">Recibe descuentos exclusivos, tutoriales
-                            gratuitos y sé el primero en conocer nuestros nuevos lanzamientos.</p>
-                    </div>
-                    <div class="flex-1 w-full relative z-10">
-                        <form class="flex flex-col sm:flex-row gap-3">
-                            <input
-                                class="flex-1 rounded-lg border-0 bg-black/10 dark:bg-white/10 text-text-main dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-primary h-12 px-4"
-                                placeholder="Tu correo electrónico" type="email" />
-                            <button
-                                class="rounded-lg h-12 px-6 bg-primary font-bold text-white hover:bg-primary/90 transition-colors whitespace-nowrap">
-                                Suscribirme
-                            </button>
-                        </form>
-                    </div>
-                </div>
+          </div>
+        </section>
+
+        <!-- Categorías -->
+        <section class="w-full max-w-[1280px] px-4 lg:px-10 py-14">
+          <div
+            class="flex flex-col md:flex-row justify-between items-baseline gap-4 mb-10"
+          >
+            <div>
+              <p
+                class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-dark dark:text-primary mb-3"
+              >
+                Categorías
+              </p>
+              <h2
+                class="font-display text-3xl lg:text-4xl font-semibold text-ink dark:text-white"
+              >
+                Una herramienta para cada oficio
+              </h2>
             </div>
-        </main>
-        <footer class="w-full bg-white dark:bg-background-dark border-t-4 border-primary">
-            <div class="max-w-[1280px] mx-auto px-4 lg:px-10 py-12">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-                    <div class="col-span-1 md:col-span-1">
-                        <div class="flex items-center gap-2 mb-4">
-                            <img src="images/logo.png" alt="Logo de La Casita del Molde"
-                                class="h-8 w-auto object-contain" />
-                            <h3 class="font-bold text-lg text-text-main dark:text-white">La Casita del Molde</h3>
-                        </div>
-                        <p class="text-sm text-text-light dark:text-gray-400 mb-4">
-                            Transformando ideas en realidad, capa por capa. Calidad y precisión en cada impresión.
-                        </p>
-                        <div class="flex gap-4">
-                            <a class="text-primary hover:text-primary/80 transition-colors" href="#">
-                                <span class="text-2xl font-bold">Fb</span>
-                            </a>
-                            <a class="text-primary hover:text-primary/80 transition-colors" href="#">
-                                <span class="text-2xl font-bold">In</span>
-                            </a>
-                            <a class="text-primary hover:text-primary/80 transition-colors" href="#">
-                                <span class="text-2xl font-bold">Tw</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-text-main dark:text-white mb-4">Tienda</h4>
-                        <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-gray-400">
-                            <li><a class="hover:text-primary transition-colors" href="#">Nuevos Lanzamientos</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Más Vendidos</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Ofertas</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Tarjetas de Regalo</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-text-main dark:text-white mb-4">Empresa</h4>
-                        <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-gray-400">
-                            <li><a class="hover:text-primary transition-colors" href="#">Sobre Nosotros</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Blog</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Prensa</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Trabaja con nosotros</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-text-main dark:text-white mb-4">Soporte</h4>
-                        <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-gray-400">
-                            <li><a class="hover:text-primary transition-colors" href="#">Centro de Ayuda</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Envíos y Devoluciones</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Términos y Condiciones</a></li>
-                            <li><a class="hover:text-primary transition-colors" href="#">Política de Privacidad</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div
-                    class="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-text-light dark:text-gray-500">
-                    <p>© 2023 La Casita del Molde. Todos los derechos reservados.</p>
-                    <p>Diseñado con ❤️ para creadores.</p>
-                </div>
+            <a
+              class="group inline-flex items-center gap-1 text-sm font-semibold text-ink dark:text-white hover:text-primary-dark dark:hover:text-primary transition-colors rounded-lg"
+              href="catalogo.html"
+            >
+              Ver todo
+              <span
+                class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a
+              href="catalogo.html"
+              class="group relative overflow-hidden rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 hover:border-primary/40 dark:hover:border-primary/40 transition-[border-color,box-shadow] duration-300 hover:shadow-xl hover:shadow-black/5"
+            >
+              <div class="aspect-[4/3] w-full overflow-hidden">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx7MxVPLJXJoR7EkBxdrC-3neIhWZSdmnJ6NPTIkC-qGQl7uluOXDmEK3sSP-IDvtvdHvyi3QDAK3LMeeZEvYGXDknHmLkwKR8CNGL6PzOsPVpIXhHQBEqT-13y0PqqplK7exBqafAzFQ5eeVDqTFYSt0Gdw1kDQAwMz5DPZYzxRQzPOZ-Gnmnm9d0VpNvLrNut1AGrUDDr73GPwFTs5SUlXzp2UxLV1OFoVkIVNknF2q8l-b1k-8_YFoMa0JetH5VyTTppwpPzyLO"
+                  alt="Herramientas de escultura en arcilla y moldes sobre una mesa"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div class="p-6">
+                <p
+                  class="text-xs font-semibold uppercase tracking-[0.16em] text-primary-dark dark:text-primary mb-2"
+                >
+                  Destacado
+                </p>
+                <h3
+                  class="font-display text-xl font-semibold text-ink dark:text-white mb-2"
+                >
+                  Impresión 3D personalizada
+                </h3>
+                <p class="text-sm text-text-light dark:text-stone-400 leading-relaxed">
+                  Piezas y herramientas a medida para ceramistas, escultores y
+                  artistas plásticos, a partir de tu propio diseño.
+                </p>
+              </div>
+            </a>
+            <a
+              href="catalogo.html"
+              class="group relative overflow-hidden rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 hover:border-primary/40 dark:hover:border-primary/40 transition-[border-color,box-shadow] duration-300 hover:shadow-xl hover:shadow-black/5"
+            >
+              <div class="aspect-[4/3] w-full overflow-hidden">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAInPR71rK6Tqb1Npjyz8_eMOKUSIWOO4yruPUUUMo6i2errmhMcE5x0l6PsL3CXQDq6x1EML1C6dYB_8XZTDtEMnnEZ66-fZdmr2tRkOQJCBMHFo05ac1fA3knvAh0scNuXzq6WYMqWF2_czrYugOiuTtgJ4WNJzu_KUgdvNDceuxPGLygB--ILdAhZloM3WQxcWBNeiHEJa4ZpiSQcNsvTLd3bMQBz74lWRzNqWeX-w4HCpb1_JXdKqFvOFLMQdPoXboMpFL15vsa"
+                  alt="Cortadores de galletas de colores sobre una superficie de horneado"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div class="p-6">
+                <p
+                  class="text-xs font-semibold uppercase tracking-[0.16em] text-primary-dark dark:text-primary mb-2"
+                >
+                  Repostería
+                </p>
+                <h3
+                  class="font-display text-xl font-semibold text-ink dark:text-white mb-2"
+                >
+                  Repostería creativa
+                </h3>
+                <p class="text-sm text-text-light dark:text-stone-400 leading-relaxed">
+                  Moldes para galletas, pasteles y decoraciones de chocolate con
+                  detalles precisos.
+                </p>
+              </div>
+            </a>
+            <a
+              href="catalogo.html"
+              class="group relative overflow-hidden rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 hover:border-primary/40 dark:hover:border-primary/40 transition-[border-color,box-shadow] duration-300 hover:shadow-xl hover:shadow-black/5"
+            >
+              <div class="aspect-[4/3] w-full overflow-hidden">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkNpN-IYEEnCMBsCIdSkO4q7yqWLzK5Wa_lyNAG7Tj2G-GpbsQifxDyIeDD-hhzYVoa9MwCIQ3mcZd_rhdDAZLOVjdbRHBd27cQjfupFyC_h9f2aFQS3R7PLIGbkoa93mkajSNiCPz0QmaH0RdVKGtJ4vXpMY79EFG_nmWNWLekVGXakHXyQcm9ATMKNvTUkPdg-yyO-hDXDwRf_RDz6DblfrJVZqTtwfK5ndx1Q95LXvO-u8j79SLC099LGBqIYnII8FJ035URXe9"
+                  alt="Jabones artesanales con diseños florales detallados"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div class="p-6">
+                <p
+                  class="text-xs font-semibold uppercase tracking-[0.16em] text-primary-dark dark:text-primary mb-2"
+                >
+                  Spa &amp; relax
+                </p>
+                <h3
+                  class="font-display text-xl font-semibold text-ink dark:text-white mb-2"
+                >
+                  Jabones y velas
+                </h3>
+                <p class="text-sm text-text-light dark:text-stone-400 leading-relaxed">
+                  Diseños ergonómicos y estéticos para la creación de jabones
+                  artesanales y velas.
+                </p>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- Populares -->
+        <section id="popular" class="w-full max-w-[1280px] px-4 lg:px-10 py-16">
+          <div class="max-w-2xl mb-10">
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-dark dark:text-primary mb-3"
+            >
+              Los favoritos
+            </p>
+            <h2
+              class="font-display text-3xl lg:text-4xl font-semibold text-ink dark:text-white"
+            >
+              Lo más popular de la semana
+            </h2>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <article class="group flex flex-col gap-3">
+              <div
+                class="relative overflow-hidden rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 aspect-square"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSFau7_5rWdohTKj-8iyVdrCCiaq376jb71l387B1BtZV8rVM5Tfh7TM4nUV4Urlw07K1nDew-AR6yQX3A7DEYGwoKiMUvMY27KT9juORwJso7mqbWXCSjktcu6PgBEqXulC6HKmytNDdGZARyHQwrtl5YBiZV_b0SfOvdYw5K0t4XHfAoR9QygIOxubafePmR5DF0QIxtTU5cNB8ExBWJ52Q_Rk21Uj2GtdILnvv9UuJrakqQQDxzf-pHmDaY6vEIHAnnTAzWF20d"
+                  alt="Molde geométrico minimalista blanco sobre fondo pastel"
+                  width="600"
+                  height="600"
+                  loading="lazy"
+                  class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <button
+                  type="button"
+                  aria-label="Agregar Molde Geométrico V2 al carrito"
+                  class="absolute bottom-3 right-3 size-10 rounded-full bg-ink text-white shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 focus-visible:opacity-100 translate-y-2 group-hover:translate-y-0 focus-visible:translate-y-0 transition-[opacity,transform,background-color] duration-300 hover:bg-primary"
+                >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    aria-hidden="true"
+                    >add_shopping_cart</span
+                  >
+                </button>
+              </div>
+              <div>
+                <h3 class="font-medium text-ink dark:text-white truncate">
+                  <a href="catalogo.html" class="hover:text-primary-dark dark:hover:text-primary"
+                    >Molde Geométrico V2</a
+                  >
+                </h3>
+                <p class="text-sm text-text-light dark:text-stone-400 tabular">$240.00</p>
+              </div>
+            </article>
+            <article class="group flex flex-col gap-3">
+              <div
+                class="relative overflow-hidden rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 aspect-square"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLPrV2SESPM4r9Hgu2bvDqgJ1KP6GS9UeV3lbZUieP4s8Pqp5cL3PwXVtMkdfARTgrBkc5FqXnulDWljprdiiPZj-2W4L2_-3T383Z5afvwg0HeTvOHRrtKhxNhvXWO3W9CFzJSDGSiq0ZHRnNPSOmNEhdO3RrbCOZ4QRP83pdZXPTCbjhEw1-S6vfl5v6uF8cVYty4tbk2fzpsHJz4m04vQUpI6FROhBfICRur2d3kx517y_00Q8X5iBjpz4lbUYm13OSKSQvYZR7"
+                  alt="Molde de silicona en forma de corazón para repostería"
+                  width="600"
+                  height="600"
+                  loading="lazy"
+                  class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <button
+                  type="button"
+                  aria-label="Agregar Corazón Diamante al carrito"
+                  class="absolute bottom-3 right-3 size-10 rounded-full bg-ink text-white shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 focus-visible:opacity-100 translate-y-2 group-hover:translate-y-0 focus-visible:translate-y-0 transition-[opacity,transform,background-color] duration-300 hover:bg-primary"
+                >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    aria-hidden="true"
+                    >add_shopping_cart</span
+                  >
+                </button>
+              </div>
+              <div>
+                <h3 class="font-medium text-ink dark:text-white truncate">
+                  <a href="catalogo.html" class="hover:text-primary-dark dark:hover:text-primary"
+                    >Corazón Diamante</a
+                  >
+                </h3>
+                <p class="text-sm text-text-light dark:text-stone-400 tabular">$185.00</p>
+              </div>
+            </article>
+            <article class="group flex flex-col gap-3">
+              <div
+                class="relative overflow-hidden rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 aspect-square"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI7vTqhBcl4FMaARVu6srdRJ4znFYlW2ZIqbGC-BzsYgW0ilwnAEd3-rjkH31AEbt--rd4mXnnHdZEwOslzHs0ItQNON_g1ptlRM850-gcrrnbAz3Ata6taCxMtUWddvGmVyGBpQLeXt11IjKjRcyjEMpfx0TLiPpPXhQlQeWQqBFFvbwAN3lE5mhQ277UehvX54JYga_tcYph9spGSWLn4zBbAOQ0-u-wK6WWcMvsDxDz5MAURWbGIrZ62IzTfId3EwL7qO0dyEhl"
+                  alt="Molde con patrón de flor detallado"
+                  width="600"
+                  height="600"
+                  loading="lazy"
+                  class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <button
+                  type="button"
+                  aria-label="Agregar Rosa Clásica al carrito"
+                  class="absolute bottom-3 right-3 size-10 rounded-full bg-ink text-white shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 focus-visible:opacity-100 translate-y-2 group-hover:translate-y-0 focus-visible:translate-y-0 transition-[opacity,transform,background-color] duration-300 hover:bg-primary"
+                >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    aria-hidden="true"
+                    >add_shopping_cart</span
+                  >
+                </button>
+              </div>
+              <div>
+                <h3 class="font-medium text-ink dark:text-white truncate">
+                  <a href="catalogo.html" class="hover:text-primary-dark dark:hover:text-primary"
+                    >Rosa Clásica</a
+                  >
+                </h3>
+                <p class="text-sm text-text-light dark:text-stone-400 tabular">$129.00</p>
+              </div>
+            </article>
+            <article class="group flex flex-col gap-3">
+              <div
+                class="relative overflow-hidden rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 aspect-square"
+              >
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuChQ7Q8n2CAASPNGsg8xdgxR1QGvbgABXtfyJxf09TzBCv6RpfLXbpXqvVsRxyQ4xVAuAhErVAbOsbsKXP8DGwBY3jJ1QZag5g1sLECDHQMbXzbo1GSKelO6SJr45e5eShmCwXLUvu6s-HMG7cVwfZIXUeWpKAAd9i_dntS0bVizXS4IhKhzR0GfaC1vmp0NnlCn962bFa3tQ1lprDRynPO0mAnvYKQjjYzDzpAzY-zRLqRpv1AzTqCVSrS5e5coJGAlnbs_xDnTtJV"
+                  alt="Cortador de galletas en forma de estrella sobre superficie blanca"
+                  width="600"
+                  height="600"
+                  loading="lazy"
+                  class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <button
+                  type="button"
+                  aria-label="Agregar Set Estrellas al carrito"
+                  class="absolute bottom-3 right-3 size-10 rounded-full bg-ink text-white shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 focus-visible:opacity-100 translate-y-2 group-hover:translate-y-0 focus-visible:translate-y-0 transition-[opacity,transform,background-color] duration-300 hover:bg-primary"
+                >
+                  <span
+                    class="material-symbols-outlined text-[20px]"
+                    aria-hidden="true"
+                    >add_shopping_cart</span
+                  >
+                </button>
+              </div>
+              <div>
+                <h3 class="font-medium text-ink dark:text-white truncate">
+                  <a href="catalogo.html" class="hover:text-primary-dark dark:hover:text-primary"
+                    >Set Estrellas (5pcs)</a
+                  >
+                </h3>
+                <p class="text-sm text-text-light dark:text-stone-400 tabular">$300.00</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Portafolio (teaser) -->
+        <section class="w-full max-w-[1280px] px-4 lg:px-10 py-16">
+          <div
+            class="flex flex-col md:flex-row justify-between items-baseline gap-4 mb-10"
+          >
+            <div>
+              <p
+                class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-dark dark:text-primary mb-3"
+              >
+                Portafolio
+              </p>
+              <h2
+                class="font-display text-3xl lg:text-4xl font-semibold text-ink dark:text-white"
+              >
+                Proyectos en los que hemos trabajado
+              </h2>
             </div>
-        </footer>
+            <a
+              class="group inline-flex items-center gap-1 text-sm font-semibold text-ink dark:text-white hover:text-primary-dark dark:hover:text-primary transition-colors rounded-lg"
+              href="portafolio.html"
+            >
+              Ver portafolio
+              <span
+                class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+          <div
+            id="grid-portafolio-home"
+            class="grid grid-cols-1 md:grid-cols-3 gap-6"
+          >
+            <p class="text-text-light dark:text-stone-400 col-span-full">Cargando proyectos...</p>
+          </div>
+        </section>
+
+        <!-- Blog preview -->
+        <section class="w-full max-w-[1280px] px-4 lg:px-10 py-16">
+          <div
+            class="flex flex-col md:flex-row justify-between items-baseline gap-4 mb-10"
+          >
+            <div>
+              <p
+                class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-dark dark:text-primary mb-3"
+              >
+                Blog &amp; tutoriales
+              </p>
+              <h2
+                class="font-display text-3xl lg:text-4xl font-semibold text-ink dark:text-white"
+              >
+                Aprende con nosotros
+              </h2>
+            </div>
+            <a
+              class="group inline-flex items-center gap-1 text-sm font-semibold text-ink dark:text-white hover:text-primary-dark dark:hover:text-primary transition-colors rounded-lg"
+              href="blog.html"
+            >
+              Ver todos los artículos
+              <span
+                class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a
+              href="blog.html?categoria=impresion-3d"
+              class="group flex flex-col rounded-2xl overflow-hidden bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 hover:border-primary/40 dark:hover:border-primary/40 hover:-translate-y-1 transition-[border-color,box-shadow,transform] duration-300 hover:shadow-xl hover:shadow-black/5"
+            >
+              <div class="aspect-[16/9] overflow-hidden relative">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVgQUDzR-jRo4iPXi9VbJl-950RY5f805rVSkXpE8iIPWm4f-e1RmrRjyKZW6ZhZtEkWNxBU215GzGxYKHwZkTfGsrTVLQW8D1occL-vEtZWHVVQuqQHU_cl75y6PtrPKIT_683iIK1zkXy5fsy1EeBOMFx8nau6PqquOWZjevd2TyIyH0KWcXdSNOSQQcLpq71JYFqudCNFCVXFLcLjip8eu1aH1341HKfyu-YzaZJ-X52MZsRyTgdOAKCaEpQiBRO6Xw6NMqAV6v"
+                  alt="Figuras y moldes impresos en 3D"
+                  width="800"
+                  height="450"
+                  loading="lazy"
+                  class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 flex flex-col gap-3 flex-1">
+                <p
+                  class="text-xs font-semibold uppercase tracking-[0.14em] text-primary-dark dark:text-primary"
+                >
+                  Impresión 3D
+                </p>
+                <h3
+                  class="font-display text-lg font-semibold text-ink dark:text-white group-hover:text-primary-dark dark:group-hover:text-primary transition-colors leading-snug"
+                >
+                  Cómo elegir el material de impresión 3D ideal para tus moldes
+                </h3>
+                <p class="text-sm text-text-light dark:text-stone-400 leading-relaxed flex-1">
+                  PLA, PETG o resina: te explicamos cuál es la opción más segura
+                  y duradera para tu negocio.
+                </p>
+                <p class="text-xs text-text-light dark:text-stone-500 pt-3 border-t border-black/5 dark:border-white/10 mt-auto">
+                  Carmen Molina · 12 feb 2026
+                </p>
+              </div>
+            </a>
+            <a
+              href="blog.html?categoria=jabones"
+              class="group flex flex-col rounded-2xl overflow-hidden bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 hover:border-primary/40 dark:hover:border-primary/40 hover:-translate-y-1 transition-[border-color,box-shadow,transform] duration-300 hover:shadow-xl hover:shadow-black/5"
+            >
+              <div class="aspect-[16/9] overflow-hidden relative">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkNpN-IYEEnCMBsCIdSkO4q7yqWLzK5Wa_lyNAG7Tj2G-GpbsQifxDyIeDD-hhzYVoa9MwCIQ3mcZd_rhdDAZLOVjdbRHBd27cQjfupFyC_h9f2aFQS3R7PLIGbkoa93mkajSNiCPz0QmaH0RdVKGtJ4vXpMY79EFG_nmWNWLekVGXakHXyQcm9ATMKNvTUkPdg-yyO-hDXDwRf_RDz6DblfrJVZqTtwfK5ndx1Q95LXvO-u8j79SLC099LGBqIYnII8FJ035URXe9"
+                  alt="Jabones artesanales con diseños florales"
+                  width="800"
+                  height="450"
+                  loading="lazy"
+                  class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 flex flex-col gap-3 flex-1">
+                <p
+                  class="text-xs font-semibold uppercase tracking-[0.14em] text-primary-dark dark:text-primary"
+                >
+                  Jabones
+                </p>
+                <h3
+                  class="font-display text-lg font-semibold text-ink dark:text-white group-hover:text-primary-dark dark:group-hover:text-primary transition-colors leading-snug"
+                >
+                  Guía completa: jabones artesanales con moldes de alta precisión
+                </h3>
+                <p class="text-sm text-text-light dark:text-stone-400 leading-relaxed flex-1">
+                  Fragancias, colorantes y moldes para crear jabones con
+                  detalles increíbles y texturas únicas.
+                </p>
+                <p class="text-xs text-text-light dark:text-stone-500 pt-3 border-t border-black/5 dark:border-white/10 mt-auto">
+                  Mariana Soto · 28 ene 2026
+                </p>
+              </div>
+            </a>
+            <a
+              href="blog.html?categoria=reposteria"
+              class="group flex flex-col rounded-2xl overflow-hidden bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 hover:border-primary/40 dark:hover:border-primary/40 hover:-translate-y-1 transition-[border-color,box-shadow,transform] duration-300 hover:shadow-xl hover:shadow-black/5"
+            >
+              <div class="aspect-[16/9] overflow-hidden relative">
+                <img
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAInPR71rK6Tqb1Npjyz8_eMOKUSIWOO4yruPUUUMo6i2errmhMcE5x0l6PsL3CXQDq6x1EML1C6dYB_8XZTDtEMnnEZ66-fZdmr2tRkOQJCBMHFo05ac1fA3knvAh0scNuXzq6WYMqWF2_czrYugOiuTtgJ4WNJzu_KUgdvNDceuxPGLygB--ILdAhZloM3WQxcWBNeiHEJa4ZpiSQcNsvTLd3bMQBz74lWRzNqWeX-w4HCpb1_JXdKqFvOFLMQdPoXboMpFL15vsa"
+                  alt="Cortadores de galletas de colores"
+                  width="800"
+                  height="450"
+                  loading="lazy"
+                  class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-6 flex flex-col gap-3 flex-1">
+                <p
+                  class="text-xs font-semibold uppercase tracking-[0.14em] text-primary-dark dark:text-primary"
+                >
+                  Repostería
+                </p>
+                <h3
+                  class="font-display text-lg font-semibold text-ink dark:text-white group-hover:text-primary-dark dark:group-hover:text-primary transition-colors leading-snug"
+                >
+                  5 técnicas para decorar galletas con moldes de silicona
+                </h3>
+                <p class="text-sm text-text-light dark:text-stone-400 leading-relaxed flex-1">
+                  Desde aerógrafo hasta transfer de colores: métodos
+                  profesionales para acabados perfectos.
+                </p>
+                <p class="text-xs text-text-light dark:text-stone-500 pt-3 border-t border-black/5 dark:border-white/10 mt-auto">
+                  Laura Pérez · 5 feb 2026
+                </p>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- Comunidad / newsletter -->
+        <section id="comunidad" class="w-full max-w-[1280px] px-4 lg:px-10 pb-20">
+          <div
+            class="rounded-3xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 p-8 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-8"
+          >
+            <div class="flex-1">
+              <h2
+                class="font-display text-3xl lg:text-4xl font-semibold text-ink dark:text-white mb-4"
+              >
+                Únete a nuestra comunidad creativa
+              </h2>
+              <p class="text-text-light dark:text-stone-400 max-w-md">
+                Recibe descuentos exclusivos, tutoriales gratuitos y sé el
+                primero en conocer nuestros nuevos lanzamientos.
+              </p>
+            </div>
+            <div class="flex-1 w-full">
+              <form class="flex flex-col sm:flex-row gap-3" data-newsletter>
+                <label class="sr-only" for="correo-boletin"
+                  >Correo electrónico</label
+                >
+                <input
+                  id="correo-boletin"
+                  name="email"
+                  type="email"
+                  required
+                  autocomplete="email"
+                  spellcheck="false"
+                  inputmode="email"
+                  placeholder="tu@correo.com"
+                  class="flex-1 rounded-full border border-black/10 dark:border-white/15 bg-paper dark:bg-paper-dark text-ink dark:text-white placeholder-text-light dark:placeholder-stone-500 focus:ring-2 focus:ring-primary focus:border-primary h-12 px-5"
+                />
+                <button
+                  type="submit"
+                  class="rounded-full h-12 px-6 bg-ink text-white dark:bg-white dark:text-ink font-semibold hover:bg-ink/90 dark:hover:bg-white/90 transition-colors whitespace-nowrap"
+                >
+                  Suscribirme
+                </button>
+              </form>
+              <p
+                data-newsletter-mensaje
+                aria-live="polite"
+                class="text-sm font-semibold text-primary-dark dark:text-primary mt-3 min-h-[1.25rem]"
+              ></p>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer
+        class="w-full bg-surface dark:bg-surface-dark border-t border-black/5 dark:border-white/10"
+      >
+        <div class="max-w-[1280px] mx-auto px-4 lg:px-10 py-14">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+            <div class="col-span-1 md:col-span-1">
+              <div class="flex items-center gap-2 mb-4">
+                <img
+                  src="images/logo.png"
+                  alt=""
+                  width="150"
+                  height="150"
+                  class="h-8 w-8 object-contain"
+                />
+                <p class="font-display font-semibold text-lg text-ink dark:text-white">
+                  La Casita del Molde
+                </p>
+              </div>
+              <p class="text-sm text-text-light dark:text-stone-400 mb-4 max-w-xs">
+                Transformando ideas en realidad, capa por capa. Calidad y
+                precisión en cada impresión.
+              </p>
+              <div class="flex gap-3">
+                <a
+                  class="text-text-light dark:text-stone-400 hover:text-primary-dark dark:hover:text-primary transition-colors rounded-full"
+                  href="#"
+                  aria-label="Facebook de La Casita del Molde"
+                >
+                  <svg class="size-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6h1.4V4.9c-.3 0-1.3-.1-2.5-.1-2.4 0-4 1.5-4 4.1V11H7.5v3H10v7h3.5Z" />
+                  </svg>
+                </a>
+                <a
+                  class="text-text-light dark:text-stone-400 hover:text-primary-dark dark:hover:text-primary transition-colors rounded-full"
+                  href="#"
+                  aria-label="Instagram de La Casita del Molde"
+                >
+                  <svg class="size-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm10 2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm-5 3.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5Zm0 2A1.5 1.5 0 1 0 13.5 12 1.5 1.5 0 0 0 12 10.5Zm5.25-3.75a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z" />
+                  </svg>
+                </a>
+                <a
+                  class="text-text-light dark:text-stone-400 hover:text-primary-dark dark:hover:text-primary transition-colors rounded-full"
+                  href="#"
+                  aria-label="X (Twitter) de La Casita del Molde"
+                >
+                  <svg class="size-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M17.2 3h2.9l-6.4 7.3L21.3 21h-5.9l-4.6-6-5.3 6H2.6l6.9-7.8L2.1 3H8l4.2 5.5L17.2 3Zm-1 16.2h1.6L7.1 4.7H5.4l10.8 14.5Z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold text-ink dark:text-white mb-4">Tienda</h4>
+              <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-stone-400">
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="catalogo.html">Catálogo completo</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="index.html#popular">Lo más popular</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="index.html#cotiza">Impresión 3D a medida</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-ink dark:text-white mb-4">Empresa</h4>
+              <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-stone-400">
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="nosotros.html">Sobre Nosotros</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="portafolio.html">Portafolio</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="nosotros.html#proceso">Proceso creativo</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="blog.html">Blog</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="contacto.html">Contacto</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-ink dark:text-white mb-4">Aprende</h4>
+              <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-stone-400">
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="blog.html?categoria=reposteria">Repostería creativa</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="blog.html?categoria=jabones">Jabones artesanales</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="blog.html?categoria=impresion-3d">Impresión 3D</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="blog.html?categoria=tutoriales">Tutoriales</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="contacto.html#faq">Preguntas frecuentes</a></li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="border-t border-black/5 dark:border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-text-light dark:text-stone-500"
+          >
+            <p>© 2026 La Casita del Molde. Todos los derechos reservados.</p>
+            <p>Diseñado con ❤️ para creadores.</p>
+          </div>
+        </div>
+      </footer>
     </div>
-</body>
 
+    <!-- Asistente de ayuda -->
+    <div class="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+      <div
+        id="chat-panel"
+        hidden
+        role="dialog"
+        aria-modal="false"
+        aria-label="Asistente de La Casita del Molde"
+        class="w-[92vw] max-w-sm rounded-3xl bg-surface dark:bg-surface-dark border border-black/10 dark:border-white/15 shadow-2xl overflow-hidden flex flex-col max-h-[70vh]"
+      >
+        <div class="flex items-center justify-between gap-3 px-5 py-4 bg-ink text-white flex-shrink-0">
+          <div class="flex items-center gap-3">
+            <span class="size-9 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <span class="material-symbols-outlined text-[20px]">forum</span>
+            </span>
+            <div>
+              <p class="font-display font-semibold leading-tight text-sm">Asistente LCDM</p>
+              <p class="text-xs text-stone-300">Respuestas al instante</p>
+            </div>
+          </div>
+          <button
+            type="button"
+            id="chat-cerrar"
+            aria-label="Cerrar chat"
+            class="p-1.5 rounded-full hover:bg-white/10 transition-colors flex-shrink-0"
+          >
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">close</span>
+          </button>
+        </div>
+        <div
+          id="chat-mensajes"
+          class="flex-1 min-h-0 overflow-y-auto px-4 py-4 flex flex-col gap-3"
+          aria-live="polite"
+        ></div>
+        <div class="border-t border-black/5 dark:border-white/10 px-4 py-3 text-xs text-text-light dark:text-stone-400 flex-shrink-0">
+          ¿No encuentras tu respuesta?
+          <a href="contacto.html" class="font-semibold text-primary-dark dark:text-primary hover:underline">Escríbenos</a>.
+        </div>
+      </div>
+      <button
+        type="button"
+        id="chat-boton"
+        aria-label="Abrir asistente de ayuda"
+        aria-expanded="false"
+        aria-controls="chat-panel"
+        class="size-14 rounded-full bg-primary text-white shadow-xl shadow-primary/30 flex items-center justify-center hover:bg-primary-dark transition-colors"
+      >
+        <span class="material-symbols-outlined" aria-hidden="true">chat</span>
+      </button>
+    </div>
+    <script>
+      // Teaser de portafolio del home: muestra los primeros 3 proyectos.
+      (function () {
+        var grid = document.getElementById("grid-portafolio-home");
+        if (!grid) return;
+        fetch("data/proyectos.json")
+          .then(function (res) {
+            return res.json();
+          })
+          .then(function (data) {
+            var proyectos = (data.proyectos || []).slice(0, 3);
+            if (!proyectos.length) {
+              grid.innerHTML =
+                '<p class="text-text-light dark:text-stone-400 col-span-full">Pronto compartiremos nuestros proyectos.</p>';
+              return;
+            }
+            grid.innerHTML = proyectos
+              .map(function (p) {
+                return (
+                  '<a href="portafolio.html?categoria=' +
+                  p.categoriaSlug +
+                  '" class="group relative flex flex-col overflow-hidden rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 hover:border-primary/40 dark:hover:border-primary/40 transition-[border-color,box-shadow] duration-300 hover:shadow-xl hover:shadow-black/5">' +
+                  '<div class="aspect-[4/3] w-full overflow-hidden bg-paper dark:bg-paper-dark">' +
+                  '<img alt="' +
+                  p.imagen.alt +
+                  '" width="800" height="600" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="' +
+                  p.imagen.src +
+                  '" />' +
+                  "</div>" +
+                  '<div class="p-6 flex flex-col gap-2">' +
+                  '<p class="text-xs font-semibold uppercase tracking-[0.14em] text-primary-dark dark:text-primary">' +
+                  p.emoji +
+                  " " +
+                  p.categoria +
+                  "</p>" +
+                  '<h3 class="font-display text-lg font-semibold text-ink dark:text-white leading-tight group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">' +
+                  p.titulo +
+                  "</h3>" +
+                  '<p class="text-sm text-text-light dark:text-stone-400 leading-relaxed line-clamp-2">' +
+                  p.resumen +
+                  "</p>" +
+                  "</div>" +
+                  "</a>"
+                );
+              })
+              .join("");
+          })
+          .catch(function () {
+            grid.innerHTML =
+              '<p class="text-text-light dark:text-stone-400 col-span-full">No se pudieron cargar los proyectos.</p>';
+          });
+      })();
+    </script>
+    <script>
+      (function () {
+        var botonTema = document.getElementById("boton-tema");
+        if (botonTema) {
+          var etiquetaTema = function () {
+            var oscuro = document.documentElement.classList.contains("dark");
+            botonTema.setAttribute(
+              "aria-label",
+              oscuro ? "Cambiar a modo claro" : "Cambiar a modo oscuro"
+            );
+          };
+          etiquetaTema();
+          botonTema.addEventListener("click", function () {
+            var oscuro = !document.documentElement.classList.contains("dark");
+            if (window.aplicarTema) window.aplicarTema(oscuro);
+            else document.documentElement.classList.toggle("dark", oscuro);
+            try {
+              localStorage.setItem("tema", oscuro ? "oscuro" : "claro");
+            } catch (e) {}
+            etiquetaTema();
+          });
+        }
+
+        var boton = document.getElementById("boton-menu");
+        var panel = document.getElementById("menu-movil");
+        if (boton && panel) {
+          boton.addEventListener("click", function () {
+            var abrir = panel.hidden;
+            panel.hidden = !abrir;
+            boton.setAttribute("aria-expanded", String(abrir));
+            boton.setAttribute("aria-label", abrir ? "Cerrar menú" : "Abrir menú");
+            boton.querySelector("span").textContent = abrir ? "close" : "menu";
+          });
+          panel.querySelectorAll("a").forEach(function (enlace) {
+            enlace.addEventListener("click", function () {
+              panel.hidden = true;
+              boton.setAttribute("aria-expanded", "false");
+              boton.setAttribute("aria-label", "Abrir menú");
+              boton.querySelector("span").textContent = "menu";
+            });
+          });
+        }
+        document
+          .querySelectorAll("form[data-newsletter]")
+          .forEach(function (formulario) {
+            formulario.addEventListener("submit", function (evento) {
+              evento.preventDefault();
+              var mensaje = formulario.parentElement.querySelector(
+                "[data-newsletter-mensaje]"
+              );
+              if (mensaje) {
+                mensaje.textContent =
+                  "¡Gracias! Muy pronto recibirás novedades en tu correo.";
+              }
+              formulario.reset();
+            });
+          });
+
+        var botonSubida = document.getElementById("abrir-subida");
+        var panelSubida = document.getElementById("panel-subida");
+        if (botonSubida && panelSubida) {
+          botonSubida.addEventListener("click", function () {
+            var abrir = panelSubida.hidden;
+            panelSubida.hidden = !abrir;
+            botonSubida.setAttribute("aria-expanded", String(abrir));
+            if (abrir) {
+              panelSubida.scrollIntoView({ behavior: "smooth", block: "nearest" });
+            }
+          });
+        }
+
+        var MAX_BYTES_DISENO = 25 * 1024 * 1024;
+        var dropzone = document.getElementById("dropzone");
+        var inputArchivo = document.getElementById("archivo-diseno");
+        var textoArchivo = document.getElementById("archivo-seleccionado");
+        var errorArchivo = document.getElementById("error-archivo");
+        var archivoValido = null;
+
+        function formatoTamano(bytes) {
+          return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+        }
+
+        function ocultarErrorArchivo() {
+          errorArchivo.hidden = true;
+          errorArchivo.textContent = "";
+        }
+
+        function mostrarErrorArchivo(texto) {
+          errorArchivo.textContent = texto;
+          errorArchivo.hidden = false;
+        }
+
+        function manejarArchivoElegido(archivo) {
+          ocultarErrorArchivo();
+          if (!archivo) return;
+          if (archivo.size > MAX_BYTES_DISENO) {
+            archivoValido = null;
+            inputArchivo.value = "";
+            textoArchivo.hidden = true;
+            mostrarErrorArchivo(
+              "Ese archivo pesa " +
+                formatoTamano(archivo.size) +
+                ". El máximo permitido es 25 MB."
+            );
+            return;
+          }
+          archivoValido = archivo;
+          textoArchivo.textContent = archivo.name + " · " + formatoTamano(archivo.size);
+          textoArchivo.hidden = false;
+        }
+
+        if (dropzone && inputArchivo) {
+          dropzone.addEventListener("click", function () {
+            inputArchivo.click();
+          });
+          dropzone.addEventListener("keydown", function (evento) {
+            if (evento.key === "Enter" || evento.key === " ") {
+              evento.preventDefault();
+              inputArchivo.click();
+            }
+          });
+          inputArchivo.addEventListener("change", function () {
+            manejarArchivoElegido(inputArchivo.files[0]);
+          });
+          ["dragenter", "dragover"].forEach(function (tipo) {
+            dropzone.addEventListener(tipo, function (evento) {
+              evento.preventDefault();
+              dropzone.classList.add("border-primary");
+            });
+          });
+          ["dragleave", "drop"].forEach(function (tipo) {
+            dropzone.addEventListener(tipo, function (evento) {
+              evento.preventDefault();
+              dropzone.classList.remove("border-primary");
+            });
+          });
+          dropzone.addEventListener("drop", function (evento) {
+            var archivo =
+              evento.dataTransfer &&
+              evento.dataTransfer.files &&
+              evento.dataTransfer.files[0];
+            if (!archivo) return;
+            try {
+              var transferencia = new DataTransfer();
+              transferencia.items.add(archivo);
+              inputArchivo.files = transferencia.files;
+            } catch (err) {}
+            manejarArchivoElegido(archivo);
+          });
+        }
+
+        var MAX_BYTES_IMAGEN = 10 * 1024 * 1024;
+        var grupoDiseno = document.getElementById("grupo-diseno");
+        var grupoCortador = document.getElementById("grupo-cortador");
+        var grupoTopper = document.getElementById("grupo-topper");
+        var grupoDetalles = document.getElementById("grupo-detalles");
+        var radiosTipo = document.querySelectorAll('input[name="tipo-cotizacion"]');
+        var tipoCotizacion = "diseno";
+
+        var botonImagen = document.getElementById("adjuntar-imagen");
+        var inputImagen = document.getElementById("imagen-referencia");
+        var textoImagen = document.getElementById("imagen-seleccionada");
+        var errorImagen = document.getElementById("error-imagen");
+        var botonQuitarImagen = document.getElementById("quitar-imagen");
+        var imagenValida = null;
+
+        function ocultarErrorImagen() {
+          errorImagen.hidden = true;
+          errorImagen.textContent = "";
+        }
+
+        function mostrarErrorImagen(texto) {
+          errorImagen.textContent = texto;
+          errorImagen.hidden = false;
+        }
+
+        function limpiarImagen() {
+          imagenValida = null;
+          inputImagen.value = "";
+          textoImagen.hidden = true;
+          textoImagen.textContent = "";
+          botonQuitarImagen.hidden = true;
+        }
+
+        function manejarImagenElegida(imagen) {
+          ocultarErrorImagen();
+          if (!imagen) return;
+          if (imagen.type.indexOf("image/") !== 0) {
+            limpiarImagen();
+            mostrarErrorImagen("Ese archivo no es una imagen. Usa JPG, PNG o WebP.");
+            return;
+          }
+          if (imagen.size > MAX_BYTES_IMAGEN) {
+            limpiarImagen();
+            mostrarErrorImagen(
+              "Esa imagen pesa " +
+                formatoTamano(imagen.size) +
+                ". El máximo permitido es 10 MB."
+            );
+            return;
+          }
+          imagenValida = imagen;
+          textoImagen.textContent = imagen.name + " · " + formatoTamano(imagen.size);
+          textoImagen.hidden = false;
+          botonQuitarImagen.hidden = false;
+        }
+
+        function aplicarTipoCotizacion(tipo) {
+          tipoCotizacion = tipo;
+          grupoDiseno.hidden = tipo !== "diseno";
+          grupoCortador.hidden = tipo !== "cortador";
+          grupoTopper.hidden = tipo !== "topper";
+          grupoDetalles.hidden = tipo === "diseno";
+          ocultarErrorArchivo();
+          ocultarErrorImagen();
+        }
+
+        if (grupoDiseno && grupoCortador && grupoTopper && grupoDetalles) {
+          radiosTipo.forEach(function (radio) {
+            radio.addEventListener("change", function () {
+              if (radio.checked) aplicarTipoCotizacion(radio.value);
+            });
+          });
+        }
+
+        if (botonImagen && inputImagen) {
+          botonImagen.addEventListener("click", function () {
+            inputImagen.click();
+          });
+          inputImagen.addEventListener("change", function () {
+            manejarImagenElegida(inputImagen.files[0]);
+          });
+          botonQuitarImagen.addEventListener("click", function () {
+            limpiarImagen();
+            ocultarErrorImagen();
+            botonImagen.focus();
+          });
+        }
+
+        var formSubida = document.getElementById("form-subida");
+        if (formSubida) {
+          formSubida.addEventListener("submit", function (evento) {
+            evento.preventDefault();
+            var correo = document.getElementById("correo-diseno");
+            var enlace = document.getElementById("enlace-diseno");
+            var mensajeSubida = document.getElementById("mensaje-subida");
+            if (!correo.checkValidity()) {
+              correo.focus();
+              return;
+            }
+            if (
+              tipoCotizacion === "diseno" &&
+              !archivoValido &&
+              !enlace.value.trim()
+            ) {
+              mostrarErrorArchivo(
+                "Sube un archivo o comparte un enlace para continuar."
+              );
+              dropzone.focus();
+              return;
+            }
+            var NOMBRES_TIPO = {
+              diseno: "tu diseño",
+              cortador: "tu cortador de galletas",
+              topper: "tu topper para pastel",
+            };
+            mensajeSubida.textContent =
+              "¡Gracias! Revisaremos " +
+              (NOMBRES_TIPO[tipoCotizacion] || "tu idea") +
+              " y te enviaremos la cotización a " +
+              correo.value +
+              ".";
+            formSubida.reset();
+            textoArchivo.hidden = true;
+            ocultarErrorArchivo();
+            archivoValido = null;
+            limpiarImagen();
+            aplicarTipoCotizacion("diseno");
+          });
+        }
+      })();
+    </script>
+
+    <script>
+      (function () {
+        var MENU_PRINCIPAL = [
+          {
+            pregunta: "¿Hacen envíos a todo el país?",
+            respuesta:
+              "Sí, enviamos a todo el país. Los pedidos del catálogo se despachan en 24–48 hrs y el tiempo de entrega depende de tu ubicación.",
+          },
+          {
+            pregunta: "¿Los materiales son seguros para alimentos?",
+            respuesta:
+              "Sí. Usamos PLA Premium, un bioplástico food-safe certificado para contacto indirecto con alimentos, y silicona de grado platino para los moldes de jabón.",
+          },
+          {
+            pregunta: "¿Puedo pedir un diseño personalizado?",
+            respuesta:
+              'Claro. Sube tu archivo STL u OBJ, o cuéntanos tu idea desde <a href="index.html#cotiza" class="font-semibold underline">Cotizar mi idea</a>. Revisamos la viabilidad técnica sin costo.',
+          },
+          {
+            pregunta: "¿Cuánto tardan en fabricar un pedido?",
+            respuesta:
+              "Los productos del catálogo se despachan en 24–48 hrs. Los diseños personalizados toman entre 3 y 7 días hábiles según la complejidad.",
+          },
+          {
+            pregunta: "¿Cómo se cotiza una pieza personalizada?",
+            respuesta:
+              "El precio depende del tamaño, la complejidad y el material. Sube tu diseño y te enviamos una cotización sin compromiso.",
+          },
+          {
+            pregunta: "Quiero hablar con una persona",
+            respuesta:
+              'Con gusto. Escríbenos desde nuestra <a href="contacto.html" class="font-semibold underline">página de contacto</a> y te respondemos a la brevedad.',
+          },
+        ];
+
+        var botonChat = document.getElementById("chat-boton");
+        var panelChat = document.getElementById("chat-panel");
+        var cerrarChat = document.getElementById("chat-cerrar");
+        var mensajesChat = document.getElementById("chat-mensajes");
+        if (!botonChat || !panelChat) return;
+
+        var iniciado = false;
+
+        function agregarBurbuja(contenido, esUsuario) {
+          var burbuja = document.createElement("div");
+          burbuja.className = esUsuario
+            ? "self-end max-w-[85%] rounded-2xl rounded-br-sm bg-ink dark:bg-white text-white dark:text-ink px-4 py-2.5 text-sm"
+            : "self-start max-w-[85%] rounded-2xl rounded-bl-sm bg-paper dark:bg-paper-dark text-text-main dark:text-stone-200 px-4 py-2.5 text-sm leading-relaxed";
+          burbuja.innerHTML = contenido;
+          mensajesChat.appendChild(burbuja);
+          mensajesChat.scrollTop = mensajesChat.scrollHeight;
+          return burbuja;
+        }
+
+        function mostrarChips(lista) {
+          var anterior = mensajesChat.querySelector("[data-chips]");
+          if (anterior) anterior.remove();
+          if (!lista.length) return;
+          var grupo = document.createElement("div");
+          grupo.setAttribute("data-chips", "");
+          grupo.className = "flex flex-wrap gap-2";
+          lista.forEach(function (item) {
+            var boton = document.createElement("button");
+            boton.type = "button";
+            boton.className =
+              "px-3.5 py-2 rounded-full border border-black/10 dark:border-white/15 text-xs font-medium text-ink dark:text-white hover:border-primary hover:text-primary-dark dark:hover:text-primary transition-colors";
+            boton.textContent = item.pregunta;
+            boton.addEventListener("click", function () {
+              seleccionarPregunta(item);
+            });
+            grupo.appendChild(boton);
+          });
+          mensajesChat.appendChild(grupo);
+          mensajesChat.scrollTop = mensajesChat.scrollHeight;
+        }
+
+        function seleccionarPregunta(item) {
+          mostrarChips([]);
+          agregarBurbuja(item.pregunta, true);
+          var indicador = agregarBurbuja(
+            '<span class="flex items-center gap-1 py-0.5"><span class="size-1.5 rounded-full bg-text-light dark:bg-stone-500 animate-bounce [animation-delay:-0.3s]"></span><span class="size-1.5 rounded-full bg-text-light dark:bg-stone-500 animate-bounce [animation-delay:-0.15s]"></span><span class="size-1.5 rounded-full bg-text-light dark:bg-stone-500 animate-bounce"></span></span>',
+            false
+          );
+          window.setTimeout(function () {
+            indicador.remove();
+            var respuesta = agregarBurbuja(item.respuesta, false);
+            mostrarChips(MENU_PRINCIPAL);
+            respuesta.scrollIntoView({ block: "start", behavior: "smooth" });
+          }, 500);
+        }
+
+        function abrirChat() {
+          panelChat.hidden = false;
+          botonChat.setAttribute("aria-expanded", "true");
+          botonChat.setAttribute("aria-label", "Cerrar asistente de ayuda");
+          if (!iniciado) {
+            iniciado = true;
+            agregarBurbuja(
+              "¡Hola! 👋 Soy el asistente de La Casita del Molde. Elige una pregunta para empezar.",
+              false
+            );
+            mostrarChips(MENU_PRINCIPAL);
+          }
+          cerrarChat.focus();
+        }
+
+        function cerrarChatFn() {
+          panelChat.hidden = true;
+          botonChat.setAttribute("aria-expanded", "false");
+          botonChat.setAttribute("aria-label", "Abrir asistente de ayuda");
+          botonChat.focus();
+        }
+
+        botonChat.addEventListener("click", function () {
+          if (panelChat.hidden) abrirChat();
+          else cerrarChatFn();
+        });
+        cerrarChat.addEventListener("click", cerrarChatFn);
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && !panelChat.hidden) cerrarChatFn();
+        });
+
+        document.querySelectorAll("[data-abrir-chat]").forEach(function (el) {
+          el.addEventListener("click", abrirChat);
+        });
+      })();
+    </script>
+  </body>
 </html>

@@ -1,0 +1,181 @@
+{
+  "posts": [
+    {
+      "id": "material-impresion-3d-moldes",
+      "titulo": "Cómo elegir el material de impresión 3D ideal para tus moldes de repostería",
+      "categoria": "Impresión 3D",
+      "categoriaSlug": "impresion-3d",
+      "emoji": "🖨️",
+      "destacado": true,
+      "autor": "Carmen Molina",
+      "autorIniciales": "CM",
+      "fecha": "2026-02-12",
+      "fechaTexto": "12 de febrero, 2026",
+      "minutos": 8,
+      "resumen": "No todos los filamentos son aptos para usar con alimentos. Te explicamos las diferencias entre PLA, PETG y resina, y cuál es la opción más segura y duradera para tu negocio creativo.",
+      "imagen": {
+        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBVgQUDzR-jRo4iPXi9VbJl-950RY5f805rVSkXpE8iIPWm4f-e1RmrRjyKZW6ZhZtEkWNxBU215GzGxYKHwZkTfGsrTVLQW8D1occL-vEtZWHVVQuqQHU_cl75y6PtrPKIT_683iIK1zkXy5fsy1EeBOMFx8nau6PqquOWZjevd2TyIyH0KWcXdSNOSQQcLpq71JYFqudCNFCVXFLcLjip8eu1aH1341HKfyu-YzaZJ-X52MZsRyTgdOAKCaEpQiBRO6Xw6NMqAV6v",
+        "alt": "Moldes y figuras geométricas impresas en 3D en color blanco"
+      },
+      "contenido": [
+        "No todo lo que sale de una impresora 3D es apto para tocar comida, y esa es la primera pregunta que deberías hacerte antes de imprimir un molde: ¿qué material estoy usando y para qué va a servir?",
+        "El <strong>PLA</strong> es el punto de partida más seguro: es un bioplástico derivado del maíz, biodegradable, y existen líneas certificadas para contacto indirecto con alimentos (nunca directo y prolongado, pero sí para moldes de galletas, fondant o chocolate). Es también el material más fácil de imprimir con buen acabado superficial.",
+        "El <strong>PETG</strong> gana cuando necesitas más resistencia a la temperatura y a los golpes — típico en piezas que se lavan seguido o que van al congelador. A cambio, es un poco más difícil de imprimir con la misma nitidez de detalle que el PLA.",
+        "La <strong>resina</strong> es la opción cuando el detalle es lo que manda: relieves finos, texturas complejas, superficies ultra lisas. No es apta para contacto con alimentos, así que se reserva para moldes decorativos, prototipos o piezas que no tocan directamente lo que vas a comer.",
+        "Nuestra recomendación por defecto: si el molde va a tocar masa, fondant o jabón, PLA food-safe. Si necesitas resistencia extra, PETG. Si el detalle es la prioridad y no hay contacto alimentario, resina."
+      ]
+    },
+    {
+      "id": "tecnicas-decorar-galletas-moldes-silicona",
+      "titulo": "5 técnicas para decorar galletas con moldes de silicona que nadie te ha contado",
+      "categoria": "Repostería",
+      "categoriaSlug": "reposteria",
+      "emoji": "🎂",
+      "destacado": false,
+      "autor": "Laura Pérez",
+      "autorIniciales": "LP",
+      "fecha": "2026-02-05",
+      "fechaTexto": "5 de febrero, 2026",
+      "minutos": 5,
+      "resumen": "Desde el uso de aerógrafo hasta transfer de colores, descubre métodos profesionales para conseguir acabados perfectos.",
+      "imagen": {
+        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAInPR71rK6Tqb1Npjyz8_eMOKUSIWOO4yruPUUUMo6i2errmhMcE5x0l6PsL3CXQDq6x1EML1C6dYB_8XZTDtEMnnEZ66-fZdmr2tRkOQJCBMHFo05ac1fA3knvAh0scNuXzq6WYMqWF2_czrYugOiuTtgJ4WNJzu_KUgdvNDceuxPGLygB--ILdAhZloM3WQxcWBNeiHEJa4ZpiSQcNsvTLd3bMQBz74lWRzNqWeX-w4HCpb1_JXdKqFvOFLMQdPoXboMpFL15vsa",
+        "alt": "Cortadores de galletas de colores sobre una superficie de horneado"
+      },
+      "contenido": [
+        "Un buen molde es solo la mitad del trabajo — la otra mitad es cómo terminas la pieza. Aquí van cinco técnicas que usamos todos los días en el estudio.",
+        "<strong>1. Aerógrafo con plantilla.</strong> Usa el mismo molde como plantilla invertida: cubre la galleta ya horneada y aplica color en spray solo donde quieras resaltar el relieve.",
+        "<strong>2. Transfer de color en el molde.</strong> Antes de poner la masa, pinta el fondo del molde con colorante en gel diluido. El color queda impreso en la superficie que toca el molde.",
+        "<strong>3. Doble textura.</strong> Combina un molde de relieve fino con un cortador liso para crear piezas con borde limpio y centro texturizado.",
+        "<strong>4. Glaseado real con plantilla de molde.</strong> Usa el contorno del molde como guía de glaseado real (glasa que se endurece) para lograr bordes perfectamente definidos.",
+        "<strong>5. Sellado en caliente.</strong> Para fondant, calienta ligeramente el sello antes de presionar — el detalle queda mucho más nítido que en frío."
+      ]
+    },
+    {
+      "id": "guia-jabones-artesanales-moldes-precision",
+      "titulo": "Guía completa: jabones artesanales con moldes de alta precisión",
+      "categoria": "Jabones",
+      "categoriaSlug": "jabones",
+      "emoji": "🫧",
+      "destacado": false,
+      "autor": "Mariana Soto",
+      "autorIniciales": "MS",
+      "fecha": "2026-01-28",
+      "fechaTexto": "28 de enero, 2026",
+      "minutos": 7,
+      "resumen": "Aprende a combinar fragancias, colorantes y moldes para crear jabones con detalles increíbles y texturas únicas.",
+      "imagen": {
+        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBkNpN-IYEEnCMBsCIdSkO4q7yqWLzK5Wa_lyNAG7Tj2G-GpbsQifxDyIeDD-hhzYVoa9MwCIQ3mcZd_rhdDAZLOVjdbRHBd27cQjfupFyC_h9f2aFQS3R7PLIGbkoa93mkajSNiCPz0QmaH0RdVKGtJ4vXpMY79EFG_nmWNWLekVGXakHXyQcm9ATMKNvTUkPdg-yyO-hDXDwRf_RDz6DblfrJVZqTtwfK5ndx1Q95LXvO-u8j79SLC099LGBqIYnII8FJ035URXe9",
+        "alt": "Jabones artesanales con diseños florales detallados"
+      },
+      "contenido": [
+        "Un jabón artesanal se distingue en tres cosas: el relieve del molde, la fragancia y el color. Aquí te contamos cómo trabajar las tres juntas.",
+        "<strong>Elige el molde según la técnica.</strong> Los moldes de silicona de platino, como los nuestros, resisten temperaturas más altas y sueltan la pieza sin deformarla — ideales tanto para jabón en frío como para jabón fundido (melt & pour).",
+        "<strong>Fragancia: menos es más.</strong> Para jabón en frío, no superes el 3% del peso total en aceite esencial o fragancia; a mayor concentración, más riesgo de que acelere la saponificación y arruine el relieve del molde.",
+        "<strong>Color en capas.</strong> Vierte el jabón en capas de distinto color dejando reposar unos minutos entre cada una — así consigues efectos degradados sin que se mezclen.",
+        "<strong>El secreto del desmolde limpio:</strong> deja reposar el jabón en el molde al menos 24 horas antes de desmoldar, y nunca fuerces los bordes — empuja siempre desde el centro de la base."
+      ]
+    },
+    {
+      "id": "tendencias-diseno-moldes-2026",
+      "titulo": "10 tendencias en diseño de moldes para 2026 que debes conocer",
+      "categoria": "Inspiración",
+      "categoriaSlug": "inspiracion",
+      "emoji": "💡",
+      "destacado": false,
+      "autor": "Ana García",
+      "autorIniciales": "AG",
+      "fecha": "2026-01-20",
+      "fechaTexto": "20 de enero, 2026",
+      "minutos": 6,
+      "resumen": "Desde minimalismo geométrico hasta formas orgánicas inspiradas en la naturaleza: así serán los moldes este año.",
+      "imagen": {
+        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCSFau7_5rWdohTKj-8iyVdrCCiaq376jb71l387B1BtZV8rVM5Tfh7TM4nUV4Urlw07K1nDew-AR6yQX3A7DEYGwoKiMUvMY27KT9juORwJso7mqbWXCSjktcu6PgBEqXulC6HKmytNDdGZARyHQwrtl5YBiZV_b0SfOvdYw5K0t4XHfAoR9QygIOxubafePmR5DF0QIxtTU5cNB8ExBWJ52Q_Rk21Uj2GtdILnvv9UuJrakqQQDxzf-pHmDaY6vEIHAnnTAzWF20d",
+        "alt": "Molde geométrico minimalista blanco sobre fondo pastel"
+      },
+      "contenido": [
+        "Cada año revisamos qué piden nuestros clientes con más frecuencia para anticipar qué diseñar. Esto es lo que se viene en 2026.",
+        "<strong>Geometría minimalista.</strong> Formas facetadas y líneas rectas siguen ganando terreno frente a los relieves muy ornamentados — se ven modernos y son más fáciles de desmoldar.",
+        "<strong>Formas orgánicas.</strong> En contraste, también crecen los diseños inspirados en hojas, piedras y curvas naturales, especialmente en jabones y velas.",
+        "<strong>Personalización tipográfica.</strong> Sellos y toppers con nombres, iniciales o frases cortas siguen siendo de lo más pedido — por eso ampliamos nuestra línea de piezas personalizables.",
+        "<strong>Micro-detalle.</strong> La impresión 3D de alta resolución permite texturas cada vez más finas (poros, vetas, relieve de tela) que antes solo se lograban a mano."
+      ]
+    },
+    {
+      "id": "del-archivo-digital-al-molde-fisico",
+      "titulo": "Del archivo digital al molde físico: paso a paso para preparar tu diseño",
+      "categoria": "Impresión 3D",
+      "categoriaSlug": "impresion-3d",
+      "emoji": "🖨️",
+      "destacado": false,
+      "autor": "Roberto Díaz",
+      "autorIniciales": "RD",
+      "fecha": "2026-01-15",
+      "fechaTexto": "15 de enero, 2026",
+      "minutos": 10,
+      "resumen": "Todo lo que necesitas saber sobre resolución, soportes y orientación de impresión para obtener el mejor resultado.",
+      "imagen": {
+        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCx7MxVPLJXJoR7EkBxdrC-3neIhWZSdmnJ6NPTIkC-qGQl7uluOXDmEK3sSP-IDvtvdHvyi3QDAK3LMeeZEvYGXDknHmLkwKR8CNGL6PzOsPVpIXhHQBEqT-13y0PqqplK7exBqafAzFQ5eeVDqTFYSt0Gdw1kDQAwMz5DPZYzxRQzPOZ-Gnmnm9d0VpNvLrNut1AGrUDDr73GPwFTs5SUlXzp2UxLV1OFoVkIVNknF2q8l-b1k-8_YFoMa0JetH5VyTTppwpPzyLO",
+        "alt": "Herramientas de escultura en arcilla y moldes sobre una mesa"
+      },
+      "contenido": [
+        "Si nos vas a mandar tu propio diseño para cotizar, esto es lo que revisamos apenas lo recibimos — y lo que te conviene tener listo de antemano.",
+        "<strong>Formato de archivo.</strong> Preferimos STL u OBJ. Si tu diseño viene de un programa CAD, exporta con una resolución de malla alta (poca tolerancia de desviación) para que las curvas no salgan facetadas.",
+        "<strong>Orientación de impresión.</strong> La orientación afecta directamente la resistencia y el acabado. Superficies que van a estar en contacto con alimentos deben quedar hacia arriba, lejos de las líneas de soporte.",
+        "<strong>Soportes.</strong> Cualquier voladizo mayor a 45° necesita soporte durante la impresión. Diseñar pensando en minimizarlos ahorra tiempo de post-procesado y deja mejor acabado.",
+        "<strong>Tolerancias de desmolde.</strong> Si tu pieza va a usarse como molde, deja al menos 1-2° de ángulo de salida en las paredes — sin eso, el desmolde se vuelve un dolor de cabeza.",
+        "Con esto listo, el proceso de revisión técnica es mucho más rápido y tu cotización llega antes."
+      ]
+    },
+    {
+      "id": "desmoldado-perfecto-errores-comunes",
+      "titulo": "Desmoldado perfecto: errores comunes y cómo evitarlos",
+      "categoria": "Tutorial",
+      "categoriaSlug": "tutoriales",
+      "emoji": "✅",
+      "destacado": false,
+      "autor": "Sofía Ramos",
+      "autorIniciales": "SR",
+      "fecha": "2026-01-08",
+      "fechaTexto": "8 de enero, 2026",
+      "minutos": 4,
+      "resumen": "El desmoldado es el momento más emocionante (¡y el más frustrante!). Sigue estos consejos y salva cada pieza.",
+      "imagen": {
+        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBLPrV2SESPM4r9Hgu2bvDqgJ1KP6GS9UeV3lbZUieP4s8Pqp5cL3PwXVtMkdfARTgrBkc5FqXnulDWljprdiiPZj-2W4L2_-3T383Z5afvwg0HeTvOHRrtKhxNhvXWO3W9CFzJSDGSiq0ZHRnNPSOmNEhdO3RrbCOZ4QRP83pdZXPTCbjhEw1-S6vfl5v6uF8cVYty4tbk2fzpsHJz4m04vQUpI6FROhBfICRur2d3kx517y_00Q8X5iBjpz4lbUYm13OSKSQvYZR7",
+        "alt": "Molde de silicona en forma de corazón para repostería"
+      },
+      "contenido": [
+        "Después de horas de trabajo, un mal desmoldado puede arruinar la pieza en segundos. Estos son los errores más comunes que vemos.",
+        "<strong>Error 1: desmoldar demasiado pronto.</strong> Tanto en repostería como en jabón, la pieza necesita reposar el tiempo suficiente para estabilizarse. La prisa es la causa número uno de piezas rotas.",
+        "<strong>Error 2: forzar por los bordes.</strong> Siempre empuja desde el centro de la base del molde hacia afuera, nunca tires de los bordes o el relieve se deforma.",
+        "<strong>Error 3: no usar desmoldante cuando corresponde.</strong> Algunos materiales (como ciertas resinas o fondants muy pegajosos) necesitan una capa mínima de desmoldante o maicena antes de verter.",
+        "<strong>Error 4: temperatura incorrecta.</strong> El frío excesivo vuelve rígida la silicona y complica el desmolde; el calor excesivo puede deformar la pieza. Trabaja siempre a temperatura ambiente."
+      ]
+    },
+    {
+      "id": "negocio-jabones-artesanales-desde-casa",
+      "titulo": "Cómo montar un pequeño negocio de jabones artesanales desde casa",
+      "categoria": "Artesanía",
+      "categoriaSlug": "jabones",
+      "emoji": "🌸",
+      "destacado": false,
+      "autor": "Valeria Torres",
+      "autorIniciales": "VT",
+      "fecha": "2026-01-02",
+      "fechaTexto": "2 de enero, 2026",
+      "minutos": 9,
+      "resumen": "Equipamiento mínimo, costos reales y estrategia de ventas: todo lo que necesitas para empezar con bajo presupuesto.",
+      "imagen": {
+        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAI7vTqhBcl4FMaARVu6srdRJ4znFYlW2ZIqbGC-BzsYgW0ilwnAEd3-rjkH31AEbt--rd4mXnnHdZEwOslzHs0ItQNON_g1ptlRM850-gcrrnbAz3Ata6taCxMtUWddvGmVyGBpQLeXt11IjKjRcyjEMpfx0TLiPpPXhQlQeWQqBFFvbwAN3lE5mhQ277UehvX54JYga_tcYph9spGSWLn4zBbAOQ0-u-wK6WWcMvsDxDz5MAURWbGIrZ62IzTfId3EwL7qO0dyEhl",
+        "alt": "Molde con patrón de flor detallado"
+      },
+      "contenido": [
+        "No necesitas un local ni una gran inversión para empezar a vender jabones artesanales. Esto es lo mínimo indispensable.",
+        "<strong>Equipo básico:</strong> báscula de precisión, termómetro, guantes y gafas de protección, recipientes resistentes a la sosa y, por supuesto, moldes de buena calidad — son lo que define el acabado final de tu producto.",
+        "<strong>Costos reales.</strong> Calcula siempre el costo por barra incluyendo insumos, empaque, tiempo de trabajo y un margen de al menos 40-50% — es común subestimar el tiempo invertido.",
+        "<strong>Empieza con un catálogo corto.</strong> Tres o cuatro diseños bien ejecutados venden mejor que diez a medias. Un molde versátil te permite variar color y fragancia sin invertir en moldes nuevos.",
+        "<strong>Vende donde ya está tu gente.</strong> Redes sociales, mercados locales y encargos por WhatsApp suelen ser más efectivos al inicio que abrir una tienda en línea completa."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://TU-SITIO.netlify.app
+display_url: https://TU-SITIO.netlify.app
+logo_url: /images/logo.png
+
+locale: "es"
+
+collections:
+  - name: "productos"
+    label: "Catálogo"
+    editor:
+      preview: false
+    files:
+      - name: "productos"
+        label: "Productos"
+        file: "data/productos.json"
+        fields:
+          - label: "Productos"
+            name: "productos"
+            widget: "list"
+            summary: "{{nombre}} — {{precio}}"
+            fields:
+              - { label: "ID (slug único, sin espacios)", name: "id", widget: "string", hint: "Se usa en la URL: producto.html?id=este-slug" }
+              - { label: "Nombre", name: "nombre", widget: "string" }
+              - label: "Categoría"
+                name: "categoria"
+                widget: "select"
+                options: ["Herramientas", "Repostería", "Jabones", "Kits Temáticos"]
+              - label: "Etiqueta (badge)"
+                name: "badge"
+                widget: "select"
+                required: false
+                options: ["Nuevo", "Popular", "Personalizable"]
+              - { label: "Precio (MXN)", name: "precio", widget: "number", value_type: "float" }
+              - { label: "Calificación (0 a 5)", name: "rating", widget: "number", value_type: "float", min: 0, max: 5 }
+              - { label: "Número de reseñas", name: "reviews", widget: "number", value_type: "int" }
+              - { label: "Descripción corta (tarjeta)", name: "desc", widget: "text" }
+              - { label: "Descripción larga (página de producto)", name: "descLarga", widget: "text" }
+              - label: "Especificaciones"
+                name: "specs"
+                widget: "list"
+                field: { label: "Especificación", name: "spec", widget: "string" }
+              - label: "Imágenes"
+                name: "imgs"
+                widget: "list"
+                summary: "{{fields.alt}}"
+                fields:
+                  - { label: "Imagen", name: "src", widget: "image" }
+                  - { label: "Texto alternativo (accesibilidad)", name: "alt", widget: "string" }
+
+  - name: "portafolio"
+    label: "Portafolio"
+    editor:
+      preview: false
+    files:
+      - name: "proyectos"
+        label: "Proyectos"
+        file: "data/proyectos.json"
+        fields:
+          - label: "Proyectos"
+            name: "proyectos"
+            widget: "list"
+            summary: "{{titulo}}"
+            fields:
+              - { label: "ID (slug único, sin espacios)", name: "id", widget: "string", hint: "Se usa en el filtro por URL: portafolio.html?categoria=..." }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Categoría (texto visible)", name: "categoria", widget: "string" }
+              - label: "Categoría (para filtros)"
+                name: "categoriaSlug"
+                widget: "select"
+                options: ["diseno-industrial", "cortadores", "toppers", "impresion-3d", "jabones", "corporativo"]
+              - { label: "Emoji de categoría", name: "emoji", widget: "string" }
+              - { label: "Marcar como destacado", name: "destacado", widget: "boolean", default: false, hint: "Muestra la etiqueta ✨ Destacado sobre la imagen" }
+              - { label: "Cliente", name: "cliente", widget: "string" }
+              - { label: "Fecha", name: "fecha", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Fecha (texto para mostrar)", name: "fechaTexto", widget: "string", hint: "Ej. Marzo 2026" }
+              - { label: "Resumen del proyecto", name: "resumen", widget: "text" }
+              - label: "Imagen"
+                name: "imagen"
+                widget: "object"
+                fields:
+                  - { label: "Imagen", name: "src", widget: "image" }
+                  - { label: "Texto alternativo (accesibilidad)", name: "alt", widget: "string" }
+              - label: "Etiquetas"
+                name: "etiquetas"
+                widget: "list"
+                field: { label: "Etiqueta", name: "etiqueta", widget: "string" }
+                hint: "Ej. 150 piezas, Cortador y marcador, Diseño a medida"
+              - label: "Descripción larga (opcional, un párrafo por bloque)"
+                name: "contenido"
+                widget: "list"
+                required: false
+                field: { label: "Párrafo", name: "parrafo", widget: "text" }
+                hint: "Se muestra en la página del proyecto. Puedes usar <strong>texto</strong> para negritas."
+              - label: "Galería (opcional)"
+                name: "galeria"
+                widget: "list"
+                required: false
+                summary: "{{fields.alt}}"
+                fields:
+                  - { label: "Imagen", name: "src", widget: "image" }
+                  - { label: "Texto alternativo (accesibilidad)", name: "alt", widget: "string" }
+
+  - name: "blog"
+    label: "Blog"
+    editor:
+      preview: false
+    files:
+      - name: "posts"
+        label: "Artículos"
+        file: "data/posts.json"
+        fields:
+          - label: "Artículos"
+            name: "posts"
+            widget: "list"
+            summary: "{{titulo}}"
+            fields:
+              - { label: "ID (slug único, sin espacios)", name: "id", widget: "string", hint: "Se usa en la URL: post.html?id=este-slug" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Categoría (texto visible)", name: "categoria", widget: "string" }
+              - label: "Categoría (para filtros)"
+                name: "categoriaSlug"
+                widget: "select"
+                options: ["impresion-3d", "reposteria", "jabones", "tutoriales", "inspiracion"]
+              - { label: "Emoji de categoría", name: "emoji", widget: "string" }
+              - { label: "Marcar como destacado", name: "destacado", widget: "boolean", default: false, hint: "Solo debe haber un artículo destacado a la vez" }
+              - { label: "Autor", name: "autor", widget: "string" }
+              - { label: "Iniciales del autor", name: "autorIniciales", widget: "string" }
+              - { label: "Fecha", name: "fecha", widget: "date", format: "YYYY-MM-DD" }
+              - { label: "Fecha (texto para mostrar)", name: "fechaTexto", widget: "string", hint: "Ej. 12 de febrero, 2026" }
+              - { label: "Minutos de lectura", name: "minutos", widget: "number", value_type: "int" }
+              - { label: "Resumen (tarjeta y vista previa)", name: "resumen", widget: "text" }
+              - label: "Imagen principal"
+                name: "imagen"
+                widget: "object"
+                fields:
+                  - { label: "Imagen", name: "src", widget: "image" }
+                  - { label: "Texto alternativo (accesibilidad)", name: "alt", widget: "string" }
+              - label: "Contenido (un párrafo por bloque)"
+                name: "contenido"
+                widget: "list"
+                field: { label: "Párrafo", name: "parrafo", widget: "text", hint: "Puedes usar <strong>texto</strong> para negritas" }

@@ -1,0 +1,166 @@
+{
+  "productos": [
+    {
+      "id": "sello-personalizable",
+      "nombre": "Sello Personalizable Nombre",
+      "categoria": "Herramientas",
+      "badge": "Personalizable",
+      "precio": 450,
+      "rating": 5,
+      "reviews": 42,
+      "desc": "Personaliza tus creaciones con tu nombre o logo. Envío en 48 hrs.",
+      "descLarga": "Lleva tu marca a cada creación. Grabamos tu nombre o logotipo en un sello de fondant listo para presionar sobre galletas, cupcakes o tabletas de chocolate. Ideal para reposteros que quieren un sello distintivo en cada pedido.",
+      "specs": [
+        "Material: PLA food-safe",
+        "Área de sellado: 5 cm de diámetro",
+        "Personalización: nombre o logo",
+        "Producción en 48 hrs"
+      ],
+      "imgs": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDFPWCc0Tj78w0NYuoXWdzEUb-4pK1ocpz_7qwxQdn9B8rBajXkhnLpWWDivfegcoHXFQDA4aQQFkIcX-q2xGuPdm2F7NuAdENdvLKGDJV9TE6awUKITN6Frsrdfex9HjbI-_CpBAigHmxrSVmzL8kHRtRwkUQsoJv5JZPnbtgIUFN2GqDX1YaRBREzj8xWfw76Ve7m2NolgvpX7aqpALRW4CJdnYRZOj9-ROEfNwIxE3B9qfb1y3VpMk8Yb7dUA3sXf_pm6MpQi-7R",
+          "alt": "Sello redondo para fondant con nombre personalizado grabado, en plástico rosa"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCu5WW58_tWePR8m5_6U0CL37MUIJCyKDUaue9AuMrz00H_EXiHjmXlE8Y8oIPJHyJ5CO4O9d7ySw4AJNoAZ8HtvSsC6BQpXh0MRZG7DB40KQpDk36JpuOWcRWTARoGgV8JEIq4_2hFZR0lVf8fu67QzcSziyE8AuZFPolWZXW2L95kh4UInZrwgRW3QNe-0batPQOlT7Vercx-0krrRs0OrLtwzQa0gu0w-vstMtrXQhRFk2j36SEBeuAAhVYuDe7C3sUjSQTiGdP6",
+          "alt": "Topper de fondant blanco para cupcake con nombre grabado en relieve"
+        }
+      ]
+    },
+    {
+      "id": "molde-jabon-floral",
+      "nombre": "Molde Jabón Floral Vintage",
+      "categoria": "Jabones",
+      "badge": "Popular",
+      "precio": 320,
+      "rating": 5,
+      "reviews": 156,
+      "desc": "Molde de silicona flexible de alta durabilidad para jabones artesanales.",
+      "descLarga": "Un clásico atemporal. El relieve floral vintage se transfiere con nitidez a jabones en frío, barras de champú sólido o piezas de resina. La silicona de grado platino garantiza un desmolde impecable durante cientos de usos.",
+      "specs": [
+        "Material: Silicona de platino",
+        "Cavidad: 7 × 3 cm",
+        "Resistente hasta 220 °C",
+        "Apto para jabón, resina y velas"
+      ],
+      "imgs": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDdi_MFJ4-EdkKmG2kp8jaxuLDkmMqbqmaSqLErjvA2v3_IGYMQMLZA1-i1---hXGzg_HO_vyfsJ6rd6b8RDMcYVNboKtn1x2bZZwA5BjIlhGYK45vIuP6hyIiv3v10kAkxpbSAme2F8NWUaFmQqpa4DxWd4YdypCNyr5FFJJE0iBs1QzEJvYDM6SL_Ll5j0iBYsYykAdL9qx02boYeQR23z5KjnHx7HG1LPuf-IwOjHDVfUWL6PfuPtGLXNuGcW-WyxohO2aLt3hho",
+          "alt": "Molde de silicona magenta para jabones con patrones florales detallados"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCQ6I4BJhYk9lNKmwVTRLVZMBYrcaq-1wLky3CQdcYC6sQTephujSPVQvRSQOvNEDm2aJ1C1AO1ry0-whhLwWlW8OG2Qd6x6Q9MRyLGRH9mPSJ0fXACNRrm9X-X8f7wCmrdLp-wtBIRGfLK3ddN5rtYdRTzmAzLT-C6rQ1FtkRgLO1KKl_2K4UUu-u2OITYXfJ7EAcfo9k5Wa767tz_PJlraekATtWb90paEkwOxIMWOygDoPjBuT1L_Z0MXAmD_6XeLjfiXTwm8nuj",
+          "alt": "Jabón artesanal de lavanda con relieve floral detallado"
+        }
+      ]
+    },
+    {
+      "id": "cortador-dinosaurio",
+      "nombre": "Cortador Dinosaurio T-Rex",
+      "categoria": "Repostería",
+      "badge": "Nuevo",
+      "precio": 150,
+      "rating": 4.5,
+      "reviews": 24,
+      "desc": "Ideal para galletas y fondant. Material PLA biodegradable y seguro para alimentos.",
+      "descLarga": "Convierte cualquier bandeja de galletas en un pequeño parque jurásico. Este cortador imprime un T-Rex de contorno limpio y, gracias a su sello de detalle interior, marca la textura de la piel y el ojo en un solo movimiento. Perfecto para fiestas infantiles y pedidos temáticos.",
+      "specs": [
+        "Material: PLA biodegradable (food-safe)",
+        "Medidas: 8 × 6 cm",
+        "Altura de corte: 1.5 cm",
+        "Incluye sello de detalle interior"
+      ],
+      "imgs": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAIEc_mCcZcOth1M_IgoikxbtUHzJtv9n3w8ETQB_EkJNyhUgA2yvYJnUOEOO86NS4syqyxk7caCN7n0nXZKLpbyHUrVWnkCkIDVaYRV_bXUWYCEDhyZS6NskXMWie1hYtZQGrIbXsKMteA6d8jKi4fHlhgTv9k6MmhZp3JxJnihMcsaom1bHeWgNRJ75S-gi2f-AMzy-7QxvqI5e4AChK1eFB3bhD1P8rGDLf5w9KiMLnwrZpq5Zi8UL5x2KFRfY9mdZbVP1IKbeHb",
+          "alt": "Cortador de galletas impreso en 3D en forma de dinosaurio, color magenta"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCKDUCyVR9P0Czjf_8PMPT7wrra5y6cEjsHT_d7loiesCh-1WjO5OQDOZ0UAKd5S1p_nsleOUAsdVpBoz60T5F0hyFb36JBF2we01zldhyFJtFxluXPYkh1YDKxnXcezPFNPszOr1CJYWgEn5Ydi1YyJ80Ro8NnQ555Im6HJDf3kSilXAWPMFLXLOOgmw4umZ8n89aHSu7BpJA7pkhKhJyslPXGU77zP3l-zK-NLJLWsUcGHePcOIXO54_-uK_k5VL02ZpOG7ucxQyy",
+          "alt": "Galleta con forma de dinosaurio recién horneada y decorada con glaseado"
+        }
+      ]
+    },
+    {
+      "id": "cortador-estrella",
+      "nombre": "Cortador Estrella Fugaz",
+      "categoria": "Repostería",
+      "badge": "Nuevo",
+      "precio": 130,
+      "rating": 4,
+      "reviews": 5,
+      "desc": "Diseño exclusivo para fiestas infantiles y navidad.",
+      "descLarga": "Una estrella fugaz con cola incluida para darle movimiento a tus galletas. Diseño exclusivo pensado para fiestas infantiles, posadas y decoración navideña.",
+      "specs": [
+        "Material: PLA food-safe",
+        "Medidas: 7 × 7 cm",
+        "Altura de corte: 1.5 cm",
+        "Diseño exclusivo LCDM"
+      ],
+      "imgs": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAWb5tCM_u-c9WAFWYQD8g37qWbzvAhv7g8veiYAODmP01Iz3GuHsUN14oeEvME-ovuROpwdH6ttVJwVaYa7rzqNwjYzmVQ_zaYcyeik5e2ujKDlR-0L7aTRtWSSth7-_jk5gvFvga5wNwVzrfC6f48pNzzwpItz8m1sUDtsVZU1RuPU4sduZrEhzPZIA7I2xLkl_6a26yKq03cz7QWElnVQsJCDPYh6ZU4a7wL5kkqXZmLEvsiXdJoAcj313l1X_XUXw9A6XTh5kRn",
+          "alt": "Set de cortadores de galletas en forma de estrella, impresos en 3D en plástico magenta"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuB_wOaZdTB2qzdECjfnNN0huxutDCE9XV_DcwPBXdbyn-y50c5gzJgBxchH3rkqM9myEq8HMBXec9fU_ES7a6g8Ar907VWd2VLzZqkg5YrW--4dNHM66atzrO3nWi-mJq38cO38BeCYchABlXqxJDweDKo591diTOME-sBdED6SN-4QXzSiUkq58I-3dpfncr4M8QH4nyXENN04CDv8WDG0G-QscERmDFQKGWvA5cP7hyhCau1fSjR8ymcZFRgtKBb5qoX_v9TWp9RY",
+          "alt": "Galletas de jengibre en forma de estrella decoradas con glaseado blanco"
+        }
+      ]
+    },
+    {
+      "id": "set-corazon-geo",
+      "nombre": "Set Cortadores Corazón Geo",
+      "categoria": "Repostería",
+      "badge": null,
+      "precio": 210,
+      "rating": 4,
+      "reviews": 8,
+      "desc": "Set de 3 tamaños. Perfecto para San Valentín y decoraciones modernas.",
+      "descLarga": "Tres corazones facetados para componer desde una galleta individual hasta un centro de mesa. El diseño geométrico da un acabado moderno que destaca en San Valentín, bodas y aniversarios.",
+      "specs": [
+        "Material: PLA food-safe",
+        "Incluye 3 tamaños: 4, 6 y 8 cm",
+        "Bordes reforzados",
+        "Diseño geométrico facetado"
+      ],
+      "imgs": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCD4DbwsOMrvSip5Qhzlj3li63qllMk9wuBSTwCV4REY-aGpd6d936a5daVZ6yYPC-HdrzMscP9yDX89hfm9irUvw11DuH7LqqtL1qRnu5Pl_SS3u6TZcKDR70UsSl73AfwSg3SQrkVDgbrFUdrduspK2fwvhz7y3RxiJckO4OSjZNRQBZR6ijZtRVHqBNaxBLsrWayvcHvgCcAp3w-9TviMO7rXkU5p1HfHoAWy1auBlQ6RkX4IEht1JmRDAzctyinGityMFNAvsSR",
+          "alt": "Cortador de galletas geométrico en forma de corazón, impreso en 3D en rosa brillante"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAGC7imqL15QV63rOs2iIS_gyuu65yYCun9UluYRZG3dqiHe9TiBR0k0oZ6zGCa5MXV5zt8xc-H8gJUEac_wsazDz3zREG1g5UezHj6VZfWFItC_WDOdbtrIhQdRrOfZMt6uXZg35nqBs0nWmzCJUpW-6J9pNgdpw7wG3chNafpwRhmzu3YThvhLsqeDoJDMPH4Sg9EUerD-JN3hMNEQRd16e2Vw3RJsiwNsCx00VynrFsd75Pg8eESfzna_1jrpeD722ckYX3Hn5Jx",
+          "alt": "Galletas en forma de corazón con glaseado rosa sobre una rejilla"
+        }
+      ]
+    },
+    {
+      "id": "molde-jabon-minimalista",
+      "nombre": "Molde Jabón Minimalista",
+      "categoria": "Jabones",
+      "badge": null,
+      "precio": 280,
+      "rating": 5,
+      "reviews": 89,
+      "desc": "Líneas limpias y modernas. Capacidad 100 g aprox.",
+      "descLarga": "Menos es más. Este molde de líneas puras produce barras de jabón con estética de spa contemporáneo. Su capacidad de ~100 g es ideal para venta al detalle y kits de regalo.",
+      "specs": [
+        "Material: Silicona de platino",
+        "Cavidad: 8 × 5.5 cm (≈ 100 g)",
+        "Líneas rectas y esquinas limpias",
+        "Apto para jabón, resina y velas"
+      ],
+      "imgs": [
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCmAqPmML2dLNbB9igiI2JdZQgrMv7a12xmPTbO3hejABYK7SbT-3H84Jezml7TXixszZU355PzTLcLcWWPLDnf47oKrRIvkEYo1qZ_s7XcrB2LZzMbrMNkXKdhm-2GSVNHUoEumZj4tFoTWB2qEd-R1JJ3d3AFcE8ZWlUOYL6UajS-A40UHoSJyNCIjvLy3IWlNj81OJNqwfSl5BT5JRQVOJdyDTKYvcrsvWgNMfFQsQkmH1yslH5jJLboNNvMt8Mt7RCP5HSBARIk",
+          "alt": "Molde de silicona rosa oscuro con forma abstracta minimalista para jabones"
+        },
+        {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBIMTGV7HkwEDuPN-UDKu2USdC7X-e68T3KD64ag3tMa0LJ9MbzN3eVLWZ17A2LF4_w3dWMqtfuJbBJ6ZCT0-oF1kaMBMOMgMp2NOtGANKGfFuirdbaiTx9NY0qk34R7DUpbT3Xrg2ltautBO4lxQQ3y7bTa4OJW9hP2HEWRAtjwlt488ZN00nXAdtk2iA9IDGEuf4784OxfOfXjGGIbnrOqBl8c05Lm4eFmwEgjdMD415eGkRvHoMQYfUqDpRhvs-gvsi19PxZrbq6",
+          "alt": "Jabón artesanal minimalista moderno sobre una superficie de piedra"
+        }
+      ]
+    }
+  ]
+}

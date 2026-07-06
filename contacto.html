@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contacto - La Casita del Molde</title>
+    <meta
+      name="description"
+      content="Escríbenos para cotizar un diseño personalizado, resolver dudas sobre envíos y materiales, o simplemente saludar. Respondemos el mismo día hábil."
+    />
+    <meta name="theme-color" content="#faf8f6" />
+    <script>
+      // Aplica el tema antes de pintar para evitar parpadeo.
+      (function () {
+        function aplicarTema(oscuro) {
+          document.documentElement.classList.toggle("dark", oscuro);
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", oscuro ? "#141016" : "#faf8f6");
+        }
+        window.aplicarTema = aplicarTema;
+        var guardado = null;
+        try {
+          guardado = localStorage.getItem("tema");
+        } catch (e) {}
+        aplicarTema(
+          guardado
+            ? guardado === "oscuro"
+            : window.matchMedia("(prefers-color-scheme: dark)").matches
+        );
+        try {
+          window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .addEventListener("change", function (e) {
+              var g = null;
+              try {
+                g = localStorage.getItem("tema");
+              } catch (err) {}
+              if (!g) aplicarTema(e.matches);
+            });
+        } catch (e) {}
+      })();
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#ff0099",
+              "primary-dark": "#cc007a",
+              ink: "#1b1520",
+              paper: "#faf8f6",
+              "paper-dark": "#141016",
+              surface: "#ffffff",
+              "surface-dark": "#1f1a25",
+              "text-main": "#231d29",
+              "text-light": "#6f6875",
+            },
+            fontFamily: {
+              display: ["Fraunces", "Georgia", "serif"],
+              body: ["Fraunces", "Georgia", "serif"],
+              sans: ["Fraunces", "Georgia", "serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        color-scheme: light;
+      }
+
+      html.dark {
+        color-scheme: dark;
+      }
+
+      body {
+        font-family: "Fraunces", Georgia, serif;
+        font-optical-sizing: auto;
+      }
+
+      .font-display {
+        font-optical-sizing: auto;
+      }
+
+      h1,
+      h2,
+      h3 {
+        text-wrap: balance;
+      }
+
+      .tabular {
+        font-variant-numeric: tabular-nums;
+      }
+
+      [id] {
+        scroll-margin-top: 96px;
+      }
+
+      ::selection {
+        background-color: #ff0099;
+        color: #ffffff;
+      }
+
+      :focus-visible {
+        outline: 2px solid #ff0099;
+        outline-offset: 2px;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      #faq details.faq-abierto {
+        border-color: rgba(255, 0, 153, 0.3) !important;
+      }
+
+      #faq details.faq-abierto summary .material-symbols-outlined {
+        transform: rotate(180deg) !important;
+      }
+
+      .sello-anillo {
+        animation: girar-sello 22s linear infinite;
+      }
+
+      @keyframes girar-sello {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      .textura-grano::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.06;
+        mix-blend-mode: overlay;
+        background-repeat: repeat;
+        background-size: 150px 150px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-paper text-text-main dark:bg-paper-dark dark:text-stone-200 antialiased"
+  >
+    <a
+      href="#contenido"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-ink focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white"
+      >Saltar al contenido</a
+    >
+    <div
+      class="relative flex min-h-screen w-full flex-col overflow-x-hidden pt-[72px]"
+    >
+      <header
+        class="fixed top-0 z-50 w-full bg-paper/80 dark:bg-paper-dark/80 backdrop-blur-md border-b border-black/5 dark:border-white/10"
+      >
+        <div
+          class="px-4 lg:px-10 flex items-center justify-between py-4 max-w-[1280px] mx-auto w-full"
+        >
+          <a href="index.html" class="flex items-center gap-3 rounded-lg">
+            <img
+              src="images/logo.png"
+              alt=""
+              width="150"
+              height="150"
+              class="h-10 w-10 object-contain"
+            />
+            <span
+              class="font-display text-xl font-semibold tracking-tight text-ink dark:text-white"
+              >La Casita del Molde</span
+            >
+          </a>
+          <nav class="hidden lg:flex items-center gap-9" aria-label="Principal">
+            <a
+              class="text-sm font-medium text-text-light dark:text-stone-400 hover:text-ink dark:hover:text-white transition-colors"
+              href="index.html"
+              >Tienda</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-stone-400 hover:text-ink dark:hover:text-white transition-colors"
+              href="catalogo.html"
+              >Catálogo</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-stone-400 hover:text-ink dark:hover:text-white transition-colors"
+              href="portafolio.html"
+              >Portafolio</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-stone-400 hover:text-ink dark:hover:text-white transition-colors"
+              href="nosotros.html"
+              >Sobre Nosotros</a
+            >
+            <a
+              class="text-sm font-medium text-text-light dark:text-stone-400 hover:text-ink dark:hover:text-white transition-colors"
+              href="blog.html"
+              >Blog</a
+            >
+            <a
+              class="text-sm font-medium text-ink dark:text-white relative after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:bg-primary"
+              href="contacto.html"
+              aria-current="page"
+              >Contacto</a
+            >
+          </nav>
+          <div class="flex items-center gap-4">
+            <button
+              id="boton-tema"
+              type="button"
+              aria-label="Cambiar tema"
+              class="p-2 rounded-lg text-ink dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-[20px] dark:hidden"
+                aria-hidden="true"
+                >dark_mode</span
+              >
+              <span
+                class="material-symbols-outlined text-[20px] hidden dark:inline"
+                aria-hidden="true"
+                >light_mode</span
+              >
+            </button>
+            <a
+              href="index.html#cotiza"
+              class="hidden sm:inline-flex items-center justify-center rounded-full h-10 px-5 bg-ink text-white dark:bg-white dark:text-ink text-sm font-semibold hover:bg-ink/90 dark:hover:bg-white/90 transition-colors"
+            >
+              <span
+                class="mr-2 material-symbols-outlined text-[18px]"
+                aria-hidden="true"
+                >lightbulb</span
+              >
+              <span>Cotizar mi idea</span>
+            </a>
+            <button
+              id="boton-menu"
+              type="button"
+              aria-label="Abrir menú"
+              aria-expanded="false"
+              aria-controls="menu-movil"
+              class="lg:hidden p-2 text-ink dark:text-white rounded-lg"
+            >
+              <span class="material-symbols-outlined" aria-hidden="true"
+                >menu</span
+              >
+            </button>
+          </div>
+        </div>
+        <div
+          id="menu-movil"
+          hidden
+          class="lg:hidden border-t border-black/5 dark:border-white/10 bg-paper dark:bg-paper-dark px-4 pb-6 pt-2"
+        >
+          <nav class="flex flex-col" aria-label="Menú móvil">
+            <a
+              class="py-3 text-base font-medium text-text-light dark:text-stone-300 border-b border-black/5 dark:border-white/10 hover:text-ink dark:hover:text-white"
+              href="index.html"
+              >Tienda</a
+            >
+            <a
+              class="py-3 text-base font-medium text-text-light dark:text-stone-300 border-b border-black/5 dark:border-white/10 hover:text-ink dark:hover:text-white"
+              href="catalogo.html"
+              >Catálogo</a
+            >
+            <a
+              class="py-3 text-base font-medium text-text-light dark:text-stone-300 border-b border-black/5 dark:border-white/10 hover:text-ink dark:hover:text-white"
+              href="portafolio.html"
+              >Portafolio</a
+            >
+            <a
+              class="py-3 text-base font-medium text-text-light dark:text-stone-300 border-b border-black/5 dark:border-white/10 hover:text-ink dark:hover:text-white"
+              href="nosotros.html"
+              >Sobre Nosotros</a
+            >
+            <a
+              class="py-3 text-base font-medium text-text-light dark:text-stone-300 border-b border-black/5 dark:border-white/10 hover:text-ink dark:hover:text-white"
+              href="blog.html"
+              >Blog</a
+            >
+            <a
+              class="py-3 text-base font-semibold text-ink dark:text-white"
+              href="contacto.html"
+              aria-current="page"
+              >Contacto</a
+            >
+            <a
+              href="index.html#cotiza"
+              class="mt-4 inline-flex items-center justify-center rounded-full h-11 px-6 bg-ink text-white dark:bg-white dark:text-ink text-sm font-semibold"
+            >
+              Cotizar mi idea
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <main id="contenido" class="flex-1 flex flex-col items-center w-full">
+        <!-- Hero -->
+        <section class="w-full max-w-[1280px] px-4 lg:px-10 pt-10 lg:pt-16 pb-14 lg:pb-20">
+          <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+            <div class="flex flex-col gap-7">
+              <p
+                class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-dark dark:text-primary"
+              >
+                Contacto
+              </p>
+              <h1
+                class="font-display text-5xl lg:text-6xl font-semibold leading-[1.05] tracking-tight text-ink dark:text-white"
+              >
+                Cuéntanos tu idea, la hacemos
+                <span class="relative inline-block">
+                  <span class="italic text-primary-dark dark:text-primary">molde</span>
+                  <svg
+                    class="absolute left-0 -bottom-1 w-full h-3 text-primary-dark dark:text-primary"
+                    viewBox="0 0 100 12"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2,7 Q15,2 30,6 T60,5 T98,7"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>.
+              </h1>
+              <p class="text-lg text-text-light dark:text-stone-400 leading-relaxed max-w-[46ch]">
+                ¿Tienes una pregunta rápida, quieres cotizar un diseño
+                personalizado o simplemente saludar? Escríbenos — normalmente
+                respondemos el mismo día hábil.
+              </p>
+              <button
+                type="button"
+                id="abrir-chat-contacto"
+                class="inline-flex items-center gap-2 self-start rounded-full h-11 px-6 border border-ink/15 dark:border-white/20 text-ink dark:text-white text-sm font-medium hover:border-ink/40 dark:hover:border-white/40 transition-colors"
+              >
+                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">chat</span>
+                Prefiero preguntarle al asistente
+              </button>
+            </div>
+            <div class="relative">
+              <div
+                class="absolute -inset-3 sm:-inset-5 -z-10 rounded-[2.25rem] bg-primary/10 dark:bg-primary/15 -rotate-1"
+                aria-hidden="true"
+              ></div>
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx7MxVPLJXJoR7EkBxdrC-3neIhWZSdmnJ6NPTIkC-qGQl7uluOXDmEK3sSP-IDvtvdHvyi3QDAK3LMeeZEvYGXDknHmLkwKR8CNGL6PzOsPVpIXhHQBEqT-13y0PqqplK7exBqafAzFQ5eeVDqTFYSt0Gdw1kDQAwMz5DPZYzxRQzPOZ-Gnmnm9d0VpNvLrNut1AGrUDDr73GPwFTs5SUlXzp2UxLV1OFoVkIVNknF2q8l-b1k-8_YFoMa0JetH5VyTTppwpPzyLO"
+                alt="Herramientas de escultura y moldes sobre una mesa de trabajo"
+                width="1280"
+                height="960"
+                fetchpriority="high"
+                class="w-full aspect-[4/3] object-cover rounded-[1.75rem] shadow-2xl shadow-black/10"
+              />
+              <div
+                class="absolute -top-5 -right-5 lg:-top-7 lg:-right-7 size-24 lg:size-28 rounded-full bg-ink dark:bg-white text-white dark:text-ink shadow-xl flex items-center justify-center"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 200 200" class="sello-anillo absolute inset-0 w-full h-full">
+                  <defs>
+                    <path
+                      id="circulo-sello-contacto"
+                      d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"
+                    />
+                  </defs>
+                  <text font-size="11.5" font-weight="600" letter-spacing="2.5" fill="currentColor">
+                    <textPath href="#circulo-sello-contacto" startOffset="0%">
+                      LA CASITA DEL MOLDE • RESPUESTA RÁPIDA •
+                    </textPath>
+                  </text>
+                </svg>
+                <span class="material-symbols-outlined text-2xl relative">mail</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Info + Formulario -->
+        <section class="w-full max-w-[1280px] px-4 lg:px-10 pb-16 lg:pb-24">
+          <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-14">
+            <!-- Información de contacto -->
+            <div class="lg:col-span-2 flex flex-col gap-6">
+              <h2 class="font-display text-2xl font-semibold text-ink dark:text-white">
+                Información de contacto
+              </h2>
+              <ul class="flex flex-col gap-4">
+                <li class="flex items-start gap-4 rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 p-5">
+                  <span class="size-10 flex-shrink-0 rounded-full bg-primary/10 flex items-center justify-center text-primary-dark dark:text-primary">
+                    <span class="material-symbols-outlined text-[20px]" aria-hidden="true">mail</span>
+                  </span>
+                  <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.12em] text-text-light dark:text-stone-500">Correo</p>
+                    <a href="mailto:hola@lacasitadelmolde.com" class="text-ink dark:text-white font-medium hover:text-primary-dark dark:hover:text-primary transition-colors">hola@lacasitadelmolde.com</a>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4 rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 p-5">
+                  <span class="size-10 flex-shrink-0 rounded-full bg-primary/10 flex items-center justify-center text-primary-dark dark:text-primary">
+                    <span class="material-symbols-outlined text-[20px]" aria-hidden="true">call</span>
+                  </span>
+                  <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.12em] text-text-light dark:text-stone-500">Teléfono / WhatsApp</p>
+                    <a href="tel:+525512345678" class="text-ink dark:text-white font-medium hover:text-primary-dark dark:hover:text-primary transition-colors tabular">+52 55 1234 5678</a>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4 rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 p-5">
+                  <span class="size-10 flex-shrink-0 rounded-full bg-primary/10 flex items-center justify-center text-primary-dark dark:text-primary">
+                    <span class="material-symbols-outlined text-[20px]" aria-hidden="true">schedule</span>
+                  </span>
+                  <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.12em] text-text-light dark:text-stone-500">Horario de atención</p>
+                    <p class="text-ink dark:text-white font-medium">Lunes a viernes, 9:00–18:00</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4 rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 p-5">
+                  <span class="size-10 flex-shrink-0 rounded-full bg-primary/10 flex items-center justify-center text-primary-dark dark:text-primary">
+                    <span class="material-symbols-outlined text-[20px]" aria-hidden="true">local_shipping</span>
+                  </span>
+                  <div>
+                    <p class="text-xs font-semibold uppercase tracking-[0.12em] text-text-light dark:text-stone-500">Envíos</p>
+                    <p class="text-ink dark:text-white font-medium">A todo el país · despacho en 24–48 hrs</p>
+                  </div>
+                </li>
+              </ul>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.12em] text-text-light dark:text-stone-500 mb-3">Síguenos</p>
+                <div class="flex gap-3">
+                  <a class="text-text-light dark:text-stone-400 hover:text-primary-dark dark:hover:text-primary transition-colors rounded-full" href="#" aria-label="Facebook de La Casita del Molde">
+                    <svg class="size-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6h1.4V4.9c-.3 0-1.3-.1-2.5-.1-2.4 0-4 1.5-4 4.1V11H7.5v3H10v7h3.5Z" /></svg>
+                  </a>
+                  <a class="text-text-light dark:text-stone-400 hover:text-primary-dark dark:hover:text-primary transition-colors rounded-full" href="#" aria-label="Instagram de La Casita del Molde">
+                    <svg class="size-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm10 2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm-5 3.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5Zm0 2A1.5 1.5 0 1 0 13.5 12 1.5 1.5 0 0 0 12 10.5Zm5.25-3.75a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z" /></svg>
+                  </a>
+                  <a class="text-text-light dark:text-stone-400 hover:text-primary-dark dark:hover:text-primary transition-colors rounded-full" href="#" aria-label="X (Twitter) de La Casita del Molde">
+                    <svg class="size-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2 3h2.9l-6.4 7.3L21.3 21h-5.9l-4.6-6-5.3 6H2.6l6.9-7.8L2.1 3H8l4.2 5.5L17.2 3Zm-1 16.2h1.6L7.1 4.7H5.4l10.8 14.5Z" /></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Formulario -->
+            <div class="lg:col-span-3">
+              <div class="rounded-3xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 p-6 sm:p-8 lg:p-10">
+                <h2 class="font-display text-2xl font-semibold text-ink dark:text-white mb-1">
+                  Envíanos un mensaje
+                </h2>
+                <p class="text-sm text-text-light dark:text-stone-400 mb-6">
+                  Completa el formulario y te responderemos a tu correo.
+                </p>
+                <form id="form-contacto" class="flex flex-col gap-5" novalidate>
+                  <div class="grid sm:grid-cols-2 gap-5">
+                    <div class="flex flex-col gap-2">
+                      <label for="nombre" class="text-sm font-medium text-ink dark:text-white">Nombre</label>
+                      <input
+                        id="nombre"
+                        name="nombre"
+                        type="text"
+                        required
+                        autocomplete="name"
+                        placeholder="Tu nombre completo"
+                        class="rounded-lg border border-black/10 dark:border-white/15 bg-paper dark:bg-paper-dark text-ink dark:text-white placeholder-text-light dark:placeholder-stone-500 focus:ring-2 focus:ring-primary focus:border-primary h-12 px-4"
+                      />
+                      <p class="text-xs text-primary-dark dark:text-primary hidden" data-error-de="nombre">Escribe tu nombre.</p>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="correo" class="text-sm font-medium text-ink dark:text-white">Correo electrónico</label>
+                      <input
+                        id="correo"
+                        name="correo"
+                        type="email"
+                        required
+                        autocomplete="email"
+                        inputmode="email"
+                        spellcheck="false"
+                        placeholder="tu@correo.com"
+                        class="rounded-lg border border-black/10 dark:border-white/15 bg-paper dark:bg-paper-dark text-ink dark:text-white placeholder-text-light dark:placeholder-stone-500 focus:ring-2 focus:ring-primary focus:border-primary h-12 px-4"
+                      />
+                      <p class="text-xs text-primary-dark dark:text-primary hidden" data-error-de="correo">Escribe un correo válido.</p>
+                    </div>
+                  </div>
+                  <div class="grid sm:grid-cols-2 gap-5">
+                    <div class="flex flex-col gap-2">
+                      <label for="telefono" class="text-sm font-medium text-ink dark:text-white">Teléfono <span class="text-text-light dark:text-stone-500 font-normal">(opcional)</span></label>
+                      <input
+                        id="telefono"
+                        name="telefono"
+                        type="tel"
+                        autocomplete="tel"
+                        inputmode="tel"
+                        placeholder="+52 55 1234 5678"
+                        class="rounded-lg border border-black/10 dark:border-white/15 bg-paper dark:bg-paper-dark text-ink dark:text-white placeholder-text-light dark:placeholder-stone-500 focus:ring-2 focus:ring-primary focus:border-primary h-12 px-4"
+                      />
+                    </div>
+                    <div class="flex flex-col gap-2">
+                      <label for="asunto" class="text-sm font-medium text-ink dark:text-white">Asunto</label>
+                      <select
+                        id="asunto"
+                        name="asunto"
+                        required
+                        class="rounded-lg border border-black/10 dark:border-white/15 bg-paper dark:bg-paper-dark text-ink dark:text-white focus:ring-2 focus:ring-primary focus:border-primary h-12 px-4"
+                      >
+                        <option value="">Selecciona una opción…</option>
+                        <option>Cotización personalizada</option>
+                        <option>Consulta de producto</option>
+                        <option>Envíos y devoluciones</option>
+                        <option>Trabaja con nosotros</option>
+                        <option>Otro</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-2">
+                    <label for="mensaje" class="text-sm font-medium text-ink dark:text-white">Mensaje</label>
+                    <textarea
+                      id="mensaje"
+                      name="mensaje"
+                      required
+                      rows="5"
+                      placeholder="Cuéntanos en qué podemos ayudarte…"
+                      class="rounded-lg border border-black/10 dark:border-white/15 bg-paper dark:bg-paper-dark text-ink dark:text-white placeholder-text-light dark:placeholder-stone-500 focus:ring-2 focus:ring-primary focus:border-primary px-4 py-3 resize-y"
+                    ></textarea>
+                    <p class="text-xs text-primary-dark dark:text-primary hidden" data-error-de="mensaje">Cuéntanos brevemente qué necesitas.</p>
+                  </div>
+                  <button
+                    type="submit"
+                    class="inline-flex items-center justify-center gap-2 self-start rounded-full h-12 px-8 bg-ink text-white dark:bg-white dark:text-ink text-sm font-semibold hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors"
+                  >
+                    <span class="material-symbols-outlined text-[20px]" aria-hidden="true">send</span>
+                    Enviar mensaje
+                  </button>
+                  <p id="mensaje-contacto" aria-live="polite" class="text-sm font-semibold text-primary-dark dark:text-primary min-h-[1.25rem]"></p>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Preguntas frecuentes -->
+        <section id="faq" class="w-full max-w-[1280px] px-4 lg:px-10 pb-20 scroll-mt-24">
+          <div class="text-center max-w-2xl mx-auto mb-10">
+            <h2 class="font-display text-3xl font-semibold text-ink dark:text-white mb-3">
+              Preguntas frecuentes
+            </h2>
+            <p class="text-text-light dark:text-stone-400">
+              Las dudas más comunes, resueltas al instante.
+            </p>
+          </div>
+          <div class="max-w-3xl mx-auto flex flex-col gap-3 mb-10">
+            <details class="rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 transition-colors">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-display font-semibold text-ink dark:text-white">
+                ¿Hacen envíos a todo el país?
+                <span class="material-symbols-outlined flex-shrink-0 text-text-light dark:text-stone-400 transition-transform duration-200" aria-hidden="true">expand_more</span>
+              </summary>
+              <p class="px-5 pb-5 text-sm text-text-light dark:text-stone-400 leading-relaxed">
+                Sí, enviamos a todo el país. Los pedidos del catálogo se despachan en 24–48 hrs y el tiempo de entrega depende de tu ubicación.
+              </p>
+            </details>
+            <details class="rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 transition-colors">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-display font-semibold text-ink dark:text-white">
+                ¿Los materiales son seguros para uso con alimentos?
+                <span class="material-symbols-outlined flex-shrink-0 text-text-light dark:text-stone-400 transition-transform duration-200" aria-hidden="true">expand_more</span>
+              </summary>
+              <p class="px-5 pb-5 text-sm text-text-light dark:text-stone-400 leading-relaxed">
+                Sí. Usamos PLA Premium, un bioplástico food-safe certificado para contacto indirecto con alimentos, y silicona de grado platino para los moldes de jabón.
+              </p>
+            </details>
+            <details class="rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 transition-colors">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-display font-semibold text-ink dark:text-white">
+                ¿Puedo pedir un diseño 100% personalizado?
+                <span class="material-symbols-outlined flex-shrink-0 text-text-light dark:text-stone-400 transition-transform duration-200" aria-hidden="true">expand_more</span>
+              </summary>
+              <p class="px-5 pb-5 text-sm text-text-light dark:text-stone-400 leading-relaxed">
+                Claro. Sube tu archivo STL u OBJ, o cuéntanos tu idea desde "Cotizar mi idea". Revisamos la viabilidad técnica sin costo antes de confirmar tu pedido.
+              </p>
+            </details>
+            <details class="rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 transition-colors">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-display font-semibold text-ink dark:text-white">
+                ¿Cuánto tardan en fabricar y enviar un pedido?
+                <span class="material-symbols-outlined flex-shrink-0 text-text-light dark:text-stone-400 transition-transform duration-200" aria-hidden="true">expand_more</span>
+              </summary>
+              <p class="px-5 pb-5 text-sm text-text-light dark:text-stone-400 leading-relaxed">
+                Los productos del catálogo se despachan en 24–48 hrs. Los diseños personalizados toman entre 3 y 7 días hábiles de fabricación según la complejidad, más el tiempo de envío.
+              </p>
+            </details>
+            <details class="rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 transition-colors">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-display font-semibold text-ink dark:text-white">
+                ¿Cómo se calcula el precio de una pieza personalizada?
+                <span class="material-symbols-outlined flex-shrink-0 text-text-light dark:text-stone-400 transition-transform duration-200" aria-hidden="true">expand_more</span>
+              </summary>
+              <p class="px-5 pb-5 text-sm text-text-light dark:text-stone-400 leading-relaxed">
+                El precio depende del tamaño, la complejidad y el material. Sube tu diseño y te enviamos una cotización sin compromiso.
+              </p>
+            </details>
+            <details class="rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 transition-colors">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-display font-semibold text-ink dark:text-white">
+                ¿Aceptan devoluciones o cambios?
+                <span class="material-symbols-outlined flex-shrink-0 text-text-light dark:text-stone-400 transition-transform duration-200" aria-hidden="true">expand_more</span>
+              </summary>
+              <p class="px-5 pb-5 text-sm text-text-light dark:text-stone-400 leading-relaxed">
+                Si tu pedido llega con un defecto de fabricación, lo reemplazamos sin costo dentro de los 15 días posteriores a la entrega. Por tratarse de piezas personalizadas, no aceptamos devoluciones por cambio de opinión.
+              </p>
+            </details>
+            <details class="rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 transition-colors">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-display font-semibold text-ink dark:text-white">
+                ¿Qué métodos de pago aceptan?
+                <span class="material-symbols-outlined flex-shrink-0 text-text-light dark:text-stone-400 transition-transform duration-200" aria-hidden="true">expand_more</span>
+              </summary>
+              <p class="px-5 pb-5 text-sm text-text-light dark:text-stone-400 leading-relaxed">
+                Aceptamos tarjeta de crédito o débito y transferencia bancaria. Para pedidos personalizados solicitamos un anticipo del 50%.
+              </p>
+            </details>
+            <details class="rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 transition-colors">
+              <summary class="flex items-center justify-between gap-4 cursor-pointer list-none px-5 py-4 font-display font-semibold text-ink dark:text-white">
+                ¿Trabajan con negocios o pedidos al por mayor?
+                <span class="material-symbols-outlined flex-shrink-0 text-text-light dark:text-stone-400 transition-transform duration-200" aria-hidden="true">expand_more</span>
+              </summary>
+              <p class="px-5 pb-5 text-sm text-text-light dark:text-stone-400 leading-relaxed">
+                Sí, ofrecemos precios especiales para pedidos de mayoreo y colaboraciones con emprendimientos. Cuéntanos tu proyecto desde el formulario de contacto.
+              </p>
+            </details>
+          </div>
+          <div class="text-center">
+            <button
+              type="button"
+              data-abrir-chat
+              class="inline-flex items-center gap-2 rounded-full h-12 px-7 bg-ink text-white dark:bg-white dark:text-ink text-sm font-semibold hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]" aria-hidden="true">chat</span>
+              ¿Sigues con dudas? Habla con nuestro asistente
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="w-full bg-surface dark:bg-surface-dark border-t border-black/5 dark:border-white/10">
+        <div class="max-w-[1280px] mx-auto px-4 lg:px-10 py-14">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+            <div class="col-span-1 md:col-span-1">
+              <div class="flex items-center gap-2 mb-4">
+                <img src="images/logo.png" alt="" width="150" height="150" class="h-8 w-8 object-contain" />
+                <p class="font-display font-semibold text-lg text-ink dark:text-white">La Casita del Molde</p>
+              </div>
+              <p class="text-sm text-text-light dark:text-stone-400 mb-4 max-w-xs">
+                Transformando ideas en realidad, capa por capa. Calidad y precisión en cada impresión.
+              </p>
+              <div class="flex gap-3">
+                <a class="text-text-light dark:text-stone-400 hover:text-primary-dark dark:hover:text-primary transition-colors rounded-full" href="#" aria-label="Facebook de La Casita del Molde">
+                  <svg class="size-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.6 1.6-1.6h1.4V4.9c-.3 0-1.3-.1-2.5-.1-2.4 0-4 1.5-4 4.1V11H7.5v3H10v7h3.5Z" /></svg>
+                </a>
+                <a class="text-text-light dark:text-stone-400 hover:text-primary-dark dark:hover:text-primary transition-colors rounded-full" href="#" aria-label="Instagram de La Casita del Molde">
+                  <svg class="size-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm10 2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2Zm-5 3.5A3.5 3.5 0 1 1 8.5 12 3.5 3.5 0 0 1 12 8.5Zm0 2A1.5 1.5 0 1 0 13.5 12 1.5 1.5 0 0 0 12 10.5Zm5.25-3.75a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z" /></svg>
+                </a>
+                <a class="text-text-light dark:text-stone-400 hover:text-primary-dark dark:hover:text-primary transition-colors rounded-full" href="#" aria-label="X (Twitter) de La Casita del Molde">
+                  <svg class="size-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.2 3h2.9l-6.4 7.3L21.3 21h-5.9l-4.6-6-5.3 6H2.6l6.9-7.8L2.1 3H8l4.2 5.5L17.2 3Zm-1 16.2h1.6L7.1 4.7H5.4l10.8 14.5Z" /></svg>
+                </a>
+              </div>
+            </div>
+            <div>
+              <h4 class="font-semibold text-ink dark:text-white mb-4">Tienda</h4>
+              <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-stone-400">
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="catalogo.html">Catálogo completo</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="index.html#popular">Lo más popular</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="index.html#cotiza">Impresión 3D a medida</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-ink dark:text-white mb-4">Empresa</h4>
+              <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-stone-400">
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="nosotros.html">Sobre Nosotros</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="portafolio.html">Portafolio</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="nosotros.html#proceso">Proceso creativo</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="blog.html">Blog</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="contacto.html">Contacto</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold text-ink dark:text-white mb-4">Aprende</h4>
+              <ul class="flex flex-col gap-2 text-sm text-text-light dark:text-stone-400">
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="blog.html?categoria=reposteria">Repostería creativa</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="blog.html?categoria=jabones">Jabones artesanales</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="blog.html?categoria=impresion-3d">Impresión 3D</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="blog.html?categoria=tutoriales">Tutoriales</a></li>
+                <li><a class="hover:text-primary-dark dark:hover:text-primary transition-colors" href="contacto.html#faq">Preguntas frecuentes</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-t border-black/5 dark:border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-text-light dark:text-stone-500">
+            <p>© 2026 La Casita del Molde. Todos los derechos reservados.</p>
+            <p>Diseñado con ❤️ para creadores.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Asistente de ayuda -->
+    <div class="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+      <div
+        id="chat-panel"
+        hidden
+        role="dialog"
+        aria-modal="false"
+        aria-label="Asistente de La Casita del Molde"
+        class="w-[92vw] max-w-sm rounded-3xl bg-surface dark:bg-surface-dark border border-black/10 dark:border-white/15 shadow-2xl overflow-hidden flex flex-col max-h-[70vh]"
+      >
+        <div class="flex items-center justify-between gap-3 px-5 py-4 bg-ink text-white flex-shrink-0">
+          <div class="flex items-center gap-3">
+            <span class="size-9 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <span class="material-symbols-outlined text-[20px]">forum</span>
+            </span>
+            <div>
+              <p class="font-display font-semibold leading-tight text-sm">Asistente LCDM</p>
+              <p class="text-xs text-stone-300">Respuestas al instante</p>
+            </div>
+          </div>
+          <button
+            type="button"
+            id="chat-cerrar"
+            aria-label="Cerrar chat"
+            class="p-1.5 rounded-full hover:bg-white/10 transition-colors flex-shrink-0"
+          >
+            <span class="material-symbols-outlined text-[20px]" aria-hidden="true">close</span>
+          </button>
+        </div>
+        <div
+          id="chat-mensajes"
+          class="flex-1 min-h-0 overflow-y-auto px-4 py-4 flex flex-col gap-3"
+          aria-live="polite"
+        ></div>
+        <div class="border-t border-black/5 dark:border-white/10 px-4 py-3 text-xs text-text-light dark:text-stone-400 flex-shrink-0">
+          ¿No encuentras tu respuesta?
+          <a href="contacto.html" class="font-semibold text-primary-dark dark:text-primary hover:underline">Escríbenos</a>.
+        </div>
+      </div>
+      <button
+        type="button"
+        id="chat-boton"
+        aria-label="Abrir asistente de ayuda"
+        aria-expanded="false"
+        aria-controls="chat-panel"
+        class="size-14 rounded-full bg-primary text-white shadow-xl shadow-primary/30 flex items-center justify-center hover:bg-primary-dark transition-colors"
+      >
+        <span class="material-symbols-outlined" aria-hidden="true">chat</span>
+      </button>
+    </div>
+
+    <script>
+      (function () {
+        var botonTema = document.getElementById("boton-tema");
+        if (botonTema) {
+          var etiquetaTema = function () {
+            var oscuro = document.documentElement.classList.contains("dark");
+            botonTema.setAttribute(
+              "aria-label",
+              oscuro ? "Cambiar a modo claro" : "Cambiar a modo oscuro"
+            );
+          };
+          etiquetaTema();
+          botonTema.addEventListener("click", function () {
+            var oscuro = !document.documentElement.classList.contains("dark");
+            if (window.aplicarTema) window.aplicarTema(oscuro);
+            else document.documentElement.classList.toggle("dark", oscuro);
+            try {
+              localStorage.setItem("tema", oscuro ? "oscuro" : "claro");
+            } catch (e) {}
+            etiquetaTema();
+          });
+        }
+
+        var boton = document.getElementById("boton-menu");
+        var panel = document.getElementById("menu-movil");
+        if (boton && panel) {
+          boton.addEventListener("click", function () {
+            var abrir = panel.hidden;
+            panel.hidden = !abrir;
+            boton.setAttribute("aria-expanded", String(abrir));
+            boton.setAttribute("aria-label", abrir ? "Cerrar menú" : "Abrir menú");
+            boton.querySelector("span").textContent = abrir ? "close" : "menu";
+          });
+          panel.querySelectorAll("a").forEach(function (enlace) {
+            enlace.addEventListener("click", function () {
+              panel.hidden = true;
+              boton.setAttribute("aria-expanded", "false");
+              boton.setAttribute("aria-label", "Abrir menú");
+              boton.querySelector("span").textContent = "menu";
+            });
+          });
+        }
+
+        var formContacto = document.getElementById("form-contacto");
+        if (formContacto) {
+          var campos = ["nombre", "correo", "mensaje"];
+          formContacto.addEventListener("submit", function (evento) {
+            evento.preventDefault();
+            var valido = true;
+            var primerInvalido = null;
+            campos.forEach(function (id) {
+              var campo = document.getElementById(id);
+              var error = formContacto.querySelector('[data-error-de="' + id + '"]');
+              var esValido = campo.checkValidity();
+              if (error) error.classList.toggle("hidden", esValido);
+              if (!esValido) {
+                valido = false;
+                if (!primerInvalido) primerInvalido = campo;
+              }
+            });
+            if (!valido) {
+              primerInvalido.focus();
+              return;
+            }
+            document.getElementById("mensaje-contacto").textContent =
+              "¡Gracias! Recibimos tu mensaje y te responderemos a la brevedad.";
+            formContacto.reset();
+          });
+        }
+
+        document.querySelectorAll("#faq details").forEach(function (item) {
+          item.addEventListener("toggle", function () {
+            item.classList.toggle("faq-abierto", item.open);
+          });
+        });
+      })();
+    </script>
+
+    <script>
+      (function () {
+        var MENU_PRINCIPAL = [
+          {
+            pregunta: "¿Hacen envíos a todo el país?",
+            respuesta:
+              "Sí, enviamos a todo el país. Los pedidos del catálogo se despachan en 24–48 hrs y el tiempo de entrega depende de tu ubicación.",
+          },
+          {
+            pregunta: "¿Los materiales son seguros para alimentos?",
+            respuesta:
+              "Sí. Usamos PLA Premium, un bioplástico food-safe certificado para contacto indirecto con alimentos, y silicona de grado platino para los moldes de jabón.",
+          },
+          {
+            pregunta: "¿Puedo pedir un diseño personalizado?",
+            respuesta:
+              'Claro. Sube tu archivo STL u OBJ, o cuéntanos tu idea desde <a href="index.html#cotiza" class="font-semibold underline">Cotizar mi idea</a>. Revisamos la viabilidad técnica sin costo.',
+          },
+          {
+            pregunta: "¿Cuánto tardan en fabricar un pedido?",
+            respuesta:
+              "Los productos del catálogo se despachan en 24–48 hrs. Los diseños personalizados toman entre 3 y 7 días hábiles según la complejidad.",
+          },
+          {
+            pregunta: "¿Cómo se cotiza una pieza personalizada?",
+            respuesta:
+              "El precio depende del tamaño, la complejidad y el material. Sube tu diseño y te enviamos una cotización sin compromiso.",
+          },
+          {
+            pregunta: "Quiero hablar con una persona",
+            respuesta:
+              'Con gusto. Completa el formulario de esta página y te respondemos a la brevedad.',
+          },
+        ];
+
+        var botonChat = document.getElementById("chat-boton");
+        var panelChat = document.getElementById("chat-panel");
+        var cerrarChat = document.getElementById("chat-cerrar");
+        var mensajesChat = document.getElementById("chat-mensajes");
+        if (!botonChat || !panelChat) return;
+
+        var iniciado = false;
+
+        function agregarBurbuja(contenido, esUsuario) {
+          var burbuja = document.createElement("div");
+          burbuja.className = esUsuario
+            ? "self-end max-w-[85%] rounded-2xl rounded-br-sm bg-ink dark:bg-white text-white dark:text-ink px-4 py-2.5 text-sm"
+            : "self-start max-w-[85%] rounded-2xl rounded-bl-sm bg-paper dark:bg-paper-dark text-text-main dark:text-stone-200 px-4 py-2.5 text-sm leading-relaxed";
+          burbuja.innerHTML = contenido;
+          mensajesChat.appendChild(burbuja);
+          mensajesChat.scrollTop = mensajesChat.scrollHeight;
+          return burbuja;
+        }
+
+        function mostrarChips(lista) {
+          var anterior = mensajesChat.querySelector("[data-chips]");
+          if (anterior) anterior.remove();
+          if (!lista.length) return;
+          var grupo = document.createElement("div");
+          grupo.setAttribute("data-chips", "");
+          grupo.className = "flex flex-wrap gap-2";
+          lista.forEach(function (item) {
+            var boton = document.createElement("button");
+            boton.type = "button";
+            boton.className =
+              "px-3.5 py-2 rounded-full border border-black/10 dark:border-white/15 text-xs font-medium text-ink dark:text-white hover:border-primary hover:text-primary-dark dark:hover:text-primary transition-colors";
+            boton.textContent = item.pregunta;
+            boton.addEventListener("click", function () {
+              seleccionarPregunta(item);
+            });
+            grupo.appendChild(boton);
+          });
+          mensajesChat.appendChild(grupo);
+          mensajesChat.scrollTop = mensajesChat.scrollHeight;
+        }
+
+        function seleccionarPregunta(item) {
+          mostrarChips([]);
+          agregarBurbuja(item.pregunta, true);
+          var indicador = agregarBurbuja(
+            '<span class="flex items-center gap-1 py-0.5"><span class="size-1.5 rounded-full bg-text-light dark:bg-stone-500 animate-bounce [animation-delay:-0.3s]"></span><span class="size-1.5 rounded-full bg-text-light dark:bg-stone-500 animate-bounce [animation-delay:-0.15s]"></span><span class="size-1.5 rounded-full bg-text-light dark:bg-stone-500 animate-bounce"></span></span>',
+            false
+          );
+          window.setTimeout(function () {
+            indicador.remove();
+            var respuesta = agregarBurbuja(item.respuesta, false);
+            mostrarChips(MENU_PRINCIPAL);
+            respuesta.scrollIntoView({ block: "start", behavior: "smooth" });
+          }, 500);
+        }
+
+        function abrirChat() {
+          panelChat.hidden = false;
+          botonChat.setAttribute("aria-expanded", "true");
+          botonChat.setAttribute("aria-label", "Cerrar asistente de ayuda");
+          if (!iniciado) {
+            iniciado = true;
+            agregarBurbuja(
+              "¡Hola! 👋 Soy el asistente de La Casita del Molde. Elige una pregunta para empezar.",
+              false
+            );
+            mostrarChips(MENU_PRINCIPAL);
+          }
+          cerrarChat.focus();
+        }
+
+        function cerrarChatFn() {
+          panelChat.hidden = true;
+          botonChat.setAttribute("aria-expanded", "false");
+          botonChat.setAttribute("aria-label", "Abrir asistente de ayuda");
+          botonChat.focus();
+        }
+
+        botonChat.addEventListener("click", function () {
+          if (panelChat.hidden) abrirChat();
+          else cerrarChatFn();
+        });
+        cerrarChat.addEventListener("click", cerrarChatFn);
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && !panelChat.hidden) cerrarChatFn();
+        });
+
+        document.querySelectorAll("[data-abrir-chat]").forEach(function (el) {
+          el.addEventListener("click", abrirChat);
+        });
+        var abrirDesdeContacto = document.getElementById("abrir-chat-contacto");
+        if (abrirDesdeContacto) {
+          abrirDesdeContacto.addEventListener("click", abrirChat);
+        }
+      })();
+    </script>
+  </body>
+</html>

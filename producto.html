@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Catálogo - La Casita del Molde | Moldes y Herramientas Creativas</title>
+    <title>Producto - La Casita del Molde</title>
     <meta
       name="description"
-      content="Explora el catálogo completo de moldes personalizados, cortadores y herramientas creativas para repostería, jabones y artesanía."
+      content="Detalle de producto: moldes personalizados y herramientas creativas de La Casita del Molde."
     />
     <meta name="theme-color" content="#faf8f6" />
     <script>
@@ -128,12 +128,18 @@
         display: none !important;
       }
 
-      .product-card:hover .product-image-hover {
-        opacity: 1;
+      .miniatura[aria-current="true"] {
+        border-color: #ff0099;
       }
 
-      .product-card:hover .product-image-default {
-        opacity: 0;
+      .sello-anillo {
+        animation: girar-sello 22s linear infinite;
+      }
+
+      @keyframes girar-sello {
+        to {
+          transform: rotate(360deg);
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -191,7 +197,6 @@
             <a
               class="text-sm font-medium text-ink dark:text-white relative after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:bg-primary"
               href="catalogo.html"
-              aria-current="page"
               >Catálogo</a
             >
             <a
@@ -272,7 +277,6 @@
             <a
               class="py-3 text-base font-semibold text-ink dark:text-white border-b border-black/5 dark:border-white/10"
               href="catalogo.html"
-              aria-current="page"
               >Catálogo</a
             >
             <a
@@ -304,147 +308,193 @@
           </nav>
         </div>
       </header>
-      <main
-        id="contenido"
-        class="flex-1 flex flex-col lg:flex-row max-w-[1440px] mx-auto w-full px-4 lg:px-10 py-8 gap-10"
-      >
-        <!-- Sidebar Filters -->
-        <aside
-          id="panel-filtros"
-          class="w-full lg:w-64 flex-shrink-0 flex-col gap-8 hidden lg:flex"
+
+      <main id="contenido" class="flex-1 w-full max-w-[1280px] mx-auto px-4 lg:px-10 py-8">
+        <!-- Breadcrumb -->
+        <nav
+          aria-label="Ruta de navegación"
+          class="flex items-center gap-2 text-xs font-medium text-text-light dark:text-stone-400 mb-8"
         >
-          <div>
-            <h2
-              class="text-xs font-semibold uppercase tracking-[0.16em] text-text-light dark:text-stone-400 mb-4 flex items-center gap-2"
+          <a class="hover:text-ink dark:hover:text-white transition-colors" href="index.html">Inicio</a>
+          <span class="material-symbols-outlined text-sm" aria-hidden="true">chevron_right</span>
+          <a class="hover:text-ink dark:hover:text-white transition-colors" href="catalogo.html">Catálogo</a>
+          <span class="material-symbols-outlined text-sm" aria-hidden="true">chevron_right</span>
+          <span id="bc-nombre" class="text-ink dark:text-white" aria-current="page">Producto</span>
+        </nav>
+
+        <!-- Producto no encontrado -->
+        <div id="no-encontrado" hidden class="text-center py-24">
+          <span class="material-symbols-outlined text-5xl text-text-light dark:text-stone-500" aria-hidden="true">search_off</span>
+          <h1 class="font-display text-3xl font-semibold text-ink dark:text-white mt-4 mb-2">
+            No encontramos ese producto
+          </h1>
+          <p class="text-text-light dark:text-stone-400 mb-6">
+            Puede que ya no esté disponible. Explora el catálogo completo.
+          </p>
+          <a
+            href="catalogo.html"
+            class="inline-flex items-center justify-center rounded-full h-12 px-7 bg-ink text-white dark:bg-white dark:text-ink text-sm font-semibold hover:bg-ink/90 dark:hover:bg-white/90 transition-colors"
+          >
+            Volver al catálogo
+          </a>
+        </div>
+
+        <!-- Detalle -->
+        <article id="detalle" class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14">
+          <!-- Galería -->
+          <div class="flex flex-col gap-4">
+            <div
+              class="relative rounded-3xl overflow-hidden bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 aspect-square"
             >
-              <span class="material-symbols-outlined text-primary text-[18px]" aria-hidden="true">category</span>
-              Categorías
-            </h2>
-            <div class="flex flex-col gap-2.5">
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input checked class="rounded border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" type="checkbox" name="categoria" value="herramientas" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Herramientas</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="rounded border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" type="checkbox" name="categoria" value="reposteria" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Repostería</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="rounded border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" type="checkbox" name="categoria" value="jabones-velas" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Jabones / Velas</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="rounded border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" type="checkbox" name="categoria" value="kits" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Kits Temáticos</span>
-              </label>
-            </div>
-          </div>
-          <div class="border-t border-black/5 dark:border-white/10 pt-6">
-            <h2
-              class="text-xs font-semibold uppercase tracking-[0.16em] text-text-light dark:text-stone-400 mb-4 flex items-center gap-2"
-            >
-              <span class="material-symbols-outlined text-primary text-[18px]" aria-hidden="true">science</span>
-              Material
-            </h2>
-            <div class="flex flex-col gap-2.5">
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input checked class="border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" name="material" type="radio" value="todos" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Todos</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" name="material" type="radio" value="pla" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">PLA (Food-Safe)</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" name="material" type="radio" value="tpu" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Flex (TPU)</span>
-              </label>
-            </div>
-          </div>
-          <div class="border-t border-black/5 dark:border-white/10 pt-6">
-            <h2
-              class="text-xs font-semibold uppercase tracking-[0.16em] text-text-light dark:text-stone-400 mb-4 flex items-center gap-2"
-            >
-              <span class="material-symbols-outlined text-primary text-[18px]" aria-hidden="true">payments</span>
-              Precio
-            </h2>
-            <div class="px-1">
-              <label class="sr-only" for="rango-precio">Precio máximo</label>
-              <input
-                id="rango-precio"
-                class="w-full h-1.5 bg-black/10 dark:bg-white/15 rounded-lg appearance-none cursor-pointer accent-primary"
-                max="1000"
-                min="50"
-                value="1000"
-                type="range"
+              <img
+                id="img-principal"
+                src=""
+                alt=""
+                width="800"
+                height="800"
+                fetchpriority="high"
+                class="w-full h-full object-cover p-6 lg:p-10"
               />
-              <div class="flex justify-between text-sm font-medium text-text-light dark:text-stone-400 mt-2 tabular">
-                <span>$50</span>
-                <output for="rango-precio" id="salida-precio">$1000+</output>
+              <div
+                class="absolute top-4 right-4 size-20 lg:size-24 rounded-full bg-ink dark:bg-white text-white dark:text-ink shadow-xl flex items-center justify-center"
+                aria-hidden="true"
+              >
+                <svg viewBox="0 0 200 200" class="sello-anillo absolute inset-0 w-full h-full">
+                  <defs>
+                    <path
+                      id="circulo-sello-producto"
+                      d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"
+                    />
+                  </defs>
+                  <text font-size="11.5" font-weight="600" letter-spacing="2.5" fill="currentColor">
+                    <textPath href="#circulo-sello-producto" startOffset="0%">
+                      GARANTÍA LCDM • HECHO A MANO •
+                    </textPath>
+                  </text>
+                </svg>
+                <span class="material-symbols-outlined text-xl relative">verified</span>
               </div>
             </div>
+            <div id="miniaturas" class="grid grid-cols-4 gap-3" role="group" aria-label="Miniaturas del producto"></div>
           </div>
-        </aside>
-        <!-- Product Grid Area -->
-        <section class="flex-1">
-          <div
-            class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 gap-4"
-          >
-            <div class="flex flex-col gap-2">
-              <nav
-                aria-label="Ruta de navegación"
-                class="flex items-center gap-2 text-xs font-medium text-text-light dark:text-stone-400"
-              >
-                <a class="hover:text-ink dark:hover:text-white transition-colors" href="index.html">Inicio</a>
-                <span class="material-symbols-outlined text-sm" aria-hidden="true">chevron_right</span>
-                <a class="text-ink dark:text-white" href="catalogo.html" aria-current="page">Catálogo</a>
-              </nav>
-              <h1 class="font-display text-4xl font-semibold text-ink dark:text-white">
-                Catálogo completo
-              </h1>
-              <p class="text-text-light dark:text-stone-400 text-sm">
-                Impresión 3D a medida y piezas listas para tu próximo proyecto · <span id="conteo-productos">6 productos</span>
-              </p>
+
+          <!-- Info -->
+          <div class="flex flex-col">
+            <p
+              id="cat"
+              class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-dark dark:text-primary mb-3"
+            ></p>
+            <h1
+              id="nombre"
+              class="font-display text-4xl lg:text-5xl font-semibold leading-[1.05] tracking-tight text-ink dark:text-white"
+            ></h1>
+            <div class="flex items-center gap-3 mt-4">
+              <span id="estrellas" class="flex items-center text-amber-400"></span>
+              <span id="reviews" class="text-sm text-text-light dark:text-stone-400"></span>
             </div>
-            <div class="flex items-center gap-3 w-full sm:w-auto">
-              <button
-                id="boton-filtros"
-                type="button"
-                aria-expanded="false"
-                aria-controls="panel-filtros"
-                class="lg:hidden inline-flex items-center gap-2 px-4 py-2.5 bg-surface dark:bg-surface-dark border border-black/10 dark:border-white/15 rounded-full text-sm font-medium text-ink dark:text-white hover:border-ink/40 dark:hover:border-white/40 transition-colors"
-              >
-                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">filter_list</span>
-                Filtros
-              </button>
-              <div class="relative w-full sm:w-64">
-                <label class="sr-only" for="orden-productos">Ordenar productos</label>
-                <select
-                  id="orden-productos"
-                  class="w-full pl-4 pr-10 py-2.5 text-sm bg-surface dark:bg-surface-dark text-ink dark:text-white border border-black/10 dark:border-white/15 rounded-full focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer"
+            <p id="precio" class="font-display text-3xl font-semibold text-ink dark:text-white mt-5 tabular"></p>
+            <p id="desc" class="text-text-light dark:text-stone-400 leading-relaxed mt-4 max-w-prose"></p>
+
+            <!-- Especificaciones -->
+            <div class="mt-8 border-t border-black/5 dark:border-white/10 pt-6">
+              <h2 class="text-xs font-semibold uppercase tracking-[0.16em] text-text-light dark:text-stone-400 mb-4">
+                Especificaciones
+              </h2>
+              <ul id="specs" class="flex flex-col gap-2.5 text-sm text-text-main dark:text-stone-300"></ul>
+            </div>
+
+            <!-- Compra -->
+            <form id="form-compra" class="mt-8 flex flex-col gap-4">
+              <div class="flex flex-wrap items-center gap-4">
+                <div
+                  class="inline-flex items-center rounded-full border border-black/10 dark:border-white/15 bg-surface dark:bg-surface-dark"
                 >
-                  <option>Recomendados</option>
-                  <option>Precio: Menor a Mayor</option>
-                  <option>Precio: Mayor a Menor</option>
-                  <option>Novedades</option>
-                </select>
-                <div class="absolute inset-y-0 right-0 flex items-center px-2.5 pointer-events-none text-text-light dark:text-stone-400">
-                  <span class="material-symbols-outlined text-[20px]" aria-hidden="true">expand_more</span>
+                  <button
+                    type="button"
+                    id="menos"
+                    aria-label="Disminuir cantidad"
+                    class="size-11 flex items-center justify-center text-ink dark:text-white hover:text-primary-dark dark:hover:text-primary rounded-full transition-colors"
+                  >
+                    <span class="material-symbols-outlined text-[20px]" aria-hidden="true">remove</span>
+                  </button>
+                  <label class="sr-only" for="cantidad">Cantidad</label>
+                  <input
+                    id="cantidad"
+                    name="cantidad"
+                    type="number"
+                    inputmode="numeric"
+                    min="1"
+                    max="99"
+                    value="1"
+                    class="w-12 border-0 bg-transparent text-center font-semibold text-ink dark:text-white tabular focus:ring-0 p-0 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                  />
+                  <button
+                    type="button"
+                    id="mas"
+                    aria-label="Aumentar cantidad"
+                    class="size-11 flex items-center justify-center text-ink dark:text-white hover:text-primary-dark dark:hover:text-primary rounded-full transition-colors"
+                  >
+                    <span class="material-symbols-outlined text-[20px]" aria-hidden="true">add</span>
+                  </button>
                 </div>
+                <button
+                  type="submit"
+                  class="flex-1 min-w-[200px] inline-flex items-center justify-center gap-2 rounded-full h-12 px-7 bg-ink text-white dark:bg-white dark:text-ink text-sm font-semibold hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors"
+                >
+                  <span class="material-symbols-outlined text-[20px]" aria-hidden="true">add_shopping_cart</span>
+                  Agregar al carrito
+                </button>
               </div>
-            </div>
+              <p
+                id="mensaje-carrito"
+                aria-live="polite"
+                class="text-sm font-semibold text-primary-dark dark:text-primary min-h-[1.25rem]"
+              ></p>
+              <a
+                href="index.html#cotiza"
+                class="inline-flex items-center justify-center rounded-full h-12 px-7 border border-ink/15 dark:border-white/20 text-ink dark:text-white text-sm font-medium hover:border-ink/40 dark:hover:border-white/40 transition-colors"
+              >
+                ¿Lo quieres personalizado? Cotiza tu diseño
+              </a>
+            </form>
+
+            <!-- Garantías -->
+            <ul class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 border-t border-black/5 dark:border-white/10 pt-6">
+              <li class="flex items-center gap-3 text-sm text-text-light dark:text-stone-400">
+                <span class="material-symbols-outlined text-primary-dark dark:text-primary" aria-hidden="true">local_shipping</span>
+                Envío a todo el país
+              </li>
+              <li class="flex items-center gap-3 text-sm text-text-light dark:text-stone-400">
+                <span class="material-symbols-outlined text-primary-dark dark:text-primary" aria-hidden="true">verified</span>
+                Material food-safe
+              </li>
+              <li class="flex items-center gap-3 text-sm text-text-light dark:text-stone-400">
+                <span class="material-symbols-outlined text-primary-dark dark:text-primary" aria-hidden="true">handshake</span>
+                Garantía de calidad
+              </li>
+            </ul>
           </div>
-          <div
-            id="grid-productos"
-            class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6"
-            aria-live="polite"
-          >
-            <p class="text-text-light dark:text-stone-400 col-span-full">Cargando productos...</p>
-          </div>
+        </article>
+
+        <!-- Descripción larga -->
+        <section id="seccion-descripcion" class="mt-16 lg:mt-24 max-w-3xl">
+          <h2 class="font-display text-2xl lg:text-3xl font-semibold text-ink dark:text-white mb-5">
+            Sobre este producto
+          </h2>
+          <p id="desc-larga" class="text-text-light dark:text-stone-400 leading-loose text-lg"></p>
+        </section>
+
+        <!-- Relacionados -->
+        <section id="seccion-relacionados" class="mt-16 lg:mt-24">
+          <h2 class="font-display text-2xl lg:text-3xl font-semibold text-ink dark:text-white mb-8">
+            También te puede gustar
+          </h2>
+          <div id="relacionados" class="grid grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </section>
       </main>
+
       <footer
-        class="w-full bg-surface dark:bg-surface-dark border-t border-black/5 dark:border-white/10"
+        class="w-full bg-surface dark:bg-surface-dark border-t border-black/5 dark:border-white/10 mt-16"
       >
         <div class="max-w-[1280px] mx-auto px-4 lg:px-10 py-14">
           <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
@@ -559,6 +609,7 @@
     </div>
     <script>
       (function () {
+        // ---- Toggle de tema ----
         var botonTema = document.getElementById("boton-tema");
         if (botonTema) {
           var etiquetaTema = function () {
@@ -580,6 +631,7 @@
           });
         }
 
+        // ---- Menú móvil ----
         var boton = document.getElementById("boton-menu");
         var panel = document.getElementById("menu-movil");
         if (boton && panel) {
@@ -600,149 +652,175 @@
           });
         }
 
-        var botonFiltros = document.getElementById("boton-filtros");
-        var panelFiltros = document.getElementById("panel-filtros");
-        if (botonFiltros && panelFiltros) {
-          botonFiltros.addEventListener("click", function () {
-            var oculto = panelFiltros.classList.toggle("hidden");
-            panelFiltros.classList.toggle("flex", !oculto);
-            botonFiltros.setAttribute("aria-expanded", String(!oculto));
-            if (!oculto) {
-              panelFiltros.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
-          });
-        }
-
-        var rango = document.getElementById("rango-precio");
-        var salida = document.getElementById("salida-precio");
-        if (rango && salida) {
-          rango.addEventListener("input", function () {
-            var valor = Number(rango.value);
-            salida.textContent = valor >= 1000 ? "$1000+" : "$" + valor;
-          });
-        }
-
-        var gridProductos = document.getElementById("grid-productos");
-        var conteoProductos = document.getElementById("conteo-productos");
-        if (gridProductos) {
-          fetch("data/productos.json")
-            .then(function (res) {
-              return res.json();
-            })
-            .then(function (data) {
-              renderProductos(data.productos);
-            })
-            .catch(function () {
-              gridProductos.innerHTML =
-                '<p class="text-text-light dark:text-stone-400 col-span-full">No se pudieron cargar los productos. Intenta recargar la página.</p>';
-            });
-        }
-
-        function formatoPrecio(valor) {
-          return (
-            "$" +
-            Number(valor).toLocaleString("es-MX", {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })
-          );
+        // ---- Catálogo de productos ----
+        function formatoPrecio(n) {
+          return "$" + n.toFixed(2);
         }
 
         function estrellasHTML(rating) {
+          var full = Math.floor(rating);
+          var half = rating - full >= 0.5;
           var html = "";
-          for (var i = 1; i <= 5; i++) {
-            if (rating >= i) {
-              html +=
-                '<span class="material-symbols-outlined text-[16px]" aria-hidden="true">star</span>';
-            } else if (rating >= i - 0.5) {
-              html +=
-                '<span class="material-symbols-outlined text-[16px]" aria-hidden="true">star_half</span>';
+          for (var i = 0; i < 5; i++) {
+            if (i < full) {
+              html += '<span class="material-symbols-outlined text-[18px]" aria-hidden="true">star</span>';
+            } else if (i === full && half) {
+              html += '<span class="material-symbols-outlined text-[18px]" aria-hidden="true">star_half</span>';
             } else {
-              html +=
-                '<span class="material-symbols-outlined text-[16px] text-black/20 dark:text-white/25" aria-hidden="true">star</span>';
+              html += '<span class="material-symbols-outlined text-[18px] text-black/20 dark:text-white/25" aria-hidden="true">star</span>';
             }
           }
           return html;
         }
 
-        function renderProductos(productos) {
-          if (conteoProductos) {
-            conteoProductos.textContent =
-              productos.length + (productos.length === 1 ? " producto" : " productos");
-          }
-          if (!productos.length) {
-            gridProductos.innerHTML =
-              '<p class="text-text-light dark:text-stone-400 col-span-full">No encontramos productos por el momento.</p>';
-            return;
-          }
-          gridProductos.innerHTML = productos
-            .map(function (p) {
-              var badgeColor = p.badge === "Popular" ? "bg-amber-500" : "bg-primary";
-              var badgeHTML = p.badge
-                ? '<span class="absolute top-3 left-3 z-10 ' +
-                  badgeColor +
-                  ' text-white text-[11px] font-semibold px-2.5 py-1 rounded-full">' +
-                  p.badge +
-                  "</span>"
-                : "";
-              var imgDefault = p.imgs && p.imgs[0] ? p.imgs[0] : { src: "", alt: "" };
-              var imgHover = p.imgs && p.imgs[1] ? p.imgs[1] : imgDefault;
-              return (
-                '<article class="group product-card relative bg-surface dark:bg-surface-dark rounded-2xl border border-black/5 dark:border-white/10 hover:border-primary/40 dark:hover:border-primary/40 hover:shadow-xl hover:shadow-black/5 transition-[box-shadow,border-color] duration-300 overflow-hidden flex flex-col">' +
-                '<div class="relative aspect-square bg-paper dark:bg-paper-dark overflow-hidden">' +
-                badgeHTML +
-                '<button type="button" aria-label="Agregar ' +
-                p.nombre +
-                ' a favoritos" class="absolute top-3 right-3 z-10 bg-surface/80 dark:bg-surface-dark/80 hover:bg-surface dark:hover:bg-surface-dark text-text-light hover:text-primary rounded-full p-1.5 transition-colors shadow-sm backdrop-blur-sm">' +
-                '<span class="material-symbols-outlined text-[20px]" aria-hidden="true">favorite</span>' +
-                "</button>" +
-                '<img alt="' +
-                imgDefault.alt +
-                '" width="600" height="600" class="product-image-default absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out p-8" src="' +
-                imgDefault.src +
-                '" />' +
-                '<img alt="' +
-                imgHover.alt +
-                '" width="600" height="600" loading="lazy" class="product-image-hover absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 ease-in-out" src="' +
-                imgHover.src +
-                '" />' +
-                "</div>" +
-                '<div class="p-5 flex flex-col gap-2 flex-1">' +
-                '<div class="flex items-center gap-1 text-amber-400 text-sm">' +
-                '<span role="img" aria-label="Calificación: ' +
-                p.rating +
-                ' de 5 estrellas" class="flex items-center">' +
-                estrellasHTML(p.rating) +
-                "</span>" +
-                '<span class="text-text-light dark:text-stone-500 text-xs ml-1 tabular">(' +
-                p.reviews +
-                ")</span>" +
-                "</div>" +
-                '<h3 class="font-display text-lg font-semibold text-ink dark:text-white leading-tight group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">' +
-                '<a href="producto.html?id=' +
-                p.id +
-                '" class="before:absolute before:inset-0 before:content-[\'\']">' +
-                p.nombre +
-                "</a>" +
-                "</h3>" +
-                '<p class="text-xs text-text-light dark:text-stone-400 line-clamp-2">' +
-                p.desc +
-                "</p>" +
-                '<div class="mt-auto pt-3 flex items-center justify-between">' +
-                '<span class="text-lg font-semibold text-ink dark:text-white tabular">' +
-                formatoPrecio(p.precio) +
-                "</span>" +
-                '<button type="button" aria-label="Agregar ' +
-                p.nombre +
-                ' al carrito" class="relative z-10 bg-ink text-white dark:bg-white dark:text-ink hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white rounded-full p-2 transition-colors">' +
-                '<span class="material-symbols-outlined text-[20px]" aria-hidden="true">add_shopping_cart</span>' +
-                "</button>" +
-                "</div>" +
-                "</div>" +
-                "</article>"
-              );
-            })
-            .join("");
+        function idActual() {
+          return new URL(window.location).searchParams.get("id");
+        }
+
+        var id = idActual();
+
+        fetch("data/productos.json")
+          .then(function (res) {
+            return res.json();
+          })
+          .then(function (data) {
+            var PRODUCTOS = {};
+            data.productos.forEach(function (p) {
+              PRODUCTOS[p.id] = p;
+            });
+            inicializarProducto(PRODUCTOS);
+          })
+          .catch(function () {
+            mostrarNoEncontrado();
+          });
+
+        function mostrarNoEncontrado() {
+          document.getElementById("detalle").hidden = true;
+          document.getElementById("seccion-descripcion").hidden = true;
+          document.getElementById("seccion-relacionados").hidden = true;
+          document.getElementById("no-encontrado").hidden = false;
+          document.getElementById("bc-nombre").textContent = "Producto no encontrado";
+        }
+
+        function inicializarProducto(PRODUCTOS) {
+        var producto = PRODUCTOS[id];
+
+        if (!producto) {
+          mostrarNoEncontrado();
+          return;
+        }
+
+        // Título de la pestaña y breadcrumb
+        document.title = producto.nombre + " - La Casita del Molde";
+        document.getElementById("bc-nombre").textContent = producto.nombre;
+
+        // Datos principales
+        document.getElementById("cat").textContent = producto.categoria;
+        document.getElementById("nombre").textContent = producto.nombre;
+        document.getElementById("precio").textContent = formatoPrecio(producto.precio);
+        document.getElementById("desc").textContent = producto.desc;
+        document.getElementById("desc-larga").textContent = producto.descLarga;
+
+        var estrellas = document.getElementById("estrellas");
+        estrellas.innerHTML = estrellasHTML(producto.rating);
+        estrellas.setAttribute("role", "img");
+        estrellas.setAttribute(
+          "aria-label",
+          "Calificación: " + producto.rating + " de 5 estrellas"
+        );
+        document.getElementById("reviews").textContent =
+          "(" + producto.reviews + " reseñas)";
+
+        // Especificaciones
+        var specs = document.getElementById("specs");
+        producto.specs.forEach(function (spec) {
+          var li = document.createElement("li");
+          li.className = "flex items-start gap-2.5";
+          li.innerHTML =
+            '<span class="material-symbols-outlined text-[18px] text-primary-dark dark:text-primary mt-0.5" aria-hidden="true">check_circle</span>' +
+            "<span></span>";
+          li.querySelector("span:last-child").textContent = spec;
+          specs.appendChild(li);
+        });
+
+        // Galería
+        var imgPrincipal = document.getElementById("img-principal");
+        var miniaturas = document.getElementById("miniaturas");
+        function mostrarImagen(indice) {
+          var img = producto.imgs[indice];
+          imgPrincipal.src = img.src;
+          imgPrincipal.alt = img.alt;
+          miniaturas.querySelectorAll("button").forEach(function (b, i) {
+            b.setAttribute("aria-current", String(i === indice));
+          });
+        }
+        producto.imgs.forEach(function (img, i) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.className =
+            "miniatura rounded-2xl overflow-hidden bg-surface dark:bg-surface-dark border-2 border-black/5 dark:border-white/10 aspect-square hover:border-primary/50 transition-colors";
+          b.setAttribute("aria-label", "Ver imagen " + (i + 1) + " de " + producto.nombre);
+          b.innerHTML =
+            '<img src="' + img.src + '" alt="" width="200" height="200" loading="lazy" class="w-full h-full object-cover p-3" />';
+          b.addEventListener("click", function () {
+            mostrarImagen(i);
+          });
+          miniaturas.appendChild(b);
+        });
+        mostrarImagen(0);
+
+        // Cantidad
+        var cantidad = document.getElementById("cantidad");
+        function ajustar(delta) {
+          var v = parseInt(cantidad.value, 10) || 1;
+          v = Math.min(99, Math.max(1, v + delta));
+          cantidad.value = v;
+        }
+        document.getElementById("menos").addEventListener("click", function () {
+          ajustar(-1);
+        });
+        document.getElementById("mas").addEventListener("click", function () {
+          ajustar(1);
+        });
+        cantidad.addEventListener("change", function () {
+          ajustar(0);
+        });
+
+        // Agregar al carrito (demo)
+        document.getElementById("form-compra").addEventListener("submit", function (e) {
+          e.preventDefault();
+          var n = parseInt(cantidad.value, 10) || 1;
+          document.getElementById("mensaje-carrito").textContent =
+            "Agregaste " + n + (n === 1 ? " unidad" : " unidades") + " al carrito.";
+        });
+
+        // Relacionados (misma categoría primero, luego el resto)
+        var contenedor = document.getElementById("relacionados");
+        var claves = Object.keys(PRODUCTOS).filter(function (k) {
+          return k !== id;
+        });
+        claves.sort(function (a, b) {
+          var sa = PRODUCTOS[a].categoria === producto.categoria ? 0 : 1;
+          var sb = PRODUCTOS[b].categoria === producto.categoria ? 0 : 1;
+          return sa - sb;
+        });
+        claves.slice(0, 3).forEach(function (k) {
+          var p = PRODUCTOS[k];
+          var a = document.createElement("a");
+          a.href = "producto.html?id=" + k;
+          a.className =
+            "group flex flex-col rounded-2xl overflow-hidden bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 hover:border-primary/40 dark:hover:border-primary/40 hover:shadow-xl hover:shadow-black/5 transition-[border-color,box-shadow] duration-300";
+          a.innerHTML =
+            '<div class="aspect-square overflow-hidden bg-paper dark:bg-paper-dark">' +
+            '<img src="' + p.imgs[0].src + '" alt="' + p.imgs[0].alt + '" width="400" height="400" loading="lazy" class="w-full h-full object-cover p-6 group-hover:scale-105 transition-transform duration-500" />' +
+            "</div>" +
+            '<div class="p-4">' +
+            '<h3 class="font-display text-base font-semibold text-ink dark:text-white leading-tight group-hover:text-primary-dark dark:group-hover:text-primary transition-colors"></h3>' +
+            '<p class="text-sm text-text-light dark:text-stone-400 mt-1 tabular">' + formatoPrecio(p.precio) + "</p>" +
+            "</div>";
+          a.querySelector("h3").textContent = p.nombre;
+          contenedor.appendChild(a);
+        });
         }
       })();
     </script>

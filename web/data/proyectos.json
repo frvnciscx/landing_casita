@@ -1,0 +1,123 @@
+{
+  "proyectos": [
+    {
+      "id": "gomitas",
+      "titulo": "Gomitas",
+      "categoria": "Diseño industrial",
+      "categoriaSlug": "diseno-industrial",
+      "emoji": "🎨",
+      "destacado": true,
+      "cliente": "Marca mexicana de gomitas",
+      "fecha": "2024-09-03",
+      "fechaTexto": "2023 – 2024",
+      "resumen": "Exploración y diseño de conceptos de producto para una marca mexicana de gomitas. Un proceso autodidacta y retador: de los múltiples conceptos desarrollados, los seleccionados sirvieron de base para presentarse en Europa. (Próximamente agregaremos más imágenes y detalle.)",
+      "imagen": {
+        "src": "images/proyecto-gomitas-006.png",
+        "alt": "Render 3D de conceptos de gomitas rosadas flotando sobre un fondo azul"
+      },
+      "etiquetas": ["Diseño de concepto", "Impresión 3D", "Presentado en Europa"]
+    },
+    {
+      "id": "cortadores-boda-lucia-marco",
+      "titulo": "Cortadores personalizados para boda",
+      "categoria": "Cortadores",
+      "categoriaSlug": "cortadores",
+      "emoji": "🍪",
+      "destacado": false,
+      "cliente": "Eventos Lucía & Marco",
+      "fecha": "2026-03-15",
+      "fechaTexto": "Marzo 2026",
+      "resumen": "Diseñamos un cortador con marcador que sella las iniciales de los novios y la fecha del evento. Se produjeron 150 piezas idénticas para las galletas de recuerdo, con desmolde limpio y detalle nítido en cada una.",
+      "imagen": {
+        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCD4DbwsOMrvSip5Qhzlj3li63qllMk9wuBSTwCV4REY-aGpd6d936a5daVZ6yYPC-HdrzMscP9yDX89hfm9irUvw11DuH7LqqtL1qRnu5Pl_SS3u6TZcKDR70UsSl73AfwSg3SQrkVDgbrFUdrduspK2fwvhz7y3RxiJckO4OSjZNRQBZR6ijZtRVHqBNaxBLsrWayvcHvgCcAp3w-9TviMO7rXkU5p1HfHoAWy1auBlQ6RkX4IEht1JmRDAzctyinGityMFNAvsSR",
+        "alt": "Cortador de galletas personalizado con iniciales grabadas para una boda"
+      },
+      "etiquetas": ["Cortador y marcador", "150 piezas", "Diseño a medida"]
+    },
+    {
+      "id": "topper-xv-anos-mariana",
+      "titulo": "Topper de XV años a cuatro colores",
+      "categoria": "Toppers",
+      "categoriaSlug": "toppers",
+      "emoji": "🎂",
+      "destacado": false,
+      "cliente": "Familia Herrera",
+      "fecha": "2026-02-20",
+      "fechaTexto": "Febrero 2026",
+      "resumen": "Topper de 20 cm con el nombre de la festejada en tipografía script, impreso en cuatro colores para combinar con la paleta del salón. Entregado en tres días para llegar a tiempo a la celebración.",
+      "imagen": {
+        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuCu5WW58_tWePR8m5_6U0CL37MUIJCyKDUaue9AuMrz00H_EXiHjmXlE8Y8oIPJHyJ5CO4O9d7ySw4AJNoAZ8HtvSsC6BQpXh0MRZG7DB40KQpDk36JpuOWcRWTARoGgV8JEIq4_2hFZR0lVf8fu67QzcSziyE8AuZFPolWZXW2L95kh4UInZrwgRW3QNe-0batPQOlT7Vercx-0krrRs0OrLtwzQa0gu0w-vstMtrXQhRFk2j36SEBeuAAhVYuDe7C3sUjSQTiGdP6",
+        "alt": "Topper para pastel con nombre en relieve para una fiesta de XV años"
+      },
+      "etiquetas": ["20 cm", "4 colores", "Entrega en 3 días"]
+    },
+    {
+      "id": "linea-moldes-aroma-botanica",
+      "titulo": "Línea de moldes para marca de jabones",
+      "categoria": "Jabones",
+      "categoriaSlug": "jabones",
+      "emoji": "🧼",
+      "destacado": false,
+      "cliente": "Aroma Botánica",
+      "fecha": "2026-01-28",
+      "fechaTexto": "Enero 2026",
+      "resumen": "Desarrollamos una familia de tres moldes de silicona de grado platino con el logotipo botánico de la marca en relieve, pensados para producción en serie de jabones en frío sin perder detalle tras cientos de usos.",
+      "imagen": {
+        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDdi_MFJ4-EdkKmG2kp8jaxuLDkmMqbqmaSqLErjvA2v3_IGYMQMLZA1-i1---hXGzg_HO_vyfsJ6rd6b8RDMcYVNboKtn1x2bZZwA5BjIlhGYK45vIuP6hyIiv3v10kAkxpbSAme2F8NWUaFmQqpa4DxWd4YdypCNyr5FFJJE0iBs1QzEJvYDM6SL_Ll5j0iBYsYykAdL9qx02boYeQR23z5KjnHx7HG1LPuf-IwOjHDVfUWL6PfuPtGLXNuGcW-WyxohO2aLt3hho",
+        "alt": "Moldes de silicona con relieve floral para jabones artesanales"
+      },
+      "etiquetas": ["Silicona platino", "3 moldes", "Producción en serie"]
+    },
+    {
+      "id": "repuesto-pieza-descontinuada",
+      "titulo": "Repuesto de una pieza descontinuada",
+      "categoria": "Impresión 3D",
+      "categoriaSlug": "impresion-3d",
+      "emoji": "🖨️",
+      "destacado": false,
+      "cliente": "Taller del Valle",
+      "fecha": "2026-01-10",
+      "fechaTexto": "Enero 2026",
+      "resumen": "A partir de una fotografía y las medidas de la pieza rota, modelamos y reimprimimos en PETG un engrane de repuesto que ya no se conseguía en el mercado, devolviendo a la vida un electrodoméstico.",
+      "imagen": {
+        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBVgQUDzR-jRo4iPXi9VbJl-950RY5f805rVSkXpE8iIPWm4f-e1RmrRjyKZW6ZhZtEkWNxBU215GzGxYKHwZkTfGsrTVLQW8D1occL-vEtZWHVVQuqQHU_cl75y6PtrPKIT_683iIK1zkXy5fsy1EeBOMFx8nau6PqquOWZjevd2TyIyH0KWcXdSNOSQQcLpq71JYFqudCNFCVXFLcLjip8eu1aH1341HKfyu-YzaZJ-X52MZsRyTgdOAKCaEpQiBRO6Xw6NMqAV6v",
+        "alt": "Pieza mecánica de repuesto impresa en 3D en color blanco"
+      },
+      "etiquetas": ["PETG", "Ingeniería inversa", "Pieza única"]
+    },
+    {
+      "id": "kit-cortadores-cafe-esquina",
+      "titulo": "Kit de cortadores temáticos para cafetería",
+      "categoria": "Cortadores",
+      "categoriaSlug": "cortadores",
+      "emoji": "🍪",
+      "destacado": false,
+      "cliente": "Café de la Esquina",
+      "fecha": "2025-12-05",
+      "fechaTexto": "Diciembre 2025",
+      "resumen": "Un set de cinco cortadores con la taza, el grano y el logo de la cafetería para su temporada navideña. El cliente los usa para producir galletas de regalo que refuerzan su identidad de marca.",
+      "imagen": {
+        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAGC7imqL15QV63rOs2iIS_gyuu65yYCun9UluYRZG3dqiHe9TiBR0k0oZ6zGCa5MXV5zt8xc-H8gJUEac_wsazDz3zREG1g5UezHj6VZfWFItC_WDOdbtrIhQdRrOfZMt6uXZg35nqBs0nWmzCJUpW-6J9pNgdpw7wG3chNafpwRhmzu3YThvhLsqeDoJDMPH4Sg9EUerD-JN3hMNEQRd16e2Vw3RJsiwNsCx00VynrFsd75Pg8eESfzna_1jrpeD722ckYX3Hn5Jx",
+        "alt": "Kit de varios cortadores de galletas temáticos de una cafetería"
+      },
+      "etiquetas": ["5 piezas", "Identidad de marca", "Edición navideña"]
+    },
+    {
+      "id": "souvenirs-corporativos-constructora",
+      "titulo": "Souvenirs corporativos con logo",
+      "categoria": "Corporativo",
+      "categoriaSlug": "corporativo",
+      "emoji": "🏢",
+      "destacado": false,
+      "cliente": "Constructora Ríos",
+      "fecha": "2025-11-18",
+      "fechaTexto": "Noviembre 2025",
+      "resumen": "Producimos 200 sellos de fondant con el logotipo de la empresa para un evento de fin de año, permitiéndoles regalar postres personalizados a clientes y colaboradores con un acabado profesional.",
+      "imagen": {
+        "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDFPWCc0Tj78w0NYuoXWdzEUb-4pK1ocpz_7qwxQdn9B8rBajXkhnLpWWDivfegcoHXFQDA4aQQFkIcX-q2xGuPdm2F7NuAdENdvLKGDJV9TE6awUKITN6Frsrdfex9HjbI-_CpBAigHmxrSVmzL8kHRtRwkUQsoJv5JZPnbtgIUFN2GqDX1YaRBREzj8xWfw76Ve7m2NolgvpX7aqpALRW4CJdnYRZOj9-ROEfNwIxE3B9qfb1y3VpMk8Yb7dUA3sXf_pm6MpQi-7R",
+        "alt": "Sello de fondant con logotipo corporativo grabado"
+      },
+      "etiquetas": ["200 piezas", "Logo corporativo", "Evento de fin de año"]
+    }
+  ]
+}

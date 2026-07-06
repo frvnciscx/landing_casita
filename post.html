@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Catálogo - La Casita del Molde | Moldes y Herramientas Creativas</title>
+    <title>Artículo - La Casita del Molde | Blog</title>
     <meta
       name="description"
-      content="Explora el catálogo completo de moldes personalizados, cortadores y herramientas creativas para repostería, jabones y artesanía."
+      content="Tutoriales, consejos y tendencias en impresión 3D, repostería creativa y jabones artesanales de La Casita del Molde."
     />
     <meta name="theme-color" content="#faf8f6" />
     <script>
@@ -47,7 +47,7 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -106,10 +106,6 @@
         text-wrap: balance;
       }
 
-      .tabular {
-        font-variant-numeric: tabular-nums;
-      }
-
       [id] {
         scroll-margin-top: 96px;
       }
@@ -128,12 +124,12 @@
         display: none !important;
       }
 
-      .product-card:hover .product-image-hover {
-        opacity: 1;
+      .contenido-articulo p {
+        margin-bottom: 1.5em;
       }
 
-      .product-card:hover .product-image-default {
-        opacity: 0;
+      .contenido-articulo p:last-child {
+        margin-bottom: 0;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -189,9 +185,8 @@
               >Tienda</a
             >
             <a
-              class="text-sm font-medium text-ink dark:text-white relative after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:bg-primary"
+              class="text-sm font-medium text-text-light dark:text-stone-400 hover:text-ink dark:hover:text-white transition-colors"
               href="catalogo.html"
-              aria-current="page"
               >Catálogo</a
             >
             <a
@@ -205,7 +200,7 @@
               >Sobre Nosotros</a
             >
             <a
-              class="text-sm font-medium text-text-light dark:text-stone-400 hover:text-ink dark:hover:text-white transition-colors"
+              class="text-sm font-medium text-ink dark:text-white relative after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:bg-primary"
               href="blog.html"
               >Blog</a
             >
@@ -270,9 +265,8 @@
               >Tienda</a
             >
             <a
-              class="py-3 text-base font-semibold text-ink dark:text-white border-b border-black/5 dark:border-white/10"
+              class="py-3 text-base font-medium text-text-light dark:text-stone-300 border-b border-black/5 dark:border-white/10 hover:text-ink dark:hover:text-white"
               href="catalogo.html"
-              aria-current="page"
               >Catálogo</a
             >
             <a
@@ -286,7 +280,7 @@
               >Sobre Nosotros</a
             >
             <a
-              class="py-3 text-base font-medium text-text-light dark:text-stone-300 border-b border-black/5 dark:border-white/10 hover:text-ink dark:hover:text-white"
+              class="py-3 text-base font-semibold text-ink dark:text-white border-b border-black/5 dark:border-white/10"
               href="blog.html"
               >Blog</a
             >
@@ -304,147 +298,101 @@
           </nav>
         </div>
       </header>
-      <main
-        id="contenido"
-        class="flex-1 flex flex-col lg:flex-row max-w-[1440px] mx-auto w-full px-4 lg:px-10 py-8 gap-10"
-      >
-        <!-- Sidebar Filters -->
-        <aside
-          id="panel-filtros"
-          class="w-full lg:w-64 flex-shrink-0 flex-col gap-8 hidden lg:flex"
+
+      <main id="contenido" class="flex-1 w-full max-w-[860px] mx-auto px-4 lg:px-10 py-8">
+        <!-- Breadcrumb -->
+        <nav
+          aria-label="Ruta de navegación"
+          class="flex items-center gap-2 text-xs font-medium text-text-light dark:text-stone-400 mb-8"
         >
-          <div>
-            <h2
-              class="text-xs font-semibold uppercase tracking-[0.16em] text-text-light dark:text-stone-400 mb-4 flex items-center gap-2"
-            >
-              <span class="material-symbols-outlined text-primary text-[18px]" aria-hidden="true">category</span>
-              Categorías
-            </h2>
-            <div class="flex flex-col gap-2.5">
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input checked class="rounded border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" type="checkbox" name="categoria" value="herramientas" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Herramientas</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="rounded border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" type="checkbox" name="categoria" value="reposteria" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Repostería</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="rounded border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" type="checkbox" name="categoria" value="jabones-velas" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Jabones / Velas</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="rounded border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" type="checkbox" name="categoria" value="kits" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Kits Temáticos</span>
-              </label>
-            </div>
-          </div>
-          <div class="border-t border-black/5 dark:border-white/10 pt-6">
-            <h2
-              class="text-xs font-semibold uppercase tracking-[0.16em] text-text-light dark:text-stone-400 mb-4 flex items-center gap-2"
-            >
-              <span class="material-symbols-outlined text-primary text-[18px]" aria-hidden="true">science</span>
-              Material
-            </h2>
-            <div class="flex flex-col gap-2.5">
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input checked class="border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" name="material" type="radio" value="todos" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Todos</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" name="material" type="radio" value="pla" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">PLA (Food-Safe)</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" name="material" type="radio" value="tpu" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Flex (TPU)</span>
-              </label>
-            </div>
-          </div>
-          <div class="border-t border-black/5 dark:border-white/10 pt-6">
-            <h2
-              class="text-xs font-semibold uppercase tracking-[0.16em] text-text-light dark:text-stone-400 mb-4 flex items-center gap-2"
-            >
-              <span class="material-symbols-outlined text-primary text-[18px]" aria-hidden="true">payments</span>
-              Precio
-            </h2>
-            <div class="px-1">
-              <label class="sr-only" for="rango-precio">Precio máximo</label>
-              <input
-                id="rango-precio"
-                class="w-full h-1.5 bg-black/10 dark:bg-white/15 rounded-lg appearance-none cursor-pointer accent-primary"
-                max="1000"
-                min="50"
-                value="1000"
-                type="range"
-              />
-              <div class="flex justify-between text-sm font-medium text-text-light dark:text-stone-400 mt-2 tabular">
-                <span>$50</span>
-                <output for="rango-precio" id="salida-precio">$1000+</output>
-              </div>
-            </div>
-          </div>
-        </aside>
-        <!-- Product Grid Area -->
-        <section class="flex-1">
-          <div
-            class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 gap-4"
+          <a class="hover:text-ink dark:hover:text-white transition-colors" href="index.html">Inicio</a>
+          <span class="material-symbols-outlined text-sm" aria-hidden="true">chevron_right</span>
+          <a class="hover:text-ink dark:hover:text-white transition-colors" href="blog.html">Blog</a>
+          <span class="material-symbols-outlined text-sm" aria-hidden="true">chevron_right</span>
+          <span id="bc-nombre" class="text-ink dark:text-white" aria-current="page">Artículo</span>
+        </nav>
+
+        <!-- Artículo no encontrado -->
+        <div id="no-encontrado" hidden class="text-center py-24">
+          <span class="material-symbols-outlined text-5xl text-text-light dark:text-stone-500" aria-hidden="true">search_off</span>
+          <h1 class="font-display text-3xl font-semibold text-ink dark:text-white mt-4 mb-2">
+            No encontramos ese artículo
+          </h1>
+          <p class="text-text-light dark:text-stone-400 mb-6">
+            Puede que ya no esté disponible. Explora el resto del blog.
+          </p>
+          <a
+            href="blog.html"
+            class="inline-flex items-center justify-center rounded-full h-12 px-7 bg-ink text-white dark:bg-white dark:text-ink text-sm font-semibold hover:bg-ink/90 dark:hover:bg-white/90 transition-colors"
           >
-            <div class="flex flex-col gap-2">
-              <nav
-                aria-label="Ruta de navegación"
-                class="flex items-center gap-2 text-xs font-medium text-text-light dark:text-stone-400"
-              >
-                <a class="hover:text-ink dark:hover:text-white transition-colors" href="index.html">Inicio</a>
-                <span class="material-symbols-outlined text-sm" aria-hidden="true">chevron_right</span>
-                <a class="text-ink dark:text-white" href="catalogo.html" aria-current="page">Catálogo</a>
-              </nav>
-              <h1 class="font-display text-4xl font-semibold text-ink dark:text-white">
-                Catálogo completo
-              </h1>
-              <p class="text-text-light dark:text-stone-400 text-sm">
-                Impresión 3D a medida y piezas listas para tu próximo proyecto · <span id="conteo-productos">6 productos</span>
+            Volver al blog
+          </a>
+        </div>
+
+        <!-- Artículo -->
+        <article id="detalle">
+          <p
+            id="cat"
+            class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-dark dark:text-primary mb-4"
+          ></p>
+          <h1
+            id="titulo"
+            class="font-display text-3xl lg:text-4xl font-semibold leading-[1.1] tracking-tight text-ink dark:text-white"
+          ></h1>
+          <div class="flex items-center gap-3 mt-5">
+            <div
+              class="size-10 rounded-full bg-primary/15 flex items-center justify-center text-primary-dark dark:text-primary font-bold text-sm flex-shrink-0"
+              aria-hidden="true"
+            >
+              <span id="autor-iniciales"></span>
+            </div>
+            <div>
+              <p id="autor" class="text-sm font-semibold text-ink dark:text-white"></p>
+              <p class="text-xs text-text-light dark:text-stone-400">
+                <span id="fecha"></span> · <span id="minutos"></span> min de lectura
               </p>
             </div>
-            <div class="flex items-center gap-3 w-full sm:w-auto">
-              <button
-                id="boton-filtros"
-                type="button"
-                aria-expanded="false"
-                aria-controls="panel-filtros"
-                class="lg:hidden inline-flex items-center gap-2 px-4 py-2.5 bg-surface dark:bg-surface-dark border border-black/10 dark:border-white/15 rounded-full text-sm font-medium text-ink dark:text-white hover:border-ink/40 dark:hover:border-white/40 transition-colors"
-              >
-                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">filter_list</span>
-                Filtros
-              </button>
-              <div class="relative w-full sm:w-64">
-                <label class="sr-only" for="orden-productos">Ordenar productos</label>
-                <select
-                  id="orden-productos"
-                  class="w-full pl-4 pr-10 py-2.5 text-sm bg-surface dark:bg-surface-dark text-ink dark:text-white border border-black/10 dark:border-white/15 rounded-full focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer"
-                >
-                  <option>Recomendados</option>
-                  <option>Precio: Menor a Mayor</option>
-                  <option>Precio: Mayor a Menor</option>
-                  <option>Novedades</option>
-                </select>
-                <div class="absolute inset-y-0 right-0 flex items-center px-2.5 pointer-events-none text-text-light dark:text-stone-400">
-                  <span class="material-symbols-outlined text-[20px]" aria-hidden="true">expand_more</span>
-                </div>
-              </div>
-            </div>
           </div>
           <div
-            id="grid-productos"
-            class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6"
-            aria-live="polite"
+            class="mt-8 rounded-3xl overflow-hidden bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 aspect-[16/9]"
           >
-            <p class="text-text-light dark:text-stone-400 col-span-full">Cargando productos...</p>
+            <img
+              id="imagen-principal"
+              src=""
+              alt=""
+              width="860"
+              height="484"
+              fetchpriority="high"
+              class="w-full h-full object-cover"
+            />
           </div>
+          <div
+            id="contenido-articulo"
+            class="contenido-articulo mt-10 text-lg leading-loose text-text-main dark:text-stone-300 max-w-prose"
+          ></div>
+
+          <div class="mt-12 pt-8 border-t border-black/5 dark:border-white/10">
+            <a
+              href="index.html#cotiza"
+              class="inline-flex items-center justify-center gap-2 rounded-full h-12 px-7 bg-ink text-white dark:bg-white dark:text-ink text-sm font-semibold hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white transition-colors"
+            >
+              <span class="material-symbols-outlined text-[20px]" aria-hidden="true">lightbulb</span>
+              ¿Tienes una idea? Cotiza tu diseño
+            </a>
+          </div>
+        </article>
+
+        <!-- Relacionados -->
+        <section id="seccion-relacionados" class="mt-16 lg:mt-20">
+          <h2 class="font-display text-2xl font-semibold text-ink dark:text-white mb-8">
+            Más artículos
+          </h2>
+          <div id="relacionados" class="grid grid-cols-1 sm:grid-cols-3 gap-6"></div>
         </section>
       </main>
+
       <footer
-        class="w-full bg-surface dark:bg-surface-dark border-t border-black/5 dark:border-white/10"
+        class="w-full bg-surface dark:bg-surface-dark border-t border-black/5 dark:border-white/10 mt-16"
       >
         <div class="max-w-[1280px] mx-auto px-4 lg:px-10 py-14">
           <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
@@ -559,6 +507,7 @@
     </div>
     <script>
       (function () {
+        // ---- Toggle de tema ----
         var botonTema = document.getElementById("boton-tema");
         if (botonTema) {
           var etiquetaTema = function () {
@@ -580,6 +529,7 @@
           });
         }
 
+        // ---- Menú móvil ----
         var boton = document.getElementById("boton-menu");
         var panel = document.getElementById("menu-movil");
         if (boton && panel) {
@@ -600,149 +550,89 @@
           });
         }
 
-        var botonFiltros = document.getElementById("boton-filtros");
-        var panelFiltros = document.getElementById("panel-filtros");
-        if (botonFiltros && panelFiltros) {
-          botonFiltros.addEventListener("click", function () {
-            var oculto = panelFiltros.classList.toggle("hidden");
-            panelFiltros.classList.toggle("flex", !oculto);
-            botonFiltros.setAttribute("aria-expanded", String(!oculto));
-            if (!oculto) {
-              panelFiltros.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
+        // ---- Artículo del blog ----
+        function idActual() {
+          return new URL(window.location).searchParams.get("id");
+        }
+
+        var id = idActual();
+
+        fetch("data/posts.json")
+          .then(function (res) {
+            return res.json();
+          })
+          .then(function (data) {
+            inicializarPost(data.posts);
+          })
+          .catch(function () {
+            mostrarNoEncontrado();
           });
+
+        function mostrarNoEncontrado() {
+          document.getElementById("detalle").hidden = true;
+          document.getElementById("seccion-relacionados").hidden = true;
+          document.getElementById("no-encontrado").hidden = false;
+          document.getElementById("bc-nombre").textContent = "Artículo no encontrado";
         }
 
-        var rango = document.getElementById("rango-precio");
-        var salida = document.getElementById("salida-precio");
-        if (rango && salida) {
-          rango.addEventListener("input", function () {
-            var valor = Number(rango.value);
-            salida.textContent = valor >= 1000 ? "$1000+" : "$" + valor;
-          });
-        }
+        function inicializarPost(posts) {
+          var post = posts.filter(function (p) {
+            return p.id === id;
+          })[0];
 
-        var gridProductos = document.getElementById("grid-productos");
-        var conteoProductos = document.getElementById("conteo-productos");
-        if (gridProductos) {
-          fetch("data/productos.json")
-            .then(function (res) {
-              return res.json();
-            })
-            .then(function (data) {
-              renderProductos(data.productos);
-            })
-            .catch(function () {
-              gridProductos.innerHTML =
-                '<p class="text-text-light dark:text-stone-400 col-span-full">No se pudieron cargar los productos. Intenta recargar la página.</p>';
-            });
-        }
-
-        function formatoPrecio(valor) {
-          return (
-            "$" +
-            Number(valor).toLocaleString("es-MX", {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })
-          );
-        }
-
-        function estrellasHTML(rating) {
-          var html = "";
-          for (var i = 1; i <= 5; i++) {
-            if (rating >= i) {
-              html +=
-                '<span class="material-symbols-outlined text-[16px]" aria-hidden="true">star</span>';
-            } else if (rating >= i - 0.5) {
-              html +=
-                '<span class="material-symbols-outlined text-[16px]" aria-hidden="true">star_half</span>';
-            } else {
-              html +=
-                '<span class="material-symbols-outlined text-[16px] text-black/20 dark:text-white/25" aria-hidden="true">star</span>';
-            }
-          }
-          return html;
-        }
-
-        function renderProductos(productos) {
-          if (conteoProductos) {
-            conteoProductos.textContent =
-              productos.length + (productos.length === 1 ? " producto" : " productos");
-          }
-          if (!productos.length) {
-            gridProductos.innerHTML =
-              '<p class="text-text-light dark:text-stone-400 col-span-full">No encontramos productos por el momento.</p>';
+          if (!post) {
+            mostrarNoEncontrado();
             return;
           }
-          gridProductos.innerHTML = productos
-            .map(function (p) {
-              var badgeColor = p.badge === "Popular" ? "bg-amber-500" : "bg-primary";
-              var badgeHTML = p.badge
-                ? '<span class="absolute top-3 left-3 z-10 ' +
-                  badgeColor +
-                  ' text-white text-[11px] font-semibold px-2.5 py-1 rounded-full">' +
-                  p.badge +
-                  "</span>"
-                : "";
-              var imgDefault = p.imgs && p.imgs[0] ? p.imgs[0] : { src: "", alt: "" };
-              var imgHover = p.imgs && p.imgs[1] ? p.imgs[1] : imgDefault;
-              return (
-                '<article class="group product-card relative bg-surface dark:bg-surface-dark rounded-2xl border border-black/5 dark:border-white/10 hover:border-primary/40 dark:hover:border-primary/40 hover:shadow-xl hover:shadow-black/5 transition-[box-shadow,border-color] duration-300 overflow-hidden flex flex-col">' +
-                '<div class="relative aspect-square bg-paper dark:bg-paper-dark overflow-hidden">' +
-                badgeHTML +
-                '<button type="button" aria-label="Agregar ' +
-                p.nombre +
-                ' a favoritos" class="absolute top-3 right-3 z-10 bg-surface/80 dark:bg-surface-dark/80 hover:bg-surface dark:hover:bg-surface-dark text-text-light hover:text-primary rounded-full p-1.5 transition-colors shadow-sm backdrop-blur-sm">' +
-                '<span class="material-symbols-outlined text-[20px]" aria-hidden="true">favorite</span>' +
-                "</button>" +
-                '<img alt="' +
-                imgDefault.alt +
-                '" width="600" height="600" class="product-image-default absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out p-8" src="' +
-                imgDefault.src +
-                '" />' +
-                '<img alt="' +
-                imgHover.alt +
-                '" width="600" height="600" loading="lazy" class="product-image-hover absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 ease-in-out" src="' +
-                imgHover.src +
-                '" />' +
-                "</div>" +
-                '<div class="p-5 flex flex-col gap-2 flex-1">' +
-                '<div class="flex items-center gap-1 text-amber-400 text-sm">' +
-                '<span role="img" aria-label="Calificación: ' +
-                p.rating +
-                ' de 5 estrellas" class="flex items-center">' +
-                estrellasHTML(p.rating) +
-                "</span>" +
-                '<span class="text-text-light dark:text-stone-500 text-xs ml-1 tabular">(' +
-                p.reviews +
-                ")</span>" +
-                "</div>" +
-                '<h3 class="font-display text-lg font-semibold text-ink dark:text-white leading-tight group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">' +
-                '<a href="producto.html?id=' +
-                p.id +
-                '" class="before:absolute before:inset-0 before:content-[\'\']">' +
-                p.nombre +
-                "</a>" +
-                "</h3>" +
-                '<p class="text-xs text-text-light dark:text-stone-400 line-clamp-2">' +
-                p.desc +
-                "</p>" +
-                '<div class="mt-auto pt-3 flex items-center justify-between">' +
-                '<span class="text-lg font-semibold text-ink dark:text-white tabular">' +
-                formatoPrecio(p.precio) +
-                "</span>" +
-                '<button type="button" aria-label="Agregar ' +
-                p.nombre +
-                ' al carrito" class="relative z-10 bg-ink text-white dark:bg-white dark:text-ink hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white rounded-full p-2 transition-colors">' +
-                '<span class="material-symbols-outlined text-[20px]" aria-hidden="true">add_shopping_cart</span>' +
-                "</button>" +
-                "</div>" +
-                "</div>" +
-                "</article>"
-              );
+
+          document.title = post.titulo + " - La Casita del Molde";
+          document.getElementById("bc-nombre").textContent = post.titulo;
+
+          document.getElementById("cat").textContent = post.emoji + " " + post.categoria;
+          document.getElementById("titulo").textContent = post.titulo;
+          document.getElementById("autor-iniciales").textContent = post.autorIniciales;
+          document.getElementById("autor").textContent = post.autor;
+          document.getElementById("fecha").textContent = post.fechaTexto;
+          document.getElementById("minutos").textContent = post.minutos;
+
+          var img = document.getElementById("imagen-principal");
+          img.src = post.imagen.src;
+          img.alt = post.imagen.alt;
+
+          var contenedorContenido = document.getElementById("contenido-articulo");
+          contenedorContenido.innerHTML = post.contenido
+            .map(function (parrafo) {
+              return "<p>" + parrafo + "</p>";
             })
             .join("");
+
+          // Relacionados (misma categoría primero, luego el resto)
+          var contenedor = document.getElementById("relacionados");
+          var otros = posts.filter(function (p) {
+            return p.id !== id;
+          });
+          otros.sort(function (a, b) {
+            var sa = a.categoriaSlug === post.categoriaSlug ? 0 : 1;
+            var sb = b.categoriaSlug === post.categoriaSlug ? 0 : 1;
+            return sa - sb;
+          });
+          otros.slice(0, 3).forEach(function (p) {
+            var a = document.createElement("a");
+            a.href = "post.html?id=" + p.id;
+            a.className =
+              "group flex flex-col rounded-2xl overflow-hidden bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 hover:border-primary/40 dark:hover:border-primary/40 hover:shadow-xl hover:shadow-black/5 transition-[border-color,box-shadow] duration-300";
+            a.innerHTML =
+              '<div class="aspect-[16/9] overflow-hidden bg-paper dark:bg-paper-dark">' +
+              '<img src="' + p.imagen.src + '" alt="' + p.imagen.alt + '" width="400" height="225" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />' +
+              "</div>" +
+              '<div class="p-4">' +
+              '<p class="text-xs font-semibold uppercase tracking-[0.12em] text-primary-dark dark:text-primary mb-1"></p>' +
+              '<h3 class="font-display text-base font-semibold text-ink dark:text-white leading-snug group-hover:text-primary-dark dark:group-hover:text-primary transition-colors"></h3>' +
+              "</div>";
+            a.querySelector("p").textContent = p.emoji + " " + p.categoria;
+            a.querySelector("h3").textContent = p.titulo;
+            contenedor.appendChild(a);
+          });
         }
       })();
     </script>

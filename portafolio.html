@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Catálogo - La Casita del Molde | Moldes y Herramientas Creativas</title>
+    <title>Portafolio - La Casita del Molde | Proyectos en los que hemos trabajado</title>
     <meta
       name="description"
-      content="Explora el catálogo completo de moldes personalizados, cortadores y herramientas creativas para repostería, jabones y artesanía."
+      content="Conoce algunos de los proyectos de impresión 3D, cortadores de galletas, toppers y moldes personalizados que hemos creado para nuestros clientes."
     />
     <meta name="theme-color" content="#faf8f6" />
     <script>
@@ -106,10 +106,6 @@
         text-wrap: balance;
       }
 
-      .tabular {
-        font-variant-numeric: tabular-nums;
-      }
-
       [id] {
         scroll-margin-top: 96px;
       }
@@ -126,14 +122,6 @@
 
       [hidden] {
         display: none !important;
-      }
-
-      .product-card:hover .product-image-hover {
-        opacity: 1;
-      }
-
-      .product-card:hover .product-image-default {
-        opacity: 0;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -189,14 +177,14 @@
               >Tienda</a
             >
             <a
-              class="text-sm font-medium text-ink dark:text-white relative after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:bg-primary"
+              class="text-sm font-medium text-text-light dark:text-stone-400 hover:text-ink dark:hover:text-white transition-colors"
               href="catalogo.html"
-              aria-current="page"
               >Catálogo</a
             >
             <a
-              class="text-sm font-medium text-text-light dark:text-stone-400 hover:text-ink dark:hover:text-white transition-colors"
+              class="text-sm font-medium text-ink dark:text-white relative after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:bg-primary"
               href="portafolio.html"
+              aria-current="page"
               >Portafolio</a
             >
             <a
@@ -270,14 +258,14 @@
               >Tienda</a
             >
             <a
-              class="py-3 text-base font-semibold text-ink dark:text-white border-b border-black/5 dark:border-white/10"
+              class="py-3 text-base font-medium text-text-light dark:text-stone-300 border-b border-black/5 dark:border-white/10 hover:text-ink dark:hover:text-white"
               href="catalogo.html"
-              aria-current="page"
               >Catálogo</a
             >
             <a
-              class="py-3 text-base font-medium text-text-light dark:text-stone-300 border-b border-black/5 dark:border-white/10 hover:text-ink dark:hover:text-white"
+              class="py-3 text-base font-semibold text-ink dark:text-white border-b border-black/5 dark:border-white/10"
               href="portafolio.html"
+              aria-current="page"
               >Portafolio</a
             >
             <a
@@ -304,142 +292,77 @@
           </nav>
         </div>
       </header>
-      <main
-        id="contenido"
-        class="flex-1 flex flex-col lg:flex-row max-w-[1440px] mx-auto w-full px-4 lg:px-10 py-8 gap-10"
-      >
-        <!-- Sidebar Filters -->
-        <aside
-          id="panel-filtros"
-          class="w-full lg:w-64 flex-shrink-0 flex-col gap-8 hidden lg:flex"
-        >
-          <div>
-            <h2
-              class="text-xs font-semibold uppercase tracking-[0.16em] text-text-light dark:text-stone-400 mb-4 flex items-center gap-2"
-            >
-              <span class="material-symbols-outlined text-primary text-[18px]" aria-hidden="true">category</span>
-              Categorías
-            </h2>
-            <div class="flex flex-col gap-2.5">
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input checked class="rounded border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" type="checkbox" name="categoria" value="herramientas" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Herramientas</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="rounded border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" type="checkbox" name="categoria" value="reposteria" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Repostería</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="rounded border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" type="checkbox" name="categoria" value="jabones-velas" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Jabones / Velas</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="rounded border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" type="checkbox" name="categoria" value="kits" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Kits Temáticos</span>
-              </label>
-            </div>
-          </div>
-          <div class="border-t border-black/5 dark:border-white/10 pt-6">
-            <h2
-              class="text-xs font-semibold uppercase tracking-[0.16em] text-text-light dark:text-stone-400 mb-4 flex items-center gap-2"
-            >
-              <span class="material-symbols-outlined text-primary text-[18px]" aria-hidden="true">science</span>
-              Material
-            </h2>
-            <div class="flex flex-col gap-2.5">
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input checked class="border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" name="material" type="radio" value="todos" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Todos</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" name="material" type="radio" value="pla" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">PLA (Food-Safe)</span>
-              </label>
-              <label class="flex items-center gap-3 cursor-pointer group">
-                <input class="border-black/20 dark:border-white/25 text-primary focus:ring-primary h-4.5 w-4.5 cursor-pointer bg-transparent" name="material" type="radio" value="tpu" />
-                <span class="text-sm text-text-main dark:text-stone-300 group-hover:text-ink dark:group-hover:text-white transition-colors">Flex (TPU)</span>
-              </label>
-            </div>
-          </div>
-          <div class="border-t border-black/5 dark:border-white/10 pt-6">
-            <h2
-              class="text-xs font-semibold uppercase tracking-[0.16em] text-text-light dark:text-stone-400 mb-4 flex items-center gap-2"
-            >
-              <span class="material-symbols-outlined text-primary text-[18px]" aria-hidden="true">payments</span>
-              Precio
-            </h2>
-            <div class="px-1">
-              <label class="sr-only" for="rango-precio">Precio máximo</label>
-              <input
-                id="rango-precio"
-                class="w-full h-1.5 bg-black/10 dark:bg-white/15 rounded-lg appearance-none cursor-pointer accent-primary"
-                max="1000"
-                min="50"
-                value="1000"
-                type="range"
-              />
-              <div class="flex justify-between text-sm font-medium text-text-light dark:text-stone-400 mt-2 tabular">
-                <span>$50</span>
-                <output for="rango-precio" id="salida-precio">$1000+</output>
-              </div>
-            </div>
-          </div>
-        </aside>
-        <!-- Product Grid Area -->
-        <section class="flex-1">
-          <div
-            class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 gap-4"
+      <main id="contenido" class="flex-1 w-full">
+        <!-- Encabezado -->
+        <section class="w-full max-w-[1280px] mx-auto px-4 lg:px-10 pt-10 pb-8">
+          <nav
+            aria-label="Ruta de navegación"
+            class="flex items-center gap-2 text-xs font-medium text-text-light dark:text-stone-400 mb-4"
           >
-            <div class="flex flex-col gap-2">
-              <nav
-                aria-label="Ruta de navegación"
-                class="flex items-center gap-2 text-xs font-medium text-text-light dark:text-stone-400"
-              >
-                <a class="hover:text-ink dark:hover:text-white transition-colors" href="index.html">Inicio</a>
-                <span class="material-symbols-outlined text-sm" aria-hidden="true">chevron_right</span>
-                <a class="text-ink dark:text-white" href="catalogo.html" aria-current="page">Catálogo</a>
-              </nav>
-              <h1 class="font-display text-4xl font-semibold text-ink dark:text-white">
-                Catálogo completo
-              </h1>
-              <p class="text-text-light dark:text-stone-400 text-sm">
-                Impresión 3D a medida y piezas listas para tu próximo proyecto · <span id="conteo-productos">6 productos</span>
-              </p>
-            </div>
-            <div class="flex items-center gap-3 w-full sm:w-auto">
-              <button
-                id="boton-filtros"
-                type="button"
-                aria-expanded="false"
-                aria-controls="panel-filtros"
-                class="lg:hidden inline-flex items-center gap-2 px-4 py-2.5 bg-surface dark:bg-surface-dark border border-black/10 dark:border-white/15 rounded-full text-sm font-medium text-ink dark:text-white hover:border-ink/40 dark:hover:border-white/40 transition-colors"
-              >
-                <span class="material-symbols-outlined text-[18px]" aria-hidden="true">filter_list</span>
-                Filtros
-              </button>
-              <div class="relative w-full sm:w-64">
-                <label class="sr-only" for="orden-productos">Ordenar productos</label>
-                <select
-                  id="orden-productos"
-                  class="w-full pl-4 pr-10 py-2.5 text-sm bg-surface dark:bg-surface-dark text-ink dark:text-white border border-black/10 dark:border-white/15 rounded-full focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer"
-                >
-                  <option>Recomendados</option>
-                  <option>Precio: Menor a Mayor</option>
-                  <option>Precio: Mayor a Menor</option>
-                  <option>Novedades</option>
-                </select>
-                <div class="absolute inset-y-0 right-0 flex items-center px-2.5 pointer-events-none text-text-light dark:text-stone-400">
-                  <span class="material-symbols-outlined text-[20px]" aria-hidden="true">expand_more</span>
-                </div>
-              </div>
-            </div>
-          </div>
+            <a class="hover:text-ink dark:hover:text-white transition-colors" href="index.html">Inicio</a>
+            <span class="material-symbols-outlined text-sm" aria-hidden="true">chevron_right</span>
+            <span class="text-ink dark:text-white">Portafolio</span>
+          </nav>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-dark dark:text-primary mb-3">
+            Nuestro trabajo
+          </p>
+          <h1 class="font-display text-4xl lg:text-5xl font-semibold text-ink dark:text-white leading-tight max-w-3xl">
+            Proyectos en los que hemos trabajado
+          </h1>
+          <p class="mt-4 text-lg text-text-light dark:text-stone-400 leading-relaxed max-w-2xl">
+            Cada pieza empieza con una idea de nuestros clientes. Aquí reunimos algunos de los cortadores,
+            toppers, moldes y piezas de impresión 3D que hemos hecho realidad.
+          </p>
+        </section>
+
+        <!-- Filtros por categoría -->
+        <section class="w-full max-w-[1280px] mx-auto px-4 lg:px-10 pb-8">
           <div
-            id="grid-productos"
-            class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6"
+            id="filtros-portafolio"
+            class="flex flex-wrap gap-2.5"
+            role="group"
+            aria-label="Filtrar proyectos por categoría"
+          >
+            <button type="button" data-filtro="todos" aria-pressed="true" class="chip-filtro px-4 py-2 rounded-full border text-sm font-medium transition-colors">Todos</button>
+            <button type="button" data-filtro="diseno-industrial" aria-pressed="false" class="chip-filtro px-4 py-2 rounded-full border text-sm font-medium transition-colors">🎨 Diseño industrial</button>
+            <button type="button" data-filtro="cortadores" aria-pressed="false" class="chip-filtro px-4 py-2 rounded-full border text-sm font-medium transition-colors">🍪 Cortadores</button>
+            <button type="button" data-filtro="toppers" aria-pressed="false" class="chip-filtro px-4 py-2 rounded-full border text-sm font-medium transition-colors">🎂 Toppers</button>
+            <button type="button" data-filtro="impresion-3d" aria-pressed="false" class="chip-filtro px-4 py-2 rounded-full border text-sm font-medium transition-colors">🖨️ Impresión 3D</button>
+            <button type="button" data-filtro="jabones" aria-pressed="false" class="chip-filtro px-4 py-2 rounded-full border text-sm font-medium transition-colors">🧼 Jabones</button>
+            <button type="button" data-filtro="corporativo" aria-pressed="false" class="chip-filtro px-4 py-2 rounded-full border text-sm font-medium transition-colors">🏢 Corporativo</button>
+          </div>
+        </section>
+
+        <!-- Grid de proyectos -->
+        <section class="w-full max-w-[1280px] mx-auto px-4 lg:px-10 pb-16">
+          <div
+            id="grid-proyectos"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             aria-live="polite"
           >
-            <p class="text-text-light dark:text-stone-400 col-span-full">Cargando productos...</p>
+            <p class="text-text-light dark:text-stone-400 col-span-full">Cargando proyectos...</p>
+          </div>
+          <p id="sin-resultados" hidden class="text-text-light dark:text-stone-400 py-8">
+            No hay proyectos en esta categoría por el momento.
+          </p>
+        </section>
+
+        <!-- CTA -->
+        <section class="w-full bg-ink text-white py-16 border-y border-transparent dark:border-white/10">
+          <div class="max-w-[1280px] mx-auto px-4 lg:px-10 flex flex-col items-center text-center gap-5">
+            <h2 class="font-display text-3xl lg:text-4xl font-semibold leading-tight">
+              ¿Tu proyecto podría ser el siguiente?
+            </h2>
+            <p class="text-lg text-stone-300 leading-relaxed max-w-xl">
+              Cuéntanos tu idea y te ayudamos a convertirla en una pieza real. Cotización sin compromiso.
+            </p>
+            <a
+              href="index.html#cotiza"
+              class="inline-flex items-center justify-center rounded-full h-12 px-8 bg-primary text-white text-sm font-semibold hover:bg-primary-dark transition-colors"
+            >
+              <span class="material-symbols-outlined mr-2 text-[20px]" aria-hidden="true">lightbulb</span>
+              Cotizar mi idea
+            </a>
           </div>
         </section>
       </main>
@@ -600,149 +523,130 @@
           });
         }
 
-        var botonFiltros = document.getElementById("boton-filtros");
-        var panelFiltros = document.getElementById("panel-filtros");
-        if (botonFiltros && panelFiltros) {
-          botonFiltros.addEventListener("click", function () {
-            var oculto = panelFiltros.classList.toggle("hidden");
-            panelFiltros.classList.toggle("flex", !oculto);
-            botonFiltros.setAttribute("aria-expanded", String(!oculto));
-            if (!oculto) {
-              panelFiltros.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
+        var CLASES_ACTIVO = ["bg-ink", "text-white", "dark:bg-white", "dark:text-ink", "border-ink", "dark:border-white"];
+        var CLASES_INACTIVO = ["border-black/10", "dark:border-white/15", "text-text-light", "dark:text-stone-300", "hover:text-ink", "dark:hover:text-white", "hover:border-ink/40"];
+
+        var gridProyectos = document.getElementById("grid-proyectos");
+        var sinResultados = document.getElementById("sin-resultados");
+        var chips = document.querySelectorAll(".chip-filtro");
+        var filtrosValidos = ["todos", "diseno-industrial", "cortadores", "toppers", "impresion-3d", "jabones", "corporativo"];
+
+        function pintarChip(chip, activo) {
+          chip.setAttribute("aria-pressed", String(activo));
+          (activo ? CLASES_INACTIVO : CLASES_ACTIVO).forEach(function (c) {
+            chip.classList.remove(c);
+          });
+          (activo ? CLASES_ACTIVO : CLASES_INACTIVO).forEach(function (c) {
+            chip.classList.add(c);
           });
         }
 
-        var rango = document.getElementById("rango-precio");
-        var salida = document.getElementById("salida-precio");
-        if (rango && salida) {
-          rango.addEventListener("input", function () {
-            var valor = Number(rango.value);
-            salida.textContent = valor >= 1000 ? "$1000+" : "$" + valor;
+        function aplicarFiltro(filtro, actualizarUrl) {
+          chips.forEach(function (chip) {
+            pintarChip(chip, chip.getAttribute("data-filtro") === filtro);
           });
-        }
-
-        var gridProductos = document.getElementById("grid-productos");
-        var conteoProductos = document.getElementById("conteo-productos");
-        if (gridProductos) {
-          fetch("data/productos.json")
-            .then(function (res) {
-              return res.json();
-            })
-            .then(function (data) {
-              renderProductos(data.productos);
-            })
-            .catch(function () {
-              gridProductos.innerHTML =
-                '<p class="text-text-light dark:text-stone-400 col-span-full">No se pudieron cargar los productos. Intenta recargar la página.</p>';
-            });
-        }
-
-        function formatoPrecio(valor) {
-          return (
-            "$" +
-            Number(valor).toLocaleString("es-MX", {
-              minimumFractionDigits: 2,
-              maximumFractionDigits: 2,
-            })
-          );
-        }
-
-        function estrellasHTML(rating) {
-          var html = "";
-          for (var i = 1; i <= 5; i++) {
-            if (rating >= i) {
-              html +=
-                '<span class="material-symbols-outlined text-[16px]" aria-hidden="true">star</span>';
-            } else if (rating >= i - 0.5) {
-              html +=
-                '<span class="material-symbols-outlined text-[16px]" aria-hidden="true">star_half</span>';
-            } else {
-              html +=
-                '<span class="material-symbols-outlined text-[16px] text-black/20 dark:text-white/25" aria-hidden="true">star</span>';
-            }
+          var tarjetas = gridProyectos.querySelectorAll("[data-categoria]");
+          var visibles = 0;
+          tarjetas.forEach(function (tarjeta) {
+            var coincide =
+              filtro === "todos" || tarjeta.getAttribute("data-categoria") === filtro;
+            tarjeta.hidden = !coincide;
+            if (coincide) visibles++;
+          });
+          if (sinResultados) sinResultados.hidden = visibles !== 0;
+          if (actualizarUrl) {
+            var url = new URL(window.location);
+            if (filtro === "todos") url.searchParams.delete("categoria");
+            else url.searchParams.set("categoria", filtro);
+            history.replaceState(null, "", url);
           }
-          return html;
         }
 
-        function renderProductos(productos) {
-          if (conteoProductos) {
-            conteoProductos.textContent =
-              productos.length + (productos.length === 1 ? " producto" : " productos");
-          }
-          if (!productos.length) {
-            gridProductos.innerHTML =
-              '<p class="text-text-light dark:text-stone-400 col-span-full">No encontramos productos por el momento.</p>';
+        function renderGrid(proyectos) {
+          if (!proyectos.length) {
+            gridProyectos.innerHTML =
+              '<p class="text-text-light dark:text-stone-400 col-span-full">Aún no hay proyectos para mostrar.</p>';
             return;
           }
-          gridProductos.innerHTML = productos
+          gridProyectos.innerHTML = proyectos
             .map(function (p) {
-              var badgeColor = p.badge === "Popular" ? "bg-amber-500" : "bg-primary";
-              var badgeHTML = p.badge
-                ? '<span class="absolute top-3 left-3 z-10 ' +
-                  badgeColor +
-                  ' text-white text-[11px] font-semibold px-2.5 py-1 rounded-full">' +
-                  p.badge +
-                  "</span>"
+              var etiquetas = (p.etiquetas || [])
+                .map(function (t) {
+                  return (
+                    '<span class="inline-flex items-center rounded-full bg-black/5 dark:bg-white/10 px-2.5 py-1 text-[11px] font-medium text-text-main dark:text-stone-300">' +
+                    t +
+                    "</span>"
+                  );
+                })
+                .join("");
+              var destacadoHTML = p.destacado
+                ? '<span class="absolute top-3 left-3 z-10 bg-primary text-white text-[11px] font-semibold px-2.5 py-1 rounded-full">✨ Destacado</span>'
                 : "";
-              var imgDefault = p.imgs && p.imgs[0] ? p.imgs[0] : { src: "", alt: "" };
-              var imgHover = p.imgs && p.imgs[1] ? p.imgs[1] : imgDefault;
               return (
-                '<article class="group product-card relative bg-surface dark:bg-surface-dark rounded-2xl border border-black/5 dark:border-white/10 hover:border-primary/40 dark:hover:border-primary/40 hover:shadow-xl hover:shadow-black/5 transition-[box-shadow,border-color] duration-300 overflow-hidden flex flex-col">' +
-                '<div class="relative aspect-square bg-paper dark:bg-paper-dark overflow-hidden">' +
-                badgeHTML +
-                '<button type="button" aria-label="Agregar ' +
-                p.nombre +
-                ' a favoritos" class="absolute top-3 right-3 z-10 bg-surface/80 dark:bg-surface-dark/80 hover:bg-surface dark:hover:bg-surface-dark text-text-light hover:text-primary rounded-full p-1.5 transition-colors shadow-sm backdrop-blur-sm">' +
-                '<span class="material-symbols-outlined text-[20px]" aria-hidden="true">favorite</span>' +
-                "</button>" +
+                '<article data-categoria="' +
+                p.categoriaSlug +
+                '" class="group relative flex flex-col overflow-hidden rounded-2xl bg-surface dark:bg-surface-dark border border-black/5 dark:border-white/10 hover:border-primary/40 dark:hover:border-primary/40 hover:shadow-xl hover:shadow-black/5 transition-[box-shadow,border-color] duration-300">' +
+                '<div class="relative aspect-[4/3] w-full overflow-hidden bg-paper dark:bg-paper-dark">' +
+                destacadoHTML +
                 '<img alt="' +
-                imgDefault.alt +
-                '" width="600" height="600" class="product-image-default absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ease-in-out p-8" src="' +
-                imgDefault.src +
-                '" />' +
-                '<img alt="' +
-                imgHover.alt +
-                '" width="600" height="600" loading="lazy" class="product-image-hover absolute inset-0 w-full h-full object-cover opacity-0 transition-opacity duration-300 ease-in-out" src="' +
-                imgHover.src +
+                p.imagen.alt +
+                '" width="800" height="600" loading="lazy" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="' +
+                p.imagen.src +
                 '" />' +
                 "</div>" +
-                '<div class="p-5 flex flex-col gap-2 flex-1">' +
-                '<div class="flex items-center gap-1 text-amber-400 text-sm">' +
-                '<span role="img" aria-label="Calificación: ' +
-                p.rating +
-                ' de 5 estrellas" class="flex items-center">' +
-                estrellasHTML(p.rating) +
-                "</span>" +
-                '<span class="text-text-light dark:text-stone-500 text-xs ml-1 tabular">(' +
-                p.reviews +
-                ")</span>" +
-                "</div>" +
-                '<h3 class="font-display text-lg font-semibold text-ink dark:text-white leading-tight group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">' +
-                '<a href="producto.html?id=' +
-                p.id +
-                '" class="before:absolute before:inset-0 before:content-[\'\']">' +
-                p.nombre +
-                "</a>" +
-                "</h3>" +
-                '<p class="text-xs text-text-light dark:text-stone-400 line-clamp-2">' +
-                p.desc +
+                '<div class="flex flex-1 flex-col gap-2 p-6">' +
+                '<p class="text-xs font-semibold uppercase tracking-[0.14em] text-primary-dark dark:text-primary">' +
+                p.emoji +
+                " " +
+                p.categoria +
                 "</p>" +
-                '<div class="mt-auto pt-3 flex items-center justify-between">' +
-                '<span class="text-lg font-semibold text-ink dark:text-white tabular">' +
-                formatoPrecio(p.precio) +
-                "</span>" +
-                '<button type="button" aria-label="Agregar ' +
-                p.nombre +
-                ' al carrito" class="relative z-10 bg-ink text-white dark:bg-white dark:text-ink hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white rounded-full p-2 transition-colors">' +
-                '<span class="material-symbols-outlined text-[20px]" aria-hidden="true">add_shopping_cart</span>' +
-                "</button>" +
-                "</div>" +
+                '<h2 class="font-display text-xl font-semibold text-ink dark:text-white leading-tight group-hover:text-primary-dark dark:group-hover:text-primary transition-colors">' +
+                '<a href="proyecto.html?id=' + p.id + '" class="before:absolute before:inset-0 before:content-[\'\']">' +
+                p.titulo +
+                "</a>" +
+                "</h2>" +
+                '<p class="flex items-center gap-1.5 text-sm text-text-light dark:text-stone-400">' +
+                '<span class="material-symbols-outlined text-[16px]" aria-hidden="true">person</span>' +
+                p.cliente +
+                ' · <span class="text-text-light dark:text-stone-500">' +
+                p.fechaTexto +
+                "</span></p>" +
+                '<p class="text-sm text-text-light dark:text-stone-400 leading-relaxed line-clamp-3">' +
+                p.resumen +
+                "</p>" +
+                (etiquetas
+                  ? '<div class="mt-auto flex flex-wrap gap-2 pt-3">' + etiquetas + "</div>"
+                  : "") +
                 "</div>" +
                 "</article>"
               );
             })
             .join("");
+        }
+
+        if (gridProyectos) {
+          fetch("data/proyectos.json")
+            .then(function (res) {
+              return res.json();
+            })
+            .then(function (data) {
+              renderGrid(data.proyectos);
+              chips.forEach(function (chip) {
+                chip.addEventListener("click", function () {
+                  aplicarFiltro(chip.getAttribute("data-filtro"), true);
+                });
+              });
+              var inicial = new URL(window.location).searchParams.get("categoria");
+              if (inicial && filtrosValidos.indexOf(inicial) !== -1) {
+                aplicarFiltro(inicial, false);
+              } else {
+                aplicarFiltro("todos", false);
+              }
+            })
+            .catch(function () {
+              gridProyectos.innerHTML =
+                '<p class="text-text-light dark:text-stone-400 col-span-full">No se pudieron cargar los proyectos. Intenta recargar la página.</p>';
+            });
         }
       })();
     </script>
@@ -773,7 +677,7 @@
           {
             pregunta: "¿Cómo se cotiza una pieza personalizada?",
             respuesta:
-              "El precio depende del tamaño, la complejidad y el material. Sube tu diseño y te enviamos una cotización sin compromiso.",
+              "El precio depende del tamaño, la complejidad y el material. Cuéntanos tu idea y te enviamos una cotización sin compromiso.",
           },
           {
             pregunta: "Quiero hablar con una persona",

@@ -1,0 +1,25 @@
+# Dependencias
+node_modules/
+/vendor/
+
+# Build / caché (Next.js en /web)
+web/.next/
+web/out/
+*.tsbuildinfo
+
+# Experimento composer/laravel abandonado (no forma parte del sitio)
+composer.phar
+composer.json
+composer.lock
+
+# Config local de Claude Code (no compartir)
+.claude/settings.local.json
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Variables de entorno
+.env
+.env.local
+.env*.local
